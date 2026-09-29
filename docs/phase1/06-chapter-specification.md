@@ -49,7 +49,10 @@
 ## Exercise quota
 
 - Per teaching chapter: >=1 output-predict, >=1 find/fix-bug, >=1 write-from-scratch.
-- Answer-key policy: placeholder — full keys in separate non-student file; student edition hints-only. (Decide location at writing phase.)
+- Answer-key policy (manager DECIDED): student chapter = questions + short hints only; no full solutions under the questions.
+  Full answers + detailed explanations live separately under `book/solutions/`, mirroring the manuscript path:
+  `book/solutions/partN/chapterNN-solutions.md` (e.g. `book/solutions/part1/chapter01-solutions.md`).
+  A chapter's solution file is written only after that chapter's manuscript is manager-approved.
 
 ## K&R-use rule
 

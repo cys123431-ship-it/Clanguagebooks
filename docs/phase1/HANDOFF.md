@@ -7,10 +7,10 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 ## Current status
 
 - PHASE 1 setup/integration/writing-kickoff checkpoints: **8 / 8**. Checkpoint 8 is complete.
-- Chapter 1 manuscript created: **Draft 1, manager review pending**, not final publication copy.
+- Chapter 1 manuscript: **Draft 2 (manager approval pending)**, not final publication copy. Draft 1 passed manager review in principle; Draft 2 applies the targeted manager revisions only.
 - Exact manuscript path: `book/part1/chapter01-programming-concepts.md`.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
-- Actual starting state verified: `main`, clean, HEAD/origin main `47bf4dc117cc6c27afc11b28b986537bb69b8d2e`.
+- Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
 
 ## Completed files
@@ -20,9 +20,9 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - docs/phase1/03-crosswalk.md — ~60 rows, destinations reconciled to Ch1-24 (const-split, argv->Ch19, funcptr->Ch22, list->Ch18, stdlib->App B).
 - docs/phase1/04-gap-analysis.md — FINAL verdicts (CORE/REQUIRED BOX/RECOMMENDED/ADVANCED/REFERENCE ONLY/DEFER), provenance kept.
 - docs/phase1/05-proposed-c-book-toc.md — FINAL Ch1-24 + App A-D, C17/VS2022-GCC, Ch18 separate bridge, tiered DS prereqs.
-- docs/phase1/06-chapter-specification.md — FINAL grouped template (MANDATORY/OPTIONAL/TOPIC-SPECIFIC) + MSVC+GCC verify rule + answer-key placeholder.
-- `book/part1/chapter01-programming-concepts.md` — Chapter 1 Draft 1: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; one draft and zero final-approved chapters reported separately.
+- docs/phase1/06-chapter-specification.md — FINAL grouped template (MANDATORY/OPTIONAL/TOPIC-SPECIFIC) + MSVC+GCC verify rule + answer-key policy (DECIDED: solutions under `book/solutions/`).
+- `book/part1/chapter01-programming-concepts.md` — Chapter 1 Draft 2 (structure unchanged from Draft 1): 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
+- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 Draft 2 / manager approval pending; zero final-approved chapters.
 
 ## Incomplete files
 
@@ -65,6 +65,24 @@ External verification (official pages fetched and read on 2026-09-29; not substi
 - The former skeleton-only/no-prose constraint applied to architecture production, not this authorized body-writing task. Chapter 1 is newly written Korean textbook prose.
 - This task explicitly overrides the reduced template's 2-3 exercise recommendation with 6-10 conceptual exercises; Draft 1 has 8. Architecture files were not rewritten.
 - No C source examples are introduced in this conceptual chapter. MSVC/GCC compilation checks are not applicable here, not claimed as passed. Future executable examples still require both toolchains.
+- **Answer-key policy (manager DECIDED, 2026-09-30):** student chapters carry questions + short hints only; full answers and detailed explanations go under `book/solutions/partN/chapterNN-solutions.md`, written only after that chapter's manuscript is approved. Recorded in 06. Applies to all later chapters.
+
+## Chapter 1 Draft 2 — targeted manager revisions (completed)
+
+- A. Program definition: now "instructions written so a computer performs a task"; embedded fixed values mentioned as secondary; input data explicitly separated from the program; "same program + different input -> different output" kept (§1.1, summary).
+- B. Compiler/interpreter: core flow is source -> translation/build -> executable form -> execution. Compiler and interpreter are presented as implementation tools, not language categories. The CPython/bytecode material is reduced to a short `보충 (선택 읽기)` box. Build-stage details stay in Ch2.
+- C. Korean line edit across §1.1-1.4: shortened long sentences, removed repeated conclusions, and cut translated-sounding phrasing. Technical content is unchanged.
+- D. Maximum-temperature reasoning stays informal (the current maximum is right for the records seen so far, and the procedure terminates). No loop invariant, induction or formal proof terms were used.
+- E. Exercise 8 is labeled `〔심화·도전〕` with a one-line note. All 8 exercises kept, and none contain C code. The hint box notes that full solutions are separate.
+- Structure (1.1-1.4, 자주 하는 오해, 핵심 정리, 확인 문제, 다음 장에서는) unchanged. No Chapter 2 content.
+
+### Draft 2 source verification (2026-09-30)
+
+- The textbook PDF pages were rendered locally with the Windows.Data.Pdf API and **visually inspected** this time (not OCR). Rendered PNGs stayed in the session scratchpad and are not committed.
+- Book p.41 / PDF p.43: Lab title is `프린터 고장 수리 알고리즘`. **01 outline typo fixed** (was `프린터 가장 수리 알고리즘`).
+- Book p.19 / PDF p.21: the textbook defines a program as a list of instructions designed to perform a specific task. This supports Revision A (instruction-centered definition).
+- Book p.29 / PDF p.31: the textbook describes conversion to machine code via "컴파일러 또는 인터프리터". This is consistent with the Draft 2 wording that treats both as tools. The textbook itself does not discuss mixed implementations, so the CPython note stays [E2]-sourced.
+- No re-OCR or full-chapter reanalysis was done. K&R was not re-consulted, because no K&R-derived claim changed.
 
 ## Uncertain items
 
@@ -75,12 +93,12 @@ RESOLVED (verified 2026-09-29 vs textbook scan, rendered pages):
 - Ch08 Advanced Topic: "모듈이란?" (modularization; cohesion/coupling), book p.353. Class ADVANCED.
 - Ch09 Advanced Topic: "스텁 기법" (stub-based top-down test), book p.393. Class ADVANCED.
 - Ch17 Advanced Topic: "수동 메모리 관리 vs 자동 메모리 관리" (manual-vs-GC; motivates free-discipline), book p.736. Class ADVANCED.
+- Ch01 Lab: exact title "프린터 고장 수리 알고리즘", book p.41 (visually verified 2026-09-30). Outline corrected (was "프린터 가장 수리 알고리즘").
 
 UNRESOLVED:
-- Chapter 1 requires manager review of Korean pacing, conceptual accuracy, exercise difficulty and final approval. Draft 1 is not publication-approved.
-- Separate instructor answer-key location remains undecided under 06; only student hints are included. No later chapter or appendix was started.
+- Chapter 1 Draft 2 requires manager final approval. It is not publication-approved.
+- Chapter 1 solution file `book/solutions/part1/chapter01-solutions.md` is NOT yet written (policy: write only after manuscript approval). No later chapter or appendix was started.
 - Source-reading limitation: original-page OCR was used; a manager may visually compare source pages if exact source typography or diagram details matter. Source diagrams are not reproduced.
-- Existing 01's printer Lab title reads `프린터 가장 수리 알고리즘`; body OCR on book p.41 / PDF p.43 reads `프린터 고장 수리 알고리즘`. This is an outline-title typo only; 01 was left unchanged as out of this three-file writing task.
 - Standing note for later chapters: legend `(i)` = inferred-from-title labels; confirm against body when writing.
 
 ## OCR / PDF issues
@@ -91,7 +109,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Manager review of Chapter 1 Draft 1.** Do not automatically start Chapter 2.
+**Manager final approval of Chapter 1 Draft 2.** Do not automatically start Chapter 2. After approval: write `book/solutions/part1/chapter01-solutions.md`.
 
 ## Draft 1 self-review and checks
 
@@ -105,7 +123,7 @@ UNRESOLVED:
 ## README status
 
 - Checkpoints 1-8 checked; preparation/writing kickoff = 8/8.
-- Overall content percentage is not calculated from that milestone. Chapter 1 Draft 1 exists; final-approved chapters = 0.
+- Overall content percentage is not calculated from that milestone. Chapter 1 Draft 2 exists (manager approval pending); final-approved chapters = 0.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -114,18 +132,21 @@ UNRESOLVED:
 - 37f8ba9 docs: add phase1 architecture review
 - dda652c docs: integrate final phase1 C book architecture
 - Final manager-consistency cleanup follows these commits; inspect `git log -5 --oneline` for the current tip.
-- `47bf4dc117cc6c27afc11b28b986537bb69b8d2e` was the verified starting tip for this draft. The writing commit is named `docs: draft chapter 1 programming concepts`; use `git log -1` after integration for its SHA.
+- `47bf4dc117cc6c27afc11b28b986537bb69b8d2e` was the verified starting tip for Draft 1.
+- `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` docs: draft chapter 1 programming concepts (Draft 1).
+- Draft 2 commit: `docs: revise chapter 1 after manager review` (child of 4f70ba3). Use `git log -1` for its SHA.
 
 ## Architecture review status
 
 - Review file: docs/phase1/07-architecture-review.md — left intact per task (audit record, do not rewrite).
 - Original review verdict: NEEDS MAJOR REVISION (2 critical + 8 major). Those findings were integrated in `dda652c` and then manager-checked for consistency.
-- Current architecture status: APPROVED; Chapter 1 Draft 1 written against it.
-- PHASE 1 preparation/writing kickoff = 8/8; Chapter 1 manager review pending.
+- Current architecture status: APPROVED; Chapter 1 Drafts 1-2 written against it.
+- PHASE 1 preparation/writing kickoff = 8/8; Chapter 1 Draft 2 manager approval pending.
+
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Review the existing Draft 1; do not infer approval or write Chapter 2 without the next instruction.
+- Chapter 1 is at Draft 2; do not infer approval or write Chapter 2 / the solution file without the next instruction.
 - Push target: origin main. Repo has single branch main.
 
 

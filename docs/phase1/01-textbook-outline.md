@@ -14,7 +14,7 @@
 | 1.2 | 프로그래밍 언어 | low/high-level; compiler vs interpreter (i) | - | 1.1 -> 1.3 |
 | 1.3 | C언어의 소개 | history; features; VS2022 (i) | - | 1.2 -> 1.4 |
 | 1.4 | 알고리즘이란? | algorithm; flowchart; pseudo (i) | - | 1.3 -> Lab |
-| Lab | 프린터 가장 수리 알고리즘 | repair-decision procedure | - | 1.4 |
+| Lab | 프린터 고장 수리 알고리즘 (verified book p.41) | repair-decision procedure | - | 1.4 |
 | Lab | 성적 평균 계산기 | average algorithm | - | Lab |
 | MiniProject | 숫자 리스트에서 최대값 찾는 알고리즘 | linear max scan (i) | - | Ch01 end |
 | Q&A / Exercise | Ch01 review | - | - -> Ch02 |
