@@ -37,9 +37,16 @@ Skeleton-first: textbook (primary) + K&R (enhancement) -> our C-part TOC + chapt
 
 ## Uncertain items
 
-- 01: 3 titles approx (Ch03 MiniProject noun, Ch05 5.2-Lab noun, Ch08 8.5-Lab noun) — re-verify from scan at writing.
-- 01: Ch08/Ch09/Ch17 "Advanced Topic" body unsampled (page nos. 353/393/736).
-- Legend `(i)` = inferred-from-title labels; low risk but confirm against body when writing.
+RESOLVED (verified 2026-09-29 vs textbook scan, rendered pages):
+- Ch03 MiniProject: exact title "사각형의 둘레와 면적", book p.116. Outline corrected (was "사과형의 면적과 면적").
+- Ch05 Lab (5.2): exact title "거스름돈 계산하기", book p.174. Outline corrected (was "가스요금 계산하기").
+- Ch08 Lab (8.5): exact title "자동차 경주 프로그램", book p.340. Outline already correct, no change.
+- Ch08 Advanced Topic: "모듈이란?" (modularization; cohesion/coupling), book p.353. Class ADVANCED.
+- Ch09 Advanced Topic: "스텁 기법" (stub-based top-down test), book p.393. Class ADVANCED.
+- Ch17 Advanced Topic: "수동 메모리 관리 vs 자동 메모리 관리" (manual-vs-GC; motivates free-discipline), book p.736. Class ADVANCED.
+
+UNRESOLVED:
+- None from prior list. Standing note: legend `(i)` = inferred-from-title labels; confirm against body when writing.
 
 ## OCR / PDF issues
 
@@ -49,9 +56,7 @@ Skeleton-first: textbook (primary) + K&R (enhancement) -> our C-part TOC + chapt
 
 ## Next exact task
 
-1. `git log -3 --oneline` to confirm tip.
-2. PHASE 1 item 8: write Chapter-spec brief header for our Ch01, then draft body per 06-template (separate turn).
-3. Or: sample Adv-Topic bodies (pp.353/393/736, PDF+2) to close uncertainty.
+Manager review of proposed TOC, dependency order, and gap-analysis decisions before body writing.
 
 ## README status
 

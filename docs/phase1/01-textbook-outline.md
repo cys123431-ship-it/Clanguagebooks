@@ -50,7 +50,7 @@
 | 3.8 | scanf() | input; address-of preview (`&`) | `%d`, `&` | 3.7 -> 3.9 |
 | 3.9 | 맛샘 프로그램 #2 | assemble full program (i) | - | 3.8 -> Lab |
 | Lab | 원의 면적 / 환율계산 / 평균 계산하기 | applied mini programs | - | 3.9 |
-| MiniProject | 사과형의 면적과 면적 [title as printed] | applied program | - -> Ch04 | - |
+| MiniProject | 사각형의 둘레와 면적 (verified book p.116) | rect w*h, 2*(w+h); rect_area.c | - -> Ch04 | - |
 
 ## Chapter 04 변수와 자료형 (book 124-162)
 
@@ -70,7 +70,7 @@
 |---|---|---|---|
 | 5.1 | 수식과 연산자 | expression; precedence preview | - |
 | 5.2 | 산술 연산자 | `+ - * / %`; int division trap | `/`, `%` |
-| Lab | 가스요금 계산하기 [title approx] | applied arithmetic | - |
+| Lab | 거스름돈 계산하기 (verified book p.174) | change; `%`, `/`; change.c | - |
 | 5.3 | 대입 연산자 | `=`; compound `+= -= *= /= %=` | `+=` etc |
 | 5.4 | 관계 연산자 | `== != < > <= >=`; 0/1 result | - |
 | 5.5 | 논리 연산자 | `&& \|\| !`; short-circuit (i) | - |
@@ -132,7 +132,7 @@
 | Lab | 시간 맞추기 게임 / 나무 높이 측정 / 삼각함수 그리기 | applied math | - |
 | 8.7 | 함수를 사용하는 이유 | decomposition; top-down (i) | - |
 | MiniProject | 공학용 계산기 프로그램 작성 | multi-func program | - |
-| Advanced Topic | (as printed, detail TBD) | - | - |
+| Advanced Topic | 모듈이란? (verified book p.353) | modularization; cohesion/coupling | ADVANCED |
 ## Chapter 09 변수 범위와 순환 호출 (book 366-398)
 
 | Sec | Title | Concepts (i) | Syntax/API |
@@ -149,7 +149,7 @@
 | 9.7 | 가변 매개 변수 함수 | `...`; `<stdarg.h>` preview (i) | `...` |
 | 9.8 | 순환 호출 | recursion; base case; stack preview | - |
 | MiniProject | 하노이 탑 | classic recursion | - |
-| Advanced Topic | (as printed, TBD) | - | - |
+| Advanced Topic | 스텁 기법 (verified book p.393) | stub-based top-down test | ADVANCED |
 
 ## Chapter 10 배열 (book 402-444)
 
@@ -270,11 +270,11 @@
 | 17.4 | 구조체를 동적 생성해보자 | `malloc(sizeof(Node))`; `->` | `sizeof` | node fig |
 | 17.5 | 연결 리스트란? | self-ref struct; traverse/insert (i) | - | list figs |
 | Lab/MiniProject | 영화 관리 프로그램 | linked-list app | - | - |
-| Advanced Topic | (as printed, TBD) | - | - | - |
+| Advanced Topic | 수동 메모리 관리 vs 자동 메모리 관리 (verified book p.736) | manual-vs-GC; motivates free-discipline | ADVANCED | - |
 | 찾아보기 (743) | index | - | - | - |
 
 ## Coverage check
 
 - [x] 17/17 chapters, all numbered sections + Labs + MiniProjects from TOC.
-- Uncertain titles (scan legibility): 3.x MiniProject word 1 ("사과형의"?), 5.2 Lab ("가스요금"?), 8.5 Lab ("자동차 경주"?). Marked approx where used. Re-verify at writing phase.
-- Ch08/Ch09/Ch17 "Advanced Topic" page exists; body detail not sampled — TBD.
+- Titles verified 2026-09-29 vs scan: Ch03 Mini "사각형의 둘레와 면적" (p.116); Ch05 Lab "거스름돈 계산하기" (p.174); Ch08 Lab "자동차 경주 프로그램" (p.340, already correct). No approx markers remain.
+- Ch08/Ch09/Ch17 Advanced Topics verified with titles+class in-table (pp.353/393/736).
