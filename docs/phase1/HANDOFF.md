@@ -22,7 +22,7 @@ Skeleton-first: textbook (primary) + K&R (enhancement) -> our C-part TOC + chapt
 
 ## Incomplete files
 
-- None structural. Quality TBD at writing phase: 3 approx titles in 01 (marked), Adv-Topic bodies unsampled.
+- None structural. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
 
@@ -57,7 +57,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-Manager verifies integrated architecture. Then: Chapter 1 writing. PHASE 1 remains 7/8.
+Integrated architecture has passed manager consistency review. Next: Chapter 1 body writing. PHASE 1 remains 7/8 until writing begins.
 
 ## README status
 
@@ -65,15 +65,17 @@ Manager verifies integrated architecture. Then: Chapter 1 writing. PHASE 1 remai
 
 ## Last known commit
 
-- 5702048 docs: verify remaining textbook outline uncertainties (HEAD before architecture review)
-- 37f8ba9 docs: add phase1 architecture review (adds 07; read in full, consistent with manager brief)
-- Plus 1 integration commit on top (05/04/03/06/HANDOFF/README). Verify: `git log -4 --oneline`.
+- 5702048 docs: verify remaining textbook outline uncertainties
+- 37f8ba9 docs: add phase1 architecture review
+- dda652c docs: integrate final phase1 C book architecture
+- Final manager-consistency cleanup follows these commits; inspect `git log -5 --oneline` for the current tip.
 
 ## Architecture review status
 
 - Review file: docs/phase1/07-architecture-review.md — left intact per task (audit record, do not rewrite).
-- Verdict: NEEDS MAJOR REVISION (2 critical: struct/heap + strings inversions; 8 major) — all adopted per manager decisions.
-- PHASE 1 remains 7/8.
+- Original review verdict: NEEDS MAJOR REVISION (2 critical + 8 major). Those findings were integrated in `dda652c` and then manager-checked for consistency.
+- Current architecture status: READY FOR CHAPTER 1 WRITING.
+- PHASE 1 remains 7/8 until Chapter 1 body writing begins.
 ## Notes for next AI
 
 - Keep docs compact; never paste book prose/code. Titles + labels only.
