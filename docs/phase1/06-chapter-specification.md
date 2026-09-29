@@ -14,7 +14,8 @@
 - common mistakes where relevant (bad pattern | symptom | cause + warnings text)
 - summary (5-8 bullets mirroring goals)
 - exercises (quota below)
-- source-tier labels ([T]/[K]/[E] per block)
+- provenance label per block: `[T]` textbook / `[K]` K&R / `[E]` external-modern supplement
+- content-role label where useful: 🟢 기본 / 🟡 보강 / 🔵 추가 / 🟣 심화
 
 ## OPTIONAL (use when topic benefits)
 
