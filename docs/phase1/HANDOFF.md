@@ -64,8 +64,16 @@ Manager review of proposed TOC, dependency order, and gap-analysis decisions bef
 
 ## Last known commit
 
-- 908a181 docs: analyze textbook+K&R structure, crosswalk, gaps, TOC draft, chapter spec
-- Plus 1 follow-up commit this turn (HANDOFF + README). Verify: `git log -3 --oneline`.
+- 5702048 docs: verify remaining textbook outline uncertainties (HEAD before architecture review)
+- Architecture review commit follows it: see `git log -3 --oneline`.
+
+## Architecture review status
+
+- Review file: docs/phase1/07-architecture-review.md
+- Review commit: `docs: add phase1 architecture review` (child of 5702048; SHA in git log)
+- Verdict: NEEDS MAJOR REVISION (2 critical: struct/heap inversion, strings inversion; 8 major).
+- Manager integration still required (05 TOC, 04 tiers, 06 template, README PART numbering). 05 NOT edited.
+- PHASE 1 remains 7/8.
 
 ## Notes for next AI
 
