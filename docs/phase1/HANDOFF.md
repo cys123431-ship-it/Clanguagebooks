@@ -30,7 +30,7 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 ## Incomplete files
 
 - Chapter 1 manuscript and Chapter 1 solution manuscript are both manager-approved.
-- No Chapter 2 work has started.
+- Chapter 2 manuscript: **Draft 1 created, manager review pending** (`book/part1/chapter02-program-development-tools.md`). Chapter 2 solution file NOT started. No Chapter 3 work started.
 - No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
@@ -114,7 +114,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Begin Chapter 2 manuscript: `Chapter 2 — 프로그램 작성 과정과 개발 도구`.**
+**Manager review of Chapter 2 Draft 1.** Do not start Chapter 3 or the Chapter 2 solution file before approval.
 
 ## Draft 1 self-review and checks
 
@@ -152,7 +152,7 @@ UNRESOLVED:
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapter 1 is approved and its separate solution file now exists as Draft 1. The next exact task is manager review of that solution file; do not start Chapter 2 until the review is complete.
+- Chapter 1 and its solution file are approved. Chapter 2 is at Draft 1 (manager review pending); do not infer approval, write `book/solutions/part1/chapter02-solutions.md`, or start Chapter 3 without the next instruction.
 - Push target: origin main. Repo has single branch main.
 
 
@@ -184,3 +184,71 @@ UNRESOLVED:
 - Manager checks: arithmetic, branch cases, terminology, multiple-answer handling, and no-C-code constraint all passed.
 - Result: APPROVED. Chapter 1 manuscript + solutions are both complete for the current writing stage.
 - Next: Chapter 2 manuscript writing.
+
+## Chapter 2 Draft 1
+
+- Created: `book/part1/chapter02-program-development-tools.md`
+- Status: **Draft 1 / manager review pending**. Chapter 1 manuscript and solutions unchanged (APPROVED).
+- Starting state verified: `main`, clean, HEAD = origin/main = `7eab08f5aad6add53cfc9a368d732ad9ef89c379`.
+- Structure: 이 장에서 배우는 것 → 2.1 프로그램은 어떻게 만들어지는가? → 2.2 전처리·컴파일·어셈블·링크 → 2.3 개발 도구의 역할 → 2.4 Visual Studio 2022에서 C 프로그램 만들기 → 2.5 C17과 컴파일 옵션 → 2.6 오류와 경고 읽기 → 2.7 첫 프로그램을 빌드하고 실행해 보기 → 자주 하는 오해 → 핵심 정리 → 확인 문제(8, #8 심화·도전) → 다음 장에서는.
+- One executable example only (`hello.c`, 7 lines), explicitly marked "structure explained in Ch3". `#include`/`#define` are previewed only as directives; macro mechanics are left to Ch20.
+- Visuals (original text diagrams): write-build-run cycle, source→executable flow, 5-stage toolchain pipeline, IDE/tool-role box and table, error-classification decision flow.
+
+### Chapter 2 source pages actually consulted (rendered and visually inspected, 2026-09-30)
+
+| Source | Printed pages | PDF pages | Use |
+|---|---|---|---|
+| [T] Ch02 §2.1 프로그램 개발 과정 | 50-57 | 52-59 | Lifecycle overview, source/compile/link, object file, library, build, run/debug, error kinds, Q&A on which files to keep |
+| [T] §2.2 통합 개발 환경 | 57-58 | 59-60 | IDE concept; VS as primary IDE |
+| [T] §2.3 설치 | 60-61 | 62-63 | "C++를 사용한 데스크톱 개발" workload |
+| [T] §2.4 비주얼 스튜디오 사용하기 | 61-68 | 63-70 | Solution/project, empty project, add item typed as `hello.c`, build solution, run without debugging, console notice is not program output |
+| [T] §2.5-2.6 예제 설명·응용 | 68-72 | 70-74 | Scope check only: the textbook explains the program's lines here; this book defers that to Ch3 |
+| [T] §2.7 오류 수정 + 디버거 | 76-81 | 78-83 | Error vs warning, reported line may be the next line, link error ("unresolved external symbol"), logic error, debugger (not taught here) |
+| [T] Mini Project 오류를 처리해보자 | 82 | 84 | Pedagogical purpose only (deliberate-error practice); new experiments written |
+| [K] Ch1 opening + §1.1 Getting Started | 5-6 | 19-20 | Create-compile-load-run mechanics as the first hurdle; "depends on the system"; `.c` naming; `cc` → `a.out`. Old `main()` form not used |
+
+- Pages 62-67 and 73-75, 83-86 were rendered and skimmed but not used as sources. No textbook or K&R prose, figures, code listings or exercises were copied.
+- Textbook simplifications corrected in our text (recorded, not contradicted in reader-facing prose):
+  - Library "built into the compiler" → supplied with the toolchain/OS.
+  - "Compiler converts to machine code" → toolchain stage model.
+  - Warning = "경미한 오류" → a signal that must be investigated.
+  - Link error filed under "컴파일 시간 오류 #3" → a separate link category.
+  - Sidebar "C++ tools can develop C" → same toolchain, different languages; `.c` vs `.cpp`.
+
+### External official docs used (fetched 2026-09-30)
+
+- [E1] GCC Overall Options: https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html. Four stages; `-E`, `-S`, `-c`, `-o`; default `a.out`.
+- [E3] GCC C Dialect Options: https://gcc.gnu.org/onlinedocs/gcc/C-Dialect-Options.html. `-std=c17` = ISO C17 (2017 revision, published 2018); current default `gnu23`.
+- [E4] GCC Warning Options: https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html. `-Wall` is not all warnings; `-Wextra`; `-Werror`.
+- [E5] MSVC /std: https://learn.microsoft.com/en-us/cpp/build/reference/std-specify-language-standard-version. `/std:c17` since VS2019 16.8; default C mode = C89 + MS extensions; property C/C++ > Language > C Language Standard.
+- [E6] MSVC warning level: https://learn.microsoft.com/en-us/cpp/build/reference/compiler-option-warning-level. `/W4` recommended for new projects; IDE default `/W3`, command-line default `/W1`; `/WX`.
+- [E7] MSVC /Tc /Tp: https://learn.microsoft.com/en-us/cpp/build/reference/tc-tp-tc-tp-specify-source-file-type. `.c` → C, `.cpp`/`.cxx` → C++ by default.
+- [E8] Compile a C program on the command line: https://learn.microsoft.com/en-us/cpp/build/walkthrough-compile-a-c-program-on-the-command-line. Developer command prompt; `cl hello.c` → `hello.obj` + `hello.exe`; C and C++ "similar, but not the same".
+- [E9] Security Features in the CRT: https://learn.microsoft.com/en-us/cpp/c-runtime-library/security-features-in-the-crt. `_s` functions; `_CRT_SECURE_NO_WARNINGS` disables warnings but the issues remain.
+- [E10] Compiler Warning C4996: https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996. Level 3; `/sdl` elevates it to an error.
+- [E11] Visual Studio debugger overview: https://learn.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour. F5 = Start Debugging with the debugger attached.
+- [E12] MSVC AddressSanitizer: https://learn.microsoft.com/en-us/cpp/sanitizers/asan. Mentioned only by name.
+
+### Toolchain verification (actually run, 2026-09-30)
+
+- `hello.c` (the exact chapter listing):
+  - MSVC 19.51.36260 x64, `cl /std:c17 /W4 hello.c`: **PASS** (0 warnings; output `Hello, C!`; exit 0).
+  - GCC 16.1.0 (MinGW-w64 UCRT), `gcc -std=c17 -Wall -Wextra`: **PASS** (0 warnings; output `Hello, C!`; exit 0).
+- GCC stage commands `-E`/`-S`/`-c`/link: PASS. `hello.i` = 1,244 non-empty lines, which supports the "천 줄이 넘게" wording (environment-dependent). A default GCC build on Windows produced `a.exe`.
+- Diagnostics quoted or described in the chapter, all reproduced:
+  - Missing `;`: MSVC `C2143` at line 6; GCC `expected ';' before 'return'` at 5:26.
+  - `prinft`: MSVC `C4013` warning + `LNK2019`/`LNK1120`; GCC 16 implicit-declaration **error**.
+  - `int class = 0;`: valid as `.c` on both toolchains; rejected as `.cpp` (MSVC C2236…, g++ errors).
+  - A declared-but-undefined function gives a pure link error on both (`LNK2019` / ld `undefined reference`).
+- **Limitation:** the installed IDE is **Visual Studio Community 2026 (18.x, MSVC toolset 14.51)**, not VS2022. Compiler flags and behavior used in the chapter are the same.
+  - The VS2022 menu wording in §2.4 comes from the textbook (VS2022, Korean UI) plus Microsoft docs. It was not click-verified in a VS2022 IDE.
+  - Exact Korean labels are unverified for "C 언어 표준", "ISO C17(2018) 표준(/std:c17)", "SDL 검사" and the "마지막으로 성공한 빌드" prompt. The chapter warns that labels may vary.
+
+### Needs manager review
+
+- Korean UI labels in §2.4 (see the limitation above).
+- Whether the GCC stage-by-stage box (선택 읽기) and the three deliberate-error experiments are the right depth for Ch2.
+- Exercise count 8 (reduced template suggests 2-3; the Ch1 precedent of 6-10 was followed per this task).
+
+- No Chapter 3 work started. No Chapter 2 solution file created. No architecture docs changed.
+- Next exact task: **Manager review of Chapter 2 Draft 1.**
