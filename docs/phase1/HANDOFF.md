@@ -7,16 +7,17 @@ Skeleton-first: textbook (primary) + K&R (enhancement) -> our C-part TOC + chapt
 ## Current status
 
 - PHASE 1 checkpoints: 7 / 8 (8 = Ch01 body writing: NOT started, must stay unchecked).
-- All 7 phase1 docs exist. Ch01 body NOT written (forbidden this phase).
+- Architecture review integrated this turn per manager decisions (FINAL). No body prose written.
+- Note: review commit 37f8ba9 landed mid-task; rebased onto it, 07 read in full and left intact.
 
 ## Completed files
 
 - docs/phase1/01-textbook-outline.md — 17/17 ch, sections+Labs+MiniProjects, book pp. verified.
 - docs/phase1/02-kr-outline.md — Ch1-8 + App A/B/C, titles verbatim.
-- docs/phase1/03-crosswalk.md — ~60 concept rows, CORE/ENHANCE/ADD/ADV/LEGACY.
-- docs/phase1/04-gap-analysis.md — A/B/C lists with verdicts.
-- docs/phase1/05-proposed-c-book-toc.md — PART 1-8 draft + DS prereqs.
-- docs/phase1/06-chapter-specification.md — 16-item template + code/exercise rules.
+- docs/phase1/03-crosswalk.md — ~60 rows, destinations reconciled to Ch1-24 (const-split, argv->Ch19, funcptr->Ch22, list->Ch18, stdlib->App B).
+- docs/phase1/04-gap-analysis.md — FINAL verdicts (CORE/REQUIRED BOX/RECOMMENDED/ADVANCED/REFERENCE ONLY/DEFER), provenance kept.
+- docs/phase1/05-proposed-c-book-toc.md — FINAL Ch1-24 + App A-D, C17/VS2022-GCC, Ch18 separate bridge, tiered DS prereqs.
+- docs/phase1/06-chapter-specification.md — FINAL grouped template (MANDATORY/OPTIONAL/TOPIC-SPECIFIC) + MSVC+GCC verify rule + answer-key placeholder.
 - README.md — checkpoints 2-7 checked, progress 7/8.
 
 ## Incomplete files
@@ -32,7 +33,7 @@ Skeleton-first: textbook (primary) + K&R (enhancement) -> our C-part TOC + chapt
 ## Important decisions
 
 - textbook = primary skeleton; K&R = enhancement only; no paragraph/code/exercise copying.
-- Modern-C: minimal boxes only (no C23 survey). DS/Algo bodies deferred. Ch8 UNIX = LEGACY-adapt.
+- Manager FINAL: C17 baseline (C23 notes only); VS2022 primary + GCC secondary; PART numbering retained (9=DS/10=Algo/11=Projects); Ch18 separate DS bridge; union split (core-brief + Ch23 revisit); func-ptrs RECOMMENDED not pre-DS; stdlib -> App B reference; no VLAs in main examples; ownership (not NULL-after-free) is Ch17 safety core.
 - Token policy kept: tables/bullets, EN analysis allowed, no polished Korean prose.
 
 ## Uncertain items
@@ -56,7 +57,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-Manager review of proposed TOC, dependency order, and gap-analysis decisions before body writing.
+Manager verifies integrated architecture. Then: Chapter 1 writing. PHASE 1 remains 7/8.
 
 ## README status
 
@@ -65,18 +66,19 @@ Manager review of proposed TOC, dependency order, and gap-analysis decisions bef
 ## Last known commit
 
 - 5702048 docs: verify remaining textbook outline uncertainties (HEAD before architecture review)
-- Architecture review commit follows it: see `git log -3 --oneline`.
+- 37f8ba9 docs: add phase1 architecture review (adds 07; read in full, consistent with manager brief)
+- Plus 1 integration commit on top (05/04/03/06/HANDOFF/README). Verify: `git log -4 --oneline`.
 
 ## Architecture review status
 
-- Review file: docs/phase1/07-architecture-review.md
-- Review commit: `docs: add phase1 architecture review` (child of 5702048; SHA in git log)
-- Verdict: NEEDS MAJOR REVISION (2 critical: struct/heap inversion, strings inversion; 8 major).
-- Manager integration still required (05 TOC, 04 tiers, 06 template, README PART numbering). 05 NOT edited.
+- Review file: docs/phase1/07-architecture-review.md — left intact per task (audit record, do not rewrite).
+- Verdict: NEEDS MAJOR REVISION (2 critical: struct/heap + strings inversions; 8 major) — all adopted per manager decisions.
 - PHASE 1 remains 7/8.
-
 ## Notes for next AI
 
 - Keep docs compact; never paste book prose/code. Titles + labels only.
 - Final Korean prose is a later phase; do not polish Korean now.
 - Push target: origin main. Repo has single branch main.
+
+
+

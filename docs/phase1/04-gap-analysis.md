@@ -1,56 +1,71 @@
-# Gap Analysis — what both books still lack
+# Gap Analysis (FINAL verdicts, manager-approved)
 
-- Verdicts: required | recommended | advanced | before-DS | can-wait | defer.
-- SOURCE tags: [T]=textbook [K]=K&R [E]=modern-C reference (general, no deep C23 survey per scope).
+- Verdicts: CORE | REQUIRED BOX | RECOMMENDED | ADVANCED | REFERENCE ONLY | DEFER.
+- Provenance preserved: [T]=textbook [K]=K&R [E]=modern/external addition.
+- Baseline: C17. VS2022 primary, GCC secondary. C23 = notes only.
+- Old coarse system (required/recommended/advanced/before-DS/can-wait/defer) replaced.
 
-## A. Covered sufficiently (keep, no action)
+## A. Covered sufficiently (CORE, keep)
 
 | # | Item | Source |
 |---|---|---|
 | A1 | basic types/printf/scanf/if/loops/functions/arrays | [T]+[K] |
-| A2 | struct/enum/union/typedef basics | [T]+[K] |
+| A2 | struct/enum/typedef basics; union brief-core | [T]+[K] |
 | A3 | text/binary files, fseek | [T]+[K] |
 | A4 | macros, cond-compile, include guards | [T]+[K] |
-| A5 | malloc/calloc/realloc/free basics, linked-list intro | [T]+[K 6.5] |
+| A5 | malloc/calloc/realloc/free basics, list intro (now Ch18 bridge) | [T]+[K 6.5] |
 
-## B. Covered but needs clarification (add boxes/sections)
+## B. Clarification boxes
 
-| # | Item | Problem | Verdict |
-|---|---|---|---|
-| B1 | `char *` vs `char[]` literal mutability | [T] weak, [K 5.5] strong | required |
-| B2 | array decay + `sizeof` inside functions | [T] implied, [K 5.3] strong | required |
-| B3 | `const` placement (`const int*` vs `int* const`) | [T 14.6] brief | required |
-| B4 | uninit vars; `static` zero-init | [T]+[K 4.9] scattered | required |
-| B5 | implicit-int/prototype story | [K 4.2] LEGACY context | recommended (history box) |
-| B6 | `register` keyword | [K 4.7] only | defer (1-line note) |
-| B7 | fd vs FILE*; buffering | [K 8.x] impl view | advanced (teacher box) |
-| B8 | string safe-input discipline | [T]+[K 1.5/7.7] | required |
+| # | Item | Source | Verdict | Placement |
+|---|---|---|---|---|
+| B1 | `char *` vs `char[]` literal mutability | [T] weak, [K 5.5] | REQUIRED BOX | Ch14 |
+| B2 | array decay + `sizeof` in functions | [T] impl, [K 5.3] | REQUIRED BOX | Ch11/13 |
+| B3 | `const` placement table | [T 14.6] | REQUIRED BOX | Ch12/16 |
+| B4 | uninit vars; `static` zero-init | [T]+[K 4.9] | REQUIRED BOX | Ch4/9 |
+| B5 | scanf return-value checking | [E] | REQUIRED BOX | Ch3 |
+| B6 | getchar returns int / EOF rule | [K 1.5] | REQUIRED BOX | Ch14 |
+| B7 | out-of-bounds = UB note | [E] | REQUIRED BOX | Ch11 |
+| B8 | never return address of local | [E] | REQUIRED BOX | Ch12 |
+| B9 | implicit-int/prototype story | [K 4.2] | RECOMMENDED (history) | Ch8, App D |
+| B10 | `register` keyword | [K 4.7] | DEFER (1 line) | App D |
+| B11 | fd vs FILE*; buffering | [K 8.x] | ADVANCED (teacher box) | Ch19 |
+| B12 | string safe-input discipline | [T]+[K 1.5/7.7] | REQUIRED BOX | Ch14 |
+| B13 | NULL-after-free: RECOMMENDED with limits (habit only, not safety) | [E] | RECOMMENDED | Ch17 |
+| B14 | `sizeof *p` house style; malloc-failure checks | [E] | REQUIRED BOX | Ch17 |
+| B15 | realloc temporary-pointer pattern | [E] | REQUIRED BOX | Ch17 |
+| B16 | ownership model (aliases invalid after free) | [E] | CORE (Ch17 safety core) | Ch17 |
 
-## C. Missing / modern supplement candidates
+## C. Supplements
 
-| # | Item | Verdict | Placement |
-|---|---|---|---|
-| C1 | signed/unsigned pitfalls, overflow | required | Ch04/05 |
-| C2 | integer promotion + usual arithmetic conversions | required | Ch05 |
-| C3 | UB / impl-defined / unspecified (incl `i=i++`, order-of-eval) | required | adv box Ch05 + PART 7 |
-| C4 | dangling/UAF/double-free/leak discipline + NULL-after-free | required (before-DS) | Ch17 end |
-| C5 | malloc-failure handling; `sizeof *p` idiom | required | Ch17 |
-| C6 | `enum` as API constants; `typedef` pointer warning | recommended | Ch13 |
-| C7 | function pointers + callbacks + `qsort` comparator | advanced (before-DS) | Ch14 adv |
-| C8 | `argc/argv` + exit codes + stderr usage | required | Ch14/15 practical |
-| C9 | TU / compile-vs-link / header design rules | required | Ch16 open |
-| C10 | `static` linkage control (file-private) | recommended | Ch09/Ch16 |
-| C11 | `volatile`/`_Static_assert`-era notes; `bool`/`stdint.h` | recommended | Ch04/13 adv boxes |
-| C12 | warnings (`-Wall -Wextra`), sanitizers, gdb basics | required | Ch02 + appendix |
-| C13 | bit ops safety (shift width, signed shift) | advanced | Ch05 adv |
-| C14 | `restrict`/`inline`/`_Generic` mention-only | can-wait | PART 7 survey |
-| C15 | `setjmp/signal` survey-only | defer | PART 8 survey |
-| C16 | alignment/padding (`sizeof` surprises) | advanced (before-DS) | Ch13 adv |
-| C17 | `errno`/`strerror` file-error pattern | recommended | Ch15 |
-| C18 | command-line parsing mini-pattern | recommended | Ch14 lab |
+| # | Item | Source | Verdict | Placement |
+|---|---|---|---|---|
+| C1 | size_t / `%zu` | [E] | REQUIRED BOX | Ch4/11 |
+| C2 | signed/unsigned compare + promotion basics | [E]+[K 2.7] | REQUIRED BOX | Ch4/5 |
+| C3 | integer overflow basics | [E] | REQUIRED BOX | Ch4 |
+| C4 | dangerous/unsequenced expr patterns (short) | [K 2.12] | REQUIRED BOX | Ch5 |
+| C5 | UB/impl-defined/unspecified consolidation | [E] | ADVANCED (Ch24) | Ch24; beginner box Ch4 |
+| C6 | dangling/UAF/double-free/leak discipline | [E] | CORE (before DS) | Ch17 |
+| C7 | `#define`/`enum` array-size strategy; VLA policy (avoid in main) | [E] | REQUIRED BOX | Ch4/11 |
+| C8 | `.c` vs `.cpp` warning (VS) | [E] | REQUIRED BOX | Ch2 |
+| C9 | TU/compile-vs-link/header rules | [E]+[K A10-A11] | CORE | Ch9 def; Ch21 full |
+| C10 | `static` linkage control | [T]+[K 4.6] | RECOMMENDED | Ch9/21 |
+| C11 | `bool`/`stdint.h`/`_Static_assert`-era notes | [E] | RECOMMENDED | Ch4/23/24 |
+| C12 | warnings (`-Wall -Wextra`, `/W4`); sanitizers RECOMMENDED (not Ch2 core) | [E] | RECOMMENDED | Ch2 brief; App A |
+| C13 | debugger RECOMMENDED, introduced when useful (loops+) | [E] | RECOMMENDED | Ch7 box; App A |
+| C14 | shift safety / signed shift | [E] | ADVANCED | Ch23 |
+| C15 | `restrict`/`inline` survey; `_Generic` mention | [E] | REFERENCE ONLY | Ch24 |
+| C16 | `setjmp`/`signal` survey | [K B8-B9] | REFERENCE ONLY | App B |
+| C17 | alignment/padding: short adv box, NOT a DS prerequisite | [E] | ADVANCED | Ch15 |
+| C18 | `errno`/`strerror` pattern | [E] | RECOMMENDED | Ch19 |
+| C19 | CLI parsing mini-pattern; argc/argv | [T]+[K 5.10] | CORE (Ch19) | Ch19 |
+| C20 | enum as API consts; typedef-ptr warning | [T]+[K 6.7] | RECOMMENDED | Ch15; void*-generics in Ch22/DS |
+| C21 | function pointers/callbacks/qsort | [K 5.11] | ADVANCED (RECOMMENDED, not pre-DS) | Ch22 |
+| C22 | volatile (HW note) | [T 14.6] | ADVANCED | Ch23 |
+| C23 | endianness note | [E] | ADVANCED | Ch23 |
+| C24 | C17 baseline box; C23 notes-only rule | [E] | CORE (policy) | Ch2 + Ch24 |
 
 ## External-source policy
 
-- Allowed only: C standard drafts (public), GCC/Clang/MSVC docs, cppreference C, university notes. Tag [E].
-- No full C23 survey in PHASE 1. Modern notes limited to table C11-C14 above.
-- No web search was needed for PHASE 1 skeleton; [E] lookups deferred to writing phase.
+- Allowed: public C standard drafts, GCC/Clang/MSVC docs, cppreference C, university notes. Tag [E].
+- No C23 survey. No web research done in this task.

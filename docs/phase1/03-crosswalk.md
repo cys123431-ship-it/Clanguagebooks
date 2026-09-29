@@ -2,7 +2,7 @@
 
 - Actions: CORE | K&R-ENHANCE | ADD | ADVANCED | LEGACY.
 - Coverage: both | textbook | K&R | neither.
-- `->` = placement recommendation for our book.
+- `->` = placement in NEW architecture (Ch1-24 + App A-D). Source columns (Textbook/K&R) preserved unchanged.
 
 ## A. Intro / tooling (Txt Ch1-3)
 
@@ -26,7 +26,7 @@
 | Ch5 | bitwise ops | 2.9 | both | K&R-ENHANCE | mask/shift drills |
 | Ch5 | conversions/casts | 2.7, A6 | K&R stronger | K&R-ENHANCE | promotion pitfalls |
 | Ch5 | precedence/eval order | 2.12 | K&R only | K&R-ENHANCE | UB teaser (`i=i++`) -> modern-C note |
-| Ch5 | overflow/signed-unsigned | A6/B11 (partial) | neither full | ADD | required; before Ch06 |
+| Ch5 | overflow/signed-unsigned | A6/B11 (partial) | neither full | ADD | required; -> Ch4/5 boxes |
 
 ## C. Control flow (Txt Ch6-7)
 
@@ -49,9 +49,9 @@
 | Ch9 | globals discipline | 4.3 | K&R stronger | K&R-ENHANCE | "minimize globals" rule |
 | Ch9 | static (local+file) | 4.6 | both | CORE | LCG lab keep |
 | Ch9 | recursion/Hanoi | 4.10 | both | K&R-ENHANCE | quicksort purpose-ref only (body in algo phase) |
-| Ch9 | variadic (`...`) | 7.3 | K&R stronger | ADVANCED | move out of Ch09 core |
-| Ch9 | init rules | 4.9 | K&R only | K&R-ENHANCE | -> Ch04 Variables too |
-| - | header-file interface thinking | 4.5 | K&R only | K&R-ENHANCE | -> Ch16 multi-file |
+| Ch9 | variadic (`...`) | 7.3 | K&R stronger | ADVANCED | -> Ch22 |
+| Ch9 | init rules | 4.9 | K&R only | K&R-ENHANCE | -> Ch4 too |
+| - | header-file interface thinking | 4.5 | K&R only | K&R-ENHANCE | -> Ch21 |
 | - | `register` | 4.7 | K&R only | LEGACY | 1-line history note |
 
 ## E. Arrays / pointers / memory (Txt Ch10-11 + 14 + 17)
@@ -67,15 +67,15 @@
 | Ch11 | pointers as function args | 5.2 | K&R stronger | K&R-ENHANCE | swap/getint pattern |
 | Ch11 | array-pointer equivalence | 5.3 | both | K&R-ENHANCE | critical; VISUAL |
 | Ch11 | pointer safety (uninit/dangle) | - (implied) | textbook | ADD | required: harden 11.3 |
-| Ch14 | `**` / ptr-array / array-ptr | 5.6, 5.8, 5.9 | both | K&R-ENHANCE | 5.9 layout contrast critical; VISUAL |
-| Ch14 | function pointers/callbacks | 5.11 | K&R only | ADVANCED | qsort/bisection labs keep as adv |
-| Ch14 | complicated declarations | 5.12 | K&R only | ADVANCED | decode-method box |
-| Ch14 | const/volatile/void ptr | - (partial) | textbook | K&R-ENHANCE | const-placement table; required |
-| Ch14 | argc/argv | 5.10 | K&R stronger | K&R-ENHANCE | -> practical chapter |
+| Ch14 | `**` / ptr-array / array-ptr | 5.6, 5.8, 5.9 | both | K&R-ENHANCE | -> Ch16; 5.9 layout contrast critical; VISUAL |
+| Ch14 | function pointers/callbacks | 5.11 | K&R only | ADVANCED | -> Ch22 (RECOMMENDED, not pre-DS) |
+| Ch14 | complicated declarations | 5.12 | K&R only | ADVANCED | -> Ch16 moderate + Ch22 |
+| Ch14 | const/volatile/void ptr | - (partial) | textbook | K&R-ENHANCE | SPLIT: const -> Ch16 (+Ch12 params); volatile -> Ch23; void* basics -> Ch17 |
+| Ch14 | argc/argv | 5.10 | K&R stronger | K&R-ENHANCE | -> Ch19 (not adv pointers) |
 | Ch17 | malloc/calloc/realloc/free | B5 + 8.7 (impl) | textbook | K&R-ENHANCE | 8.7 as teacher-only heap truth; VISUAL |
-| Ch17 | struct+malloc; linked list | 6.4, 6.5 | both | K&R-ENHANCE | DS bridge |
-| - | malloc discipline (leak/double-free/UAF) | - | neither | ADD | required; Ch17 end |
-| - | UB / impl-defined behavior | 2.12 tension | neither full | ADD | required; adv chapter |
+| Ch17 | struct+malloc; linked list | 6.4, 6.5 | both | K&R-ENHANCE | -> Ch18 separate DS-bridge chapter |
+| - | malloc discipline (leak/double-free/UAF) | - | neither | ADD | required; Ch17 OWNERSHIP core |
+| - | UB / impl-defined behavior | 2.12 tension | neither full | ADD | required; -> Ch24 (beginner box Ch4) |
 
 ## F. Strings / structs (Txt Ch12-13)
 
@@ -86,10 +86,10 @@
 | Ch12 | safe input (fgets vs gets) | 1.5, 7.7 | K&R stronger | K&R-ENHANCE | buffer-ownership note |
 | Ch12 | `char*` vs `char[]` | 5.5 | K&R only | K&R-ENHANCE | critical literal-mutability rule |
 | Ch12 | sscanf/sprintf numbers | 7.2, 7.4 | both | CORE | - |
-| Ch12 | ptr-array string tables | 5.6, 5.8 | K&R stronger | ADVANCED | dictionary lab -> adv |
+| Ch12 | ptr-array string tables | 5.6, 5.8 | K&R stronger | ADVANCED | -> Ch16 string tables |
 | Ch13 | struct/`.`/`->`/array/func | 6.1-6.4 | both | CORE | VISUAL |
 | Ch13 | typedef/enum/union | 6.7, 6.8 | both | CORE | typedef-ptr warning |
-| Ch13 | self-ref structs | 6.5 | K&R stronger | K&R-ENHANCE | -> Ch17 list |
+| Ch13 | self-ref structs | 6.5 | K&R stronger | K&R-ENHANCE | -> Ch18 (after struct fundamentals) |
 | Ch13 | table lookup design | 6.6 | K&R only | ADVANCED | project fodder |
 
 ## G. Files / preprocess / multi-file (Txt Ch15-16)
@@ -101,20 +101,22 @@
 | Ch15 | buffering (why flush) | 8.5 (teaching value) | K&R-impl | ADVANCED | teacher note, 1 box |
 | Ch16 | macros/func-macros/assert | 1.4, 4.11 | both | CORE | paren/side-effect traps |
 | Ch16 | cond-compile/platform split | 4.11 | both | CORE | - |
-| Ch16 | headers/guards/multi-file | 4.5 + A10/A11 | K&R stronger | K&R-ENHANCE | TU/linkage mini-model |
-| Ch16 | bit-fields | 6.9 | both | ADVANCED | HW lab keep as adv |
-| Ch8-ish | low-level fd/read/write | Ch8 (8.1-8.4) | K&R only | LEGACY | concept-1-pager, POSIX note |
-| - | compile-vs-link mental model | A10/A11 | neither full | ADD | required; Ch16 open |
+| Ch16 | headers/guards/multi-file | 4.5 + A10/A11 | K&R stronger | K&R-ENHANCE | -> Ch21; TU defined Ch9 first |
+| Ch16 | bit-fields | 6.9 | both | ADVANCED | -> Ch23 |
+| Ch8-ish | low-level fd/read/write | Ch8 (8.1-8.4) | K&R only | LEGACY | -> Ch19 optional adv box; POSIX note |
+| - | compile-vs-link mental model | A10/A11 | neither full | ADD | required; Ch9 brief + Ch21 full |
 
-## H. Stdlib survey (Appendix B -> our PART 8)
+## H. Stdlib survey (Appendix B -> our Appendix B reference)
 
 | Area | Textbook | K&R | Action |
 |---|---|---|---|
-| stdio/stdlib/string/ctype/math/time/assert | scattered labs | B1-B7, B10 | CORE: integrate per-chapter + reference |
-| stdarg/setjmp/signal | 9.7 preview | B6-B9 | ADVANCED: survey boxes only |
-| limits/float | - | B11 | CORE: 1 table in Ch04 |
+| stdio/stdlib/string/ctype/math/time/assert | scattered labs | B1-B7, B10 | CORE: teach contextually + App B lookup |
+| stdarg/setjmp/signal | 9.7 preview | B6-B9 | variadic -> Ch22; setjmp/signal REFERENCE ONLY (App B) |
+| limits/float | - | B11 | CORE: 1 table in Ch4 |
 
 ## Counts
 
 - Rows: ~60. CORE ~25 | K&R-ENHANCE ~25 | ADD ~8 | ADVANCED ~12 | LEGACY ~3.
 - Top K&R-ENHANCE targets: 1.8, 2.7, 2.12, 4.2, 5.2-5.5, 5.9-5.12, 6.5, 7.6.
+
+

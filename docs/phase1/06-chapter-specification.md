@@ -1,43 +1,57 @@
-# Chapter Writing Specification (template + rules, no body prose)
+# Chapter Writing Specification (FINAL, manager-approved; no body prose)
 
-## Template (every chapter; 1-3 lines of guidance each in writer brief)
+- Baseline C17; verify examples on MSVC C17 AND GCC C17 before publication. No code files yet.
+- 16-section template is now GROUPED, not all-mandatory.
 
-1. Learning goals — 3-5 bullets, verbs (write/predict/fix), DS-prereq flag if any.
-2. Previous chapter connection — 2-3 lines: what is reused, what breaks if skipped.
-3. Why this concept exists — problem before solution; 1 concrete pain.
-4. Terminology — table: term | read | meaning | misreading. EN kept where standard (dereference, decay...).
-5. Syntax — minimal grammar box; one canonical form only.
-6. Minimal example — compilable, <15 lines, `main` returns 0, no unexplained constructs.
-7. Execution flow — numbered steps mapping code lines to order.
-8. Memory model — VISUAL required for: vars/arrays/ptr/strings/stack/struct/heap (addr boxes + arrows).
-9. Step-by-step example — 1 worked program, input->trace->output.
-10. Common mistakes — table: bad pattern | symptom | cause (include warnings text).
-11. Bad code / Why bad / Correct code — side-by-side trio, minimal diff.
-12. K&R enhancement points — 1-3 bullets referencing [Kx.y]; purpose-only, no copied code.
-13. Modern C notes — box: UB/warning/safety per gap C1-C5; tag [E] if external.
-14. Summary — 5-8 bullets mirroring goals.
-15. Exercises — mix: concept-check, output-predict, fill-blank, find-bug, fix, write, mini-build.
-16. Next chapter bridge — 2 lines: open question the next chapter answers.
+## MANDATORY (teaching chapters)
 
-## Code rules (from README, binding)
+- brief header: `Goal | Prereq secs | K&R refs | Gap IDs | VISUALs | Est. pages | DS-flag`
+- learning goals (3-5 bullets, verbs; DS-prereq flag if any)
+- prerequisite/connection (what is reused, what breaks if skipped)
+- motivation (problem before solution, 1 concrete pain)
+- core explanation + syntax (one canonical form)
+- compilable example(s) (<15 lines starter; `main` returns 0; no unexplained constructs; Ch3 may use explicit "뒤에서 설명" markers for `#include`/`main`)
+- common mistakes where relevant (bad pattern | symptom | cause + warnings text)
+- summary (5-8 bullets mirroring goals)
+- exercises (quota below)
+- source-tier labels ([T]/[K]/[E] per block)
 
-- Compilable; init all pointers; check malloc/fopen; free/close shown; no unexplained globals;
-  warnings-clean (`-Wall -Wextra`); beginner-simplified vs production form labeled when both shown.
+## OPTIONAL (use when topic benefits)
 
-## Exercise-type quota (per chapter)
+- execution trace (numbered steps)
+- K&R enhancement (ref + purpose 1-liner; no copied code)
+- modern-C portability box (C17 vs notes; [E] tagged)
+- advanced-topic box (e.g. "모듈이란?", "스텁 기법", manual-vs-GC)
+- debugger/tool box (e.g. loops Ch7)
+- historical note (e.g. implicit-int -> App D)
 
-- >=1 output-predict, >=1 find/fix-bug, >=1 write-from-scratch. Pointer/memory chapters: +1 draw-memory item.
+## TOPIC-SPECIFIC (required only for matching chapters)
 
-## VISUAL required list
+- memory diagram: Ch4/11/12/13/14/15/17/18 (addr boxes + arrows; mandatory there)
+- bad/why/correct trio: pointer/memory/UB-prone chapters
+- UB/safety box: Ch5/12/17/24
+- draw-memory exercise: pointer/memory chapters (+1 item)
+- build/toolchain steps: Ch2/21 (+ App A)
+- DS-bridge checklist: Ch18 only (node/traverse/insert/free-all/head-update)
 
-vars, array layout, `&/*`, ptr arithmetic, `**`, strings/`'\0'`, call stack, struct, heap alloc,
-list-node bridge, tree-bridge (preview), file-stream model, TU/compile-link diagram.
+## Reduced templates
+
+- Ch1/Ch2: goals + concepts + 1 guided example + mistakes + summary + 2-3 exercises. (Tool setup, no full 16.)
+- Reference appendices (App B/C): entry format `prototype | semantics | return-errors | pitfall | where-taught`. No prose lessons, no exercises.
+
+## Code rules (binding)
+
+- Compilable; init all pointers; check malloc/fopen/scanf; free/close shown; ownership stated for heap;
+  no unexplained globals; warnings-clean (`/W4`, `-Wall -Wextra`); beginner-vs-production labeled;
+  no VLAs in main examples; `.c` files (VS `.c`-vs-`.cpp` note Ch2); portability box `_CRT_SECURE_NO_WARNINGS` vs Annex-K (Ch2/Ch14); NULL-after-free = habit note only.
+
+## Exercise quota
+
+- Per teaching chapter: >=1 output-predict, >=1 find/fix-bug, >=1 write-from-scratch.
+- Answer-key policy: placeholder — full keys in separate non-student file; student edition hints-only. (Decide location at writing phase.)
 
 ## K&R-use rule
 
 - Allowed: section ref, concept label, "example purpose" 1-liner.
 - Forbidden: paragraph/code/exercise copy. Quicksort/allocator/dir-list = purpose-ref only.
 
-## Chapter brief header (writer fills per chapter)
-
-`Goal | Prereq secs | K&R refs | Gap IDs | VISUALs | Est. pages | DS-flag`
