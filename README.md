@@ -87,9 +87,9 @@ START
 
 | 원고 | 상태 | 다음 작업 |
 |---|---|---|
-| [Chapter 1. 프로그래밍의 개념](book/part1/chapter01-programming-concepts.md) | ✅ 관리자 최종 승인 | 정답·상세해설 Draft 1 관리자 검토 |
-| [Chapter 1. 정답·상세해설](book/solutions/part1/chapter01-solutions.md) | 🟡 Draft 1 / manager review pending | 관리자 검토 |
-| Chapter 2 이후 | 미집필 | Chapter 1 해설 검토 후 별도 착수 |
+| [Chapter 1. 프로그래밍의 개념](book/part1/chapter01-programming-concepts.md) | ✅ 관리자 최종 승인 | 완료 |
+| [Chapter 1. 정답·상세해설](book/solutions/part1/chapter01-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
+| Chapter 2 이후 | 미집필 | Chapter 2 원고 착수 |
 
 | Phase | 내용 | 상태 |
 |---|---|---|
@@ -443,6 +443,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Chapter 1 정답·상세해설 Draft 1 관리자 검토.**
+**다음 작업: Chapter 2 「프로그램 작성 과정과 개발 도구」 원고 집필.**
 
-Chapter 1 본문은 관리자 최종 승인 상태를 유지한다. Chapter 2는 이번 작업에서 작성하지 않았으며, 해설 Draft 1 관리자 검토 후 별도로 착수한다.
+Chapter 1 본문과 정답·상세해설은 모두 관리자 최종 승인 완료 상태다. 다음 작업부터 Chapter 2 원고 제작을 시작한다.
