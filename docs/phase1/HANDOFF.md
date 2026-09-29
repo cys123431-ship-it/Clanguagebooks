@@ -21,8 +21,8 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - docs/phase1/04-gap-analysis.md — FINAL verdicts (CORE/REQUIRED BOX/RECOMMENDED/ADVANCED/REFERENCE ONLY/DEFER), provenance kept.
 - docs/phase1/05-proposed-c-book-toc.md — FINAL Ch1-24 + App A-D, C17/VS2022-GCC, Ch18 separate bridge, tiered DS prereqs.
 - docs/phase1/06-chapter-specification.md — FINAL grouped template (MANDATORY/OPTIONAL/TOPIC-SPECIFIC) + MSVC+GCC verify rule + answer-key policy (DECIDED: solutions under `book/solutions/`).
-- `book/part1/chapter01-programming-concepts.md` — Chapter 1 Draft 2 (structure unchanged from Draft 1): 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 Draft 2 / manager approval pending; zero final-approved chapters.
+- `book/part1/chapter01-programming-concepts.md` — Chapter 1 APPROVED manuscript: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
+- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manager-approved; final-approved chapters = 1.
 
 ## Incomplete files
 
@@ -109,7 +109,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Create `book/solutions/part1/chapter01-solutions.md` from the approved Chapter 1 exercises, then manager-check the solutions before Chapter 2.** After approval: write `book/solutions/part1/chapter01-solutions.md`.
+**Create `book/solutions/part1/chapter01-solutions.md` from the approved Chapter 1 exercises, then manager-check the solutions before Chapter 2.**
 
 ## Draft 1 self-review and checks
 
@@ -123,7 +123,7 @@ UNRESOLVED:
 ## README status
 
 - Checkpoints 1-8 checked; preparation/writing kickoff = 8/8.
-- Overall content percentage is not calculated from that milestone. Chapter 1 Draft 2 exists (manager approval pending); final-approved chapters = 0.
+- Overall content percentage is not calculated from that milestone. Chapter 1 is manager-approved; final-approved chapters = 1.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -140,13 +140,13 @@ UNRESOLVED:
 
 - Review file: docs/phase1/07-architecture-review.md — left intact per task (audit record, do not rewrite).
 - Original review verdict: NEEDS MAJOR REVISION (2 critical + 8 major). Those findings were integrated in `dda652c` and then manager-checked for consistency.
-- Current architecture status: APPROVED; Chapter 1 Drafts 1-2 written against it.
-- PHASE 1 preparation/writing kickoff = 8/8; Chapter 1 Draft 2 manager approval pending.
+- Current architecture status: APPROVED; Chapter 1 approved manuscript written against it.
+- PHASE 1 preparation/writing kickoff = 8/8; Chapter 1 manager approval complete.
 
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapter 1 is at Draft 2; do not infer approval or write Chapter 2 / the solution file without the next instruction.
+- Chapter 1 is approved. The next authorized manuscript task is the separate Chapter 1 solution file; do not start Chapter 2 until that solution file is manager-checked.
 - Push target: origin main. Repo has single branch main.
 
 
