@@ -4,7 +4,7 @@ Chapter: 1
 Type: Solutions
 Manuscript source: book/part1/chapter01-programming-concepts.md
 Manuscript status: APPROVED
-Solution status: Draft 1 (manager review pending)
+Solution status: APPROVED (manager-approved 2026-09-30)
 Policy: Separate full solutions; student manuscript retains questions + short hints only.
 -->
 
