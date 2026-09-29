@@ -7,7 +7,7 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 ## Current status
 
 - PHASE 1 setup/integration/writing-kickoff checkpoints: **8 / 8**. Checkpoint 8 is complete.
-- Chapter 1 manuscript: **Draft 2 (manager approval pending)**, not final publication copy. Draft 1 passed manager review in principle; Draft 2 applies the targeted manager revisions only.
+- Chapter 1 manuscript: **APPROVED (manager final approval 2026-09-30)**. Draft 2 passed final manager review without further body changes.
 - Exact manuscript path: `book/part1/chapter01-programming-concepts.md`.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
@@ -96,7 +96,7 @@ RESOLVED (verified 2026-09-29 vs textbook scan, rendered pages):
 - Ch01 Lab: exact title "프린터 고장 수리 알고리즘", book p.41 (visually verified 2026-09-30). Outline corrected (was "프린터 가장 수리 알고리즘").
 
 UNRESOLVED:
-- Chapter 1 Draft 2 requires manager final approval. It is not publication-approved.
+- Chapter 1 manager approval: RESOLVED. Approved 2026-09-30.
 - Chapter 1 solution file `book/solutions/part1/chapter01-solutions.md` is NOT yet written (policy: write only after manuscript approval). No later chapter or appendix was started.
 - Source-reading limitation: original-page OCR was used; a manager may visually compare source pages if exact source typography or diagram details matter. Source diagrams are not reproduced.
 - Standing note for later chapters: legend `(i)` = inferred-from-title labels; confirm against body when writing.
@@ -109,7 +109,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Manager final approval of Chapter 1 Draft 2.** Do not automatically start Chapter 2. After approval: write `book/solutions/part1/chapter01-solutions.md`.
+**Create `book/solutions/part1/chapter01-solutions.md` from the approved Chapter 1 exercises, then manager-check the solutions before Chapter 2.** After approval: write `book/solutions/part1/chapter01-solutions.md`.
 
 ## Draft 1 self-review and checks
 
@@ -151,3 +151,11 @@ UNRESOLVED:
 
 
 
+
+## Chapter 1 manager final approval
+
+- Date: 2026-09-30
+- Approved manuscript: `book/part1/chapter01-programming-concepts.md`
+- Basis: Draft 2 reviewed end-to-end against the manager-requested revisions and project architecture.
+- Result: APPROVED. No further body revision required before producing the separate solution file.
+- Final-approved chapters: 1.
