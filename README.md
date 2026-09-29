@@ -79,7 +79,7 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 Draft 2 / manager approval pending
+본문 현황: Chapter 1 관리자 최종 승인 완료
 최종 승인된 Chapter: 1
 ```
 
@@ -87,7 +87,7 @@ START
 
 | 원고 | 상태 | 다음 작업 |
 |---|---|---|
-| [Chapter 1. 프로그래밍의 개념](book/part1/chapter01-programming-concepts.md) | Draft 2 (관리자 검토 반영) | 관리자 최종 승인 |
+| [Chapter 1. 프로그래밍의 개념](book/part1/chapter01-programming-concepts.md) | ✅ 관리자 최종 승인 | 정답·상세해설 작성 |
 | Chapter 2 이후 | 미집필 | Chapter 1 검토 후 별도 착수 |
 
 | Phase | 내용 | 상태 |
