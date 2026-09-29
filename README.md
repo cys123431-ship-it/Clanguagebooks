@@ -2,7 +2,7 @@
 
 > **C 언어 입문부터 포인터·메모리, 표준 라이브러리, 자료구조, 알고리즘, 실전 프로젝트까지 한 흐름으로 연결하는 개인 종합 교재 제작 프로젝트**
 
-![Status](https://img.shields.io/badge/status-PHASE%201%20planning-yellow)
+![Status](https://img.shields.io/badge/status-Chapter%201%20Draft%201-yellow)
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Roadmap](https://img.shields.io/badge/roadmap-active-brightgreen)
 
@@ -43,11 +43,15 @@ flowchart TD
 
 ### 현재 위치
 
+**PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
+현재는 Chapter별 원고 제작을 시작하여 **Chapter 1 Draft 1의 관리자 검토를 기다리는 단계**다.
+이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
+
 ```text
 START
   │
   ▼
-🟡 PHASE 1  ← WE ARE HERE
+🟡 PHASE 1  ← 준비·집필 착수 완료 / Chapter별 원고 제작 중
   │
   ▼
 ⚪ PHASE 2
@@ -74,15 +78,22 @@ START
 ## 전체 콘텐츠 진행률
 
 ```text
-[░░░░░░░░░░░░░░░░░░░░] 0%
+전체 콘텐츠 완성률: 미산정
+본문 현황: Chapter 1 Draft 1 작성 / 관리자 검토 대기
+최종 승인된 Chapter: 0
 ```
 
-현재는 **책 본문 집필 전 설계 단계**다. README와 로드맵 구축은 프로젝트 기반 작업으로 별도 관리한다.
+**Chapter별 본문 집필을 시작했다.** 준비 체크포인트의 8 / 8을 전체 교재의 완성률로 환산하지 않는다. 초안 작성과 최종 승인은 구분하여 관리한다.
+
+| 원고 | 상태 | 다음 작업 |
+|---|---|---|
+| [Chapter 1. 프로그래밍의 개념](book/part1/chapter01-programming-concepts.md) | Draft 1 작성 | 관리자 검토 |
+| Chapter 2 이후 | 미집필 | Chapter 1 검토 후 별도 착수 |
 
 | Phase | 내용 | 상태 |
 |---|---|---|
 | Project Setup | 저장소·로드맵·집필 원칙 확정 | ✅ 완료 |
-| PHASE 1 | 현재 교과서 + K&R 2판 통합 | 🟡 현재 단계 |
+| PHASE 1 | 현재 교과서 + K&R 2판 통합 | 🟡 준비·집필 착수 8/8 완료, 본문 제작 중 |
 | PHASE 2 | 현대 C와 누락 영역 보강 | ⚪ 예정 |
 | PHASE 3 | 자료구조 | ⚪ 예정 |
 | PHASE 4 | 알고리즘 | ⚪ 예정 |
@@ -116,16 +127,16 @@ START
 - [x] **5. 두 책 모두에서 부족한 C 개념 목록 작성**
 - [x] **6. 우리 책의 C 본편 최종 아키텍처·목차 확정**
 - [x] **7. 각 Chapter별 상세 집필 명세 작성**
-- [ ] **8. Chapter 1부터 본문 집필 시작**
+- [x] **8. Chapter 1부터 본문 집필 시작**
 
-### PHASE 1 준비 진행률
+### PHASE 1 준비·집필 착수 진행률
 
 ```text
-[██████████████░░░░░░] 7 / 8
+[████████████████████] 8 / 8
 ```
 
-> 이 수치는 **PHASE 1을 쓰기 시작하기 위한 준비 체크포인트** 기준이다.  
-> 실제 본문 집필이 시작되면 Chapter별 진행률을 별도로 관리한다.
+> 이 수치는 **PHASE 1 아키텍처·통합 준비와 첫 본문 집필 착수**의 완료를 뜻한다.
+> 전체 본문 완성이나 출판 승인을 뜻하지 않으며, Chapter별 초안·검토·승인 상태는 별도로 관리한다.
 
 ---
 
@@ -392,6 +403,8 @@ int *p = 0x1004
 
 # ✅ PHASE 1 완료 기준
 
+아래는 **PHASE 1 본문 전체가 충족해야 할 학습 성과**다. 위의 준비·집필 착수 체크포인트 8 / 8과 별개의 기준이며, 아직 완료되지 않았다.
+
 PHASE 1은 단순히 현재 교과서 17개 Chapter를 다시 작성했다고 끝나지 않는다.
 
 이 단계가 끝나면 독자는 최소한 다음을 할 수 있어야 한다.
@@ -429,4 +442,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: 통합 PHASE 1 아키텍처 최종 관리자 검증 후 Chapter 1 본문 집필. (Final manager verification of integrated PHASE 1 architecture, then Chapter 1 body writing.)**
+**다음 작업: Chapter 1 Draft 1 관리자 검토. (Manager review of Chapter 1 Draft 1.)**
+
+Chapter 2는 이번 작업에서 작성하지 않았으며 자동으로 시작하지 않는다.
