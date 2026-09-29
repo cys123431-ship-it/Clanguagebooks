@@ -2,7 +2,7 @@
 
 > **C 언어 입문부터 포인터·메모리, 표준 라이브러리, 자료구조, 알고리즘, 실전 프로젝트까지 한 흐름으로 연결하는 개인 종합 교재 제작 프로젝트**
 
-![Status](https://img.shields.io/badge/status-Chapter%201%20Draft%202-yellow)
+![Status](https://img.shields.io/badge/status-Chapter%201%20Approved-brightgreen)
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Roadmap](https://img.shields.io/badge/roadmap-active-brightgreen)
 
@@ -44,7 +44,7 @@ flowchart TD
 ### 현재 위치
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
-현재는 Chapter별 원고 제작을 시작하여 **Chapter 1 Draft 2의 관리자 최종 승인을 기다리는 단계**다.
+현재는 Chapter별 원고 제작 단계이며 **Chapter 1은 관리자 최종 승인 완료** 상태다.
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -80,7 +80,7 @@ START
 ```text
 전체 콘텐츠 완성률: 미산정
 본문 현황: Chapter 1 Draft 2 / manager approval pending
-최종 승인된 Chapter: 0
+최종 승인된 Chapter: 1
 ```
 
 **Chapter별 본문 집필을 시작했다.** 준비 체크포인트의 8 / 8을 전체 교재의 완성률로 환산하지 않는다. 초안 작성과 최종 승인은 구분하여 관리한다.
@@ -442,6 +442,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Chapter 1 Draft 2 관리자 최종 승인. (Manager final approval of Chapter 1 Draft 2.)**
+**다음 작업: Chapter 1 정답·상세해설 파일 작성 후 Chapter 2 착수.**
 
 Chapter 2는 이번 작업에서 작성하지 않았으며 자동으로 시작하지 않는다.
