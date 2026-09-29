@@ -1,7 +1,7 @@
 <!--
 Chapter: 1 | Part: 1 | Status: APPROVED (manager-approved 2026-09-30)
-Revision: Approved version = Draft 2 + manager final approval. Draft 2 reflected 프로그램 정의 명확화, 컴파일러/인터프리터
-  보충 내용 축소, 문장 다듬기, 확인 문제 8번 심화 표시, 정답 정책 반영). 구조 변경 없음.
+Revision: Approved version = Draft 2 + manager final approval. Draft 2 반영 사항: 프로그램 정의 명확화,
+  컴파일러/인터프리터 보충 내용 축소, 문장 다듬기, 확인 문제 8번 심화 표시, 정답 정책 반영. 구조 변경 없음.
 Goal: 문제를 실행 가능한 절차로 바꾸는 사고의 기초
 Prereq secs: 없음; 기본적인 사칙연산만 사용
 Primary source [T]: 천인국, 쉽게 풀어쓴 C언어 Express 개정4판, Ch01,
