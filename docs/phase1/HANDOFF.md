@@ -9,6 +9,8 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - PHASE 1 setup/integration/writing-kickoff checkpoints: **8 / 8**. Checkpoint 8 is complete.
 - Chapter 1 manuscript: **APPROVED (manager final approval 2026-09-30)**. Draft 2 passed final manager review without further body changes.
 - Exact manuscript path: `book/part1/chapter01-programming-concepts.md`.
+- Chapter 1 solution file: **Draft 1 / manager review pending**.
+- Exact solution path: `book/solutions/part1/chapter01-solutions.md`. Exercises 1–8 are all covered; the approved Chapter 1 manuscript remains unchanged.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
@@ -22,11 +24,14 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - docs/phase1/05-proposed-c-book-toc.md — FINAL Ch1-24 + App A-D, C17/VS2022-GCC, Ch18 separate bridge, tiered DS prereqs.
 - docs/phase1/06-chapter-specification.md — FINAL grouped template (MANDATORY/OPTIONAL/TOPIC-SPECIFIC) + MSVC+GCC verify rule + answer-key policy (DECIDED: solutions under `book/solutions/`).
 - `book/part1/chapter01-programming-concepts.md` — Chapter 1 APPROVED manuscript: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manager-approved; final-approved chapters = 1.
+- `book/solutions/part1/chapter01-solutions.md` — Chapter 1 solution Draft 1: full answers + detailed explanations for exercises 1–8; manager review pending.
+- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manager-approved; solution Draft 1 recorded; final-approved chapters = 1.
 
 ## Incomplete files
 
-- None structural. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
+- `book/solutions/part1/chapter01-solutions.md` is content-complete for exercises 1–8 but remains **Draft 1 / manager review pending**.
+- No Chapter 2 work has started.
+- No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
 
@@ -97,7 +102,7 @@ RESOLVED (verified 2026-09-29 vs textbook scan, rendered pages):
 
 UNRESOLVED:
 - Chapter 1 manager approval: RESOLVED. Approved 2026-09-30.
-- Chapter 1 solution file `book/solutions/part1/chapter01-solutions.md` is NOT yet written (policy: write only after manuscript approval). No later chapter or appendix was started.
+- Chapter 1 solution file `book/solutions/part1/chapter01-solutions.md` now exists as **Draft 1 / manager review pending** and covers exercises 1–8. No later chapter or appendix was started.
 - Source-reading limitation: original-page OCR was used; a manager may visually compare source pages if exact source typography or diagram details matter. Source diagrams are not reproduced.
 - Standing note for later chapters: legend `(i)` = inferred-from-title labels; confirm against body when writing.
 
@@ -109,7 +114,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Create `book/solutions/part1/chapter01-solutions.md` from the approved Chapter 1 exercises, then manager-check the solutions before Chapter 2.**
+**Manager review of Chapter 1 solution Draft 1 at `book/solutions/part1/chapter01-solutions.md`. Do not start Chapter 2 before that review.**
 
 ## Draft 1 self-review and checks
 
@@ -124,6 +129,7 @@ UNRESOLVED:
 
 - Checkpoints 1-8 checked; preparation/writing kickoff = 8/8.
 - Overall content percentage is not calculated from that milestone. Chapter 1 is manager-approved; final-approved chapters = 1.
+- Chapter 1 solution file is Draft 1 / manager review pending; exercises 1–8 are covered.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -146,7 +152,7 @@ UNRESOLVED:
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapter 1 is approved. The next authorized manuscript task is the separate Chapter 1 solution file; do not start Chapter 2 until that solution file is manager-checked.
+- Chapter 1 is approved and its separate solution file now exists as Draft 1. The next exact task is manager review of that solution file; do not start Chapter 2 until the review is complete.
 - Push target: origin main. Repo has single branch main.
 
 
@@ -159,3 +165,13 @@ UNRESOLVED:
 - Basis: Draft 2 reviewed end-to-end against the manager-requested revisions and project architecture.
 - Result: APPROVED. No further body revision required before producing the separate solution file.
 - Final-approved chapters: 1.
+
+
+## Chapter 1 solution Draft 1
+
+- Created: `book/solutions/part1/chapter01-solutions.md`
+- Status: **Draft 1 / manager review pending**
+- Coverage: exercises 1–8, including every subquestion
+- Chapter 1 manuscript: unchanged / APPROVED
+- Chapter 2: not started
+- Next exact task: manager review of Chapter 1 solution Draft 1
