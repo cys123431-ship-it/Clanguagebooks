@@ -12,7 +12,7 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - Chapter 1 solution file: **APPROVED (manager final approval 2026-09-30)**.
 - Exact solution path: `book/solutions/part1/chapter01-solutions.md`. Exercises 1–8 are all covered; the approved Chapter 1 manuscript remains unchanged.
 - Chapter 2 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter02-program-development-tools.md`). Targeted manager revisions A–D passed final review.
-- Chapter 2 solution file: **Draft 1 / manager review pending**.
+- Chapter 2 solution file: **APPROVED (manager final approval 2026-09-30)**.
 - Exact solution path: `book/solutions/part1/chapter02-solutions.md`. Exercises 1–8 are all covered; Exercise 8 remains 〔심화·도전〕. No Chapter 3 work started.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Chapter 1 Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
@@ -28,7 +28,7 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - docs/phase1/06-chapter-specification.md — FINAL grouped template (MANDATORY/OPTIONAL/TOPIC-SPECIFIC) + MSVC+GCC verify rule + answer-key policy (DECIDED: solutions under `book/solutions/`).
 - `book/part1/chapter01-programming-concepts.md` — Chapter 1 APPROVED manuscript: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
 - `book/solutions/part1/chapter01-solutions.md` — Chapter 1 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
-- `book/solutions/part1/chapter02-solutions.md` — Chapter 2 solution Draft 1: full answers + detailed explanations for exercises 1–8; manager review pending.
+- `book/solutions/part1/chapter02-solutions.md` — Chapter 2 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
 - README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript+solutions APPROVED; Chapter 2 manuscript APPROVED; Chapter 2 solutions Draft 1 recorded; final-approved chapters = 2.
 
 ## Incomplete files
@@ -118,7 +118,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Manager review of Chapter 2 solution Draft 1 at `book/solutions/part1/chapter02-solutions.md`. Do not start Chapter 3 before that review.**
+**Begin Chapter 3 manuscript: `Chapter 3 — C 프로그램 구성요소`.**
 
 ## Draft 1 self-review and checks
 
@@ -294,3 +294,13 @@ UNRESOLVED:
 - Chapter 2 manuscript: unchanged / APPROVED
 - Chapter 3: not started
 - Next exact task: manager review of Chapter 2 solution Draft 1
+
+## Chapter 2 solution manager final approval
+
+- Date: 2026-09-30
+- Approved solution file: `book/solutions/part1/chapter02-solutions.md`
+- Coverage: exercises 1–8, including all subquestions; Exercise 8 retained as `〔심화·도전〕`.
+- Manager checks: build-stage order, tool-role distinctions, error classification, `.c`/`.cpp`, MSVC/GCC options, diagnostic parsing, stale-build guidance, incremental rebuild logic, and Windows-to-Unix portability explanation all passed.
+- Result: APPROVED. Chapter 2 manuscript + solutions are both complete for the current writing stage.
+- Final-approved chapters: 2.
+- Next: Chapter 3 manuscript writing.
