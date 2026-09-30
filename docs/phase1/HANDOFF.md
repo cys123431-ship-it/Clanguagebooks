@@ -13,7 +13,8 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - Exact solution path: `book/solutions/part1/chapter01-solutions.md`. Exercises 1–8 are all covered; the approved Chapter 1 manuscript remains unchanged.
 - Chapter 2 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter02-program-development-tools.md`). Targeted manager revisions A–D passed final review.
 - Chapter 2 solution file: **APPROVED (manager final approval 2026-09-30)**.
-- Exact solution path: `book/solutions/part1/chapter02-solutions.md`. Exercises 1–8 are all covered; Exercise 8 remains 〔심화·도전〕. No Chapter 3 work started.
+- Exact solution path: `book/solutions/part1/chapter02-solutions.md`. Exercises 1–8 are all covered; Exercise 8 remains 〔심화·도전〕.
+- Chapter 3 manuscript: **Draft 1 / manager review pending** (`book/part1/chapter03-c-program-components.md`). GCC verification complete; MSVC execution unavailable and pending. Final-approved chapters remain **2**.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Chapter 1 Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
@@ -29,12 +30,12 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - `book/part1/chapter01-programming-concepts.md` — Chapter 1 APPROVED manuscript: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
 - `book/solutions/part1/chapter01-solutions.md` — Chapter 1 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
 - `book/solutions/part1/chapter02-solutions.md` — Chapter 2 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript+solutions APPROVED; Chapter 2 manuscript APPROVED; Chapter 2 solutions Draft 1 recorded; final-approved chapters = 2.
+- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript+solutions APPROVED; Chapter 2 manuscript APPROVED; Chapter 2 solutions APPROVED; Chapter 3 Draft 1 / manager review pending; final-approved chapters = 2.
 
 ## Incomplete files
 
 - Chapter 1 manuscript and Chapter 1 solution manuscript are both manager-approved.
-- Chapter 2 manuscript: **APPROVED** (`book/part1/chapter02-program-development-tools.md`). Chapter 2 solution file is **Draft 1 / manager review pending**. No Chapter 3 work started.
+- Chapter 2 manuscript: **APPROVED** (`book/part1/chapter02-program-development-tools.md`). Chapter 2 solution file is **APPROVED**. Chapter 3 manuscript Draft 1 is written; manager review and MSVC execution verification remain pending.
 - No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
@@ -118,7 +119,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Begin Chapter 3 manuscript: `Chapter 3 — C 프로그램 구성요소`.**
+**Manager review of Chapter 3 Draft 1.**
 
 ## Draft 1 self-review and checks
 
@@ -134,7 +135,8 @@ UNRESOLVED:
 - Checkpoints 1-8 checked; preparation/writing kickoff = 8/8.
 - Overall content percentage is not calculated from that milestone. Chapters 1–2 manuscripts are manager-approved; final-approved chapters = 2.
 - Chapter 1 solution file is APPROVED; exercises 1–8 are covered.
-- Chapter 2 manuscript is APPROVED; Chapter 2 solution file is Draft 1 / manager review pending and covers exercises 1–8.
+- Chapter 2 manuscript and solution file are APPROVED; solutions cover exercises 1–8.
+- Chapter 3 manuscript is Draft 1 / manager review pending. GCC PASS; MSVC verification pending.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -157,7 +159,8 @@ UNRESOLVED:
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapter 1 manuscript and solutions are approved. Chapter 2 manuscript is approved and its solution file now exists as Draft 1. The next exact task is manager review of `book/solutions/part1/chapter02-solutions.md`; do not start Chapter 3 until that review is complete.
+- Chapters 1–2 manuscripts and solutions are APPROVED and locked. Chapter 3 Draft 1 is ready for manager review, with MSVC verification explicitly outstanding. Do not create Chapter 3 solutions or start Chapter 4 during this review.
+- Dated chapter sections below preserve historical statuses; Current status and the final Chapter 3 section describe the present state.
 - Push target: origin main. Repo has single branch main.
 
 
@@ -304,3 +307,88 @@ UNRESOLVED:
 - Result: APPROVED. Chapter 2 manuscript + solutions are both complete for the current writing stage.
 - Final-approved chapters: 2.
 - Next: Chapter 3 manuscript writing.
+
+
+## Chapter 3 Draft 1 — C 프로그램 구성요소
+
+- Created: `book/part1/chapter03-c-program-components.md`.
+- Status: **Draft 1 / manager review pending**. Manuscript writing complete; dual-toolchain verification **not complete** because MSVC is unavailable in this environment.
+- Starting state: clean `main`; actual local HEAD and remote main verified as `3c8af4a1eac2b89a22a91b1db759e2aa6803dfd8`, rather than assumed from the prompt. Read `git status`, branch, and last 8 commits before editing.
+- Required reading complete: README, Chapters 1–2, HANDOFF, and phase1 documents 01–07. Approved 05/06 remain binding; historical 07 was not reopened or edited.
+- Structure: learning goals → §3.1–3.9 → common mistakes → 7 summary points → 12 original exercises → short Chapter 4 bridge only.
+- Scope: main/include/comments/directives/function-call preview/int/assignment/simple arithmetic/printf/checked scanf/integrated study-time program. No loops, arrays, pointer mechanics, user-defined helper functions, VLA, globals or advanced type rules.
+- B5 REQUIRED BOX implemented: scanf return value counts successful assignments, not the number read; one `%d` requires return 1; failure ends the program before variable use. `&` is a deliberately limited storage-location preview pointing to Chapter 12.
+- Examples progress: A output → B one variable → C calculation → D format examples → E checked input → F input/calculation/output. Student-facing strings use ASCII to avoid an unrelated console-encoding lesson. Prose, examples, numbers and questions are newly written.
+
+### Original source pages actually consulted (2026-09-30)
+
+| Source | Pages inspected | Use |
+|---|---|---|
+| [T] `c언어 압축 (1).pdf`, 750-page scan | Book pp.88–89 / PDF pp.90–91 | Chapter opening, first program anatomy |
+| [T] §3.2–3.4 | Book pp.89–95 / PDF pp.91–97 | Comments, preprocessing/header, function/main/return |
+| [T] §3.5–3.6 | Book pp.96–103 / PDF pp.98–105 | Variables, initialization, assignment, arithmetic |
+| [T] §3.7 and arithmetic Lab | Book pp.104–107 / PDF pp.106–109 | Formats and value correspondence; Lab purpose only |
+| [T] §3.8–3.9 | Book pp.108–112 / PDF pp.110–114 | scanf, limited address preview, VS2022 CRT note, integration |
+| [T] Labs and MiniProject | Book pp.113–116 / PDF pp.115–118 | Scope and originality check; circle/exchange/average/rectangle programs not reused |
+| [T] Summary/exercises/programming | Book pp.117–120 / PDF pp.119–122 | Scope and non-copying check; no question wording or listings reused |
+| [K] uploaded `C Programming Language - 2nd Edition (OCR).pdf`, 238 pages | PDF pp.9–15: Ch1 opening, §1.1, relevant portion of §1.2 | Cumulative small examples, call/argument reading, comments, variables, integer arithmetic |
+| [K] same OCR edition | PDF pp.137–138: §7.2 | Output formats and value types, default six digits for `%f` |
+| [K] same OCR edition | PDF pp.140–142: §7.4 | Successful-assignment count and storing input through a supplied location |
+
+- Primary scan pages were rendered and visually inspected, not inferred from the repository outline. The K&R title page was visually verified and its relevant OCR text read. K&R PDF pp.139 and parts of pp.138/142 belonging to adjacent sections were incidentally extracted, but variadic implementation/file access were not used.
+- K&R source is the user-uploaded OCR edition; it is the original K&R work in a different PDF layout, not the previously catalogued 288-page `C_Programming.pdf` scan. All new page references explicitly refer to the 238-page PDF, not printed pagination.
+- Actual primary §3.1/3.9 titles read **덧셈 프로그램 #1/#2**, while 01 and the prompt say 맛샘. This is a source-outline typo, not an architectural contradiction; architecture files were left unchanged as instructed. MiniProject title 사각형의 둘레와 면적 confirmed on book p.116.
+- Technical corrections to source simplifications: header declarations/information distinguished from implementation; statements not universally said to end in `;`; `%f` default output corrected to six fractional digits; input checking added; `scanf` formats not claimed identical to `printf`; MSVC-specific definitions kept out of canonical sources. K&R legacy main syntax and broad array/pointer statements were not imported.
+
+### External references actually used
+
+Checked 2026-09-30; only authoritative sources used for technical verification:
+
+- WG14 public C11 draft N1570: https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf — downloaded and extracted locally. Clauses §5.1.2.2.1/3 (main/start/return), §6.7.6.3p10 (void parameter list), §7.21.6.1/3 (printf formats/default precision/return), §7.21.6.2p10 and §7.21.6.4 (scanf assignment count and limits), §7.22.4.4p5 (zero success; other status values). Used for established rules retained in C17, not represented as the C17 document itself. N2176 could not be text-read because the retrieved PDF required a password; no N2176 verification is claimed.
+- Microsoft Learn scanf: https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=msvc-170 — return count, storage location and C4996 example.
+- Microsoft Learn Security Features in the CRT: https://learn.microsoft.com/en-us/cpp/c-runtime-library/security-features-in-the-crt?view=msvc-170 — warning definition does not eliminate underlying risks.
+- Microsoft Learn C4996: https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-170 — CRT policy, `/sdl` severity and preprocessor-definition setting.
+- Microsoft Learn `/D`: https://learn.microsoft.com/en-us/cpp/build/reference/d-preprocessor-definitions?view=msvc-170 — command-line definition without modifying source.
+- Microsoft Learn `/std`: https://learn.microsoft.com/en-us/cpp/build/reference/std-specify-language-standard-version?view=msvc-170 — `.c`, ISO C17 mode.
+- GCC C Dialect Options: https://gcc.gnu.org/onlinedocs/gcc/C-Dialect-Options.html — `-std=c17` verification mode.
+- Microsoft main overview was also consulted, but its implementation-specific extensions/restrictions were not used as ISO C rules; main wording is based on the WG14 clauses above.
+
+### Actual toolchain verification
+
+Environment: Linux, GCC **13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04)**. Exact complete fenced C listings extracted unchanged to scratch `.c` files. Compiler output, program stdout and exit status checked. No source/test/PDF/image artifacts committed.
+
+The commands actually run had this form (one for each of the six names below):
+
+```text
+gcc -std=c17 -Wall -Wextra tmp/ch3-tests/ready.c -o tmp/ch3-tests/ready
+gcc -std=c17 -Wall -Wextra tmp/ch3-tests/minutes.c -o tmp/ch3-tests/minutes
+gcc -std=c17 -Wall -Wextra tmp/ch3-tests/split_time.c -o tmp/ch3-tests/split_time
+gcc -std=c17 -Wall -Wextra tmp/ch3-tests/formats.c -o tmp/ch3-tests/formats
+gcc -std=c17 -Wall -Wextra tmp/ch3-tests/read_number.c -o tmp/ch3-tests/read_number
+gcc -std=c17 -Wall -Wextra tmp/ch3-tests/study_time.c -o tmp/ch3-tests/study_time
+```
+
+| Example | Lines | GCC build | Warnings | Actual execution result | MSVC |
+|---|---:|---|---:|---|---|
+| A ready.c | 7 | PASS | 0 | `Study log ready.`; exit 0 | NOT RUN |
+| B minutes.c | 8 | PASS | 0 | `Study: 35 min`; exit 0 | NOT RUN |
+| C split_time.c | 10 | PASS | 0 | `2 h 15 min`; exit 0 | NOT RUN |
+| D formats.c | 10 | PASS | 0 | Four lines: `Sessions: 3`, `Hours: 1.500000`, `Group: B`, `Topic: Review`; exit 0 | NOT RUN |
+| E read_number.c | 14 | PASS | 0 | Inputs 42 and 0: correct `Read:` line, exit 0; `abc` and immediate input end: `Input failed.`, no value output, exit 1 | NOT RUN |
+| F study_time.c | 16 | PASS | 0 | 135→2 h 15 min, 60→1 h 0 min, 0→0 h 0 min, 1440→24 h 0 min; exits 0. `abc` and immediate input end: failure only after prompt, no calculation output, exits 1 | NOT RUN |
+
+- **6 complete examples; 14 executions PASS on GCC.** Full stdout including prompts/newlines and exit values matched. Exercise bug fragment intentionally not executed. Exercise solutions were not created.
+- **MSVC limitation:** no `cl`, Windows CRT runtime, or configured Windows execution environment was available. Neither baseline `/std:c17 /W4` nor adjusted CRT builds were run. Chapter 2's previous Windows results do not validate these new examples. Do not claim all examples passed both toolchains.
+- **C4996 handling:** canonical C sources retain `scanf` and contain no Microsoft definitions. Documented MSVC input-example commands are `cl /std:c17 /W4 /D_CRT_SECURE_NO_WARNINGS read_number.c` and the same for `study_time.c`. These are proposed verification commands, not executed evidence. No warning suppression was applied in this environment. GCC builds are independent and omit the define.
+- To close the MSVC gate, first run all six exact `.c` listings with `/std:c17 /W4`, retain the actual diagnostic output, then run the two input examples with the documented `/D_CRT_SECURE_NO_WARNINGS` and repeat their valid/invalid-input tests. Record compiler version, baseline C4996 behavior, adjusted warnings and stdout/exit status. Keep `/W4`; do not globally disable warnings or silently replace scanf with scanf_s.
+- VS2022 property labels are document-based, not click-verified. The manuscript retains the version/update/display-language limitation.
+
+### Final review and remaining limitations
+
+- Entire Chapter 3 reread: main/void/status, header vs implementation, directives vs statements, call/argument/return, initialization/assignment, integer division, formats and checked input are consistent with Chapters 1–2.
+- Scope deliberately stops before Ch4 type/range teaching, Ch5 full operator rules, Ch6 conditions beyond input guard, Ch8 function mechanics and Ch12 pointer mechanics. Input examples explicitly assume small representable integers and do not claim full-line/range validation; Chapter 14 is the later expansion point.
+- **12 original exercises**: output prediction (#5), find/fix ignored input failure (#9), write-from-scratch (#11–12), input-number vs scanf-return reasoning (#8), plus components/comments/directives/calls/variables/arithmetic/formats/&. #12 marked 〔심화·도전〕. Questions and short hints only.
+- Chapter 1, Chapter 1 solutions, Chapter 2 and Chapter 2 solutions unchanged / APPROVED. Architecture documents unchanged. No Chapter 3 solutions, no Chapter 4 work, no PDF/DOCX manuscript.
+- README updated to Chapter 3 Draft 1 / manager review pending; approved chapter count remains 2; PHASE 1 setup/writing kickoff remains **8 / 8**. Stale current-status references to Chapter 2 solution Draft 1 were reconciled to its already recorded approval; historical entries retained.
+- **Unresolved publication gate:** MSVC compilation/execution and C4996 baseline/adjusted results. Manager review must not treat GCC evidence as dual-toolchain PASS.
+- Next exact task: **Manager review of Chapter 3 Draft 1**.
