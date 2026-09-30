@@ -4,7 +4,7 @@ Chapter: 3
 Type: Solutions
 Manuscript source: book/part1/chapter03-c-program-components.md
 Manuscript status: APPROVED
-Solution status: Draft 1 (manager content review passed; MSVC verification pending)
+Solution status: Draft 2 (manager content review passed; GCC/MSVC verification passed; manager final approval pending)
 Baseline: C17
 Toolchains: MSVC /std:c17 /W4 | GCC -std=c17 -Wall -Wextra
 Policy: Separate full solutions; student manuscript retains questions + short hints only.
@@ -13,10 +13,19 @@ Coverage: exercises 1–12, all subquestions; #12 retains 〔심화·도전〕.
 Toolchain verification (2026-09-30): Linux / GCC 13.3.0, exact complete listings #11–12
   -std=c17 -Wall -Wextra: PASS, each 0 warnings/0 errors; 12 stdout/exit checks PASS.
   Corrected/readable fragments #4–7/#9: 5 temporary wrappers, 9 runtime checks PASS.
-  MSVC NOT RUN: no cl/Windows runtime available. Baseline C4996 not reproduced here;
-  adjusted /D_CRT_SECURE_NO_WARNINGS documented only, not applied to source or GCC.
-  Previous MSVC results for chapter examples do not verify these new solution programs.
-  Exact commands, cases and remaining MSVC limitation recorded in HANDOFF.
+  MSVC: GitHub-hosted Windows Server 2025 Datacenter, image win25-vs2026 20260925.250.1;
+  Visual Studio Enterprise 2026 18.10.2, cl.exe 19.51.36260 x64.
+  Exact #11/#12 source SHA256 verified before/after actual compilation.
+  Baseline cl /std:c17 /W4: both PASS/0 errors; #11 C4996 warning 1 (line 8),
+  #12 C4996 warnings 2 (lines 9/16); each executable produced.
+  Adjusted /D_CRT_SECURE_NO_WARNINGS: both PASS, each 0 warnings/0 errors;
+  define used only on the MSVC command line; canonical source and GCC unchanged.
+  Adjusted executables: #11 0/4/20 exit 0, abc/immediate EOF exit 1;
+  #12 120+90/0+0/600+600 exit 0, invalid-first/invalid-second/EOF-first/EOF-second exit 1.
+  All 12 stdout/exit checks PASS; EOF tested by closing redirected stdin.
+  Reader-facing writing-environment notes remain historical Draft 1 Linux records;
+  subsequent Windows verification evidence and exact commands are in HANDOFF.
+  Run: https://github.com/cys123431-ship-it/Clanguagebooks/actions/runs/36727322342
 Scope: Ch1–3 only; no loops, helper functions, arrays or pointer mechanics.
 -->
 
