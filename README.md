@@ -44,7 +44,7 @@ flowchart TD
 ### 현재 위치
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
-현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 그 정답·해설은 관리자 최종 승인 완료**, **Chapter 2는 Draft 2 수정 완료 후 관리자 최종 승인 대기** 상태다.
+현재는 Chapter별 원고 제작 단계이며 **Chapter 1 본문·정답해설과 Chapter 2 본문까지 관리자 최종 승인 완료** 상태다.
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -79,8 +79,8 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 approved (정답·해설 approved) / Chapter 2 Draft 2, manager final approval pending
-최종 승인된 Chapter: 1
+본문 현황: Chapter 1 approved (정답·해설 approved) / Chapter 2 manuscript approved
+최종 승인된 Chapter: 2
 ```
 
 **Chapter별 본문 집필을 시작했다.** 준비 체크포인트의 8 / 8을 전체 교재의 완성률로 환산하지 않는다. 초안 작성과 최종 승인은 구분하여 관리한다.
@@ -89,8 +89,8 @@ START
 |---|---|---|
 | [Chapter 1. 프로그래밍의 개념](book/part1/chapter01-programming-concepts.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 1. 정답·상세해설](book/solutions/part1/chapter01-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
-| [Chapter 2. 프로그램 작성 과정과 개발 도구](book/part1/chapter02-program-development-tools.md) | Draft 2 수정 완료 / 관리자 최종 승인 대기 | 관리자 최종 승인 검토 |
-| Chapter 3 이후 | 미집필 | Chapter 2 검토 후 별도 착수 |
+| [Chapter 2. 프로그램 작성 과정과 개발 도구](book/part1/chapter02-program-development-tools.md) | ✅ 관리자 최종 승인 | 정답·상세해설 Draft 작성 |
+| Chapter 3 이후 | 미집필 | Chapter 2 정답·해설 승인 후 별도 착수 |
 
 | Phase | 내용 | 상태 |
 |---|---|---|
@@ -444,6 +444,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Chapter 2 Draft 2 관리자 최종 승인. (Manager final approval of Chapter 2 Draft 2.)**
+**다음 작업: Chapter 2 정답·상세해설 Draft 1 작성.**
 
-Chapter 1 본문과 정답·상세해설은 관리자 최종 승인 완료 상태다. Chapter 2는 Draft 2이며 아직 승인되지 않았다. Chapter 2 정답·해설과 Chapter 3은 시작하지 않았다.
+Chapter 1 본문·정답해설과 Chapter 2 본문은 관리자 최종 승인 완료 상태다. Chapter 2 정답·해설과 Chapter 3은 아직 시작하지 않았다.
