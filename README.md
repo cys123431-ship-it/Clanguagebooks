@@ -2,7 +2,7 @@
 
 > **C 언어 입문부터 포인터·메모리, 표준 라이브러리, 자료구조, 알고리즘, 실전 프로젝트까지 한 흐름으로 연결하는 개인 종합 교재 제작 프로젝트**
 
-![Status](https://img.shields.io/badge/status-Chapter%202%20Draft%201-yellow)
+![Status](https://img.shields.io/badge/status-Chapter%202%20Draft%202-yellow)
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Roadmap](https://img.shields.io/badge/roadmap-active-brightgreen)
 
@@ -44,7 +44,7 @@ flowchart TD
 ### 현재 위치
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
-현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 그 정답·해설은 관리자 최종 승인 완료**, **Chapter 2는 Draft 1 작성 후 관리자 검토 대기** 상태다.
+현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 그 정답·해설은 관리자 최종 승인 완료**, **Chapter 2는 Draft 2 수정 완료 후 관리자 최종 승인 대기** 상태다.
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -79,7 +79,7 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 approved (정답·해설 approved) / Chapter 2 Draft 1, manager review pending
+본문 현황: Chapter 1 approved (정답·해설 approved) / Chapter 2 Draft 2, manager final approval pending
 최종 승인된 Chapter: 1
 ```
 
@@ -89,7 +89,7 @@ START
 |---|---|---|
 | [Chapter 1. 프로그래밍의 개념](book/part1/chapter01-programming-concepts.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 1. 정답·상세해설](book/solutions/part1/chapter01-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
-| [Chapter 2. 프로그램 작성 과정과 개발 도구](book/part1/chapter02-program-development-tools.md) | Draft 1 작성 | 관리자 검토 |
+| [Chapter 2. 프로그램 작성 과정과 개발 도구](book/part1/chapter02-program-development-tools.md) | Draft 2 수정 완료 / 관리자 최종 승인 대기 | 관리자 최종 승인 검토 |
 | Chapter 3 이후 | 미집필 | Chapter 2 검토 후 별도 착수 |
 
 | Phase | 내용 | 상태 |
@@ -444,6 +444,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Chapter 2 Draft 1 관리자 검토. (Manager review of Chapter 2 Draft 1.)**
+**다음 작업: Chapter 2 Draft 2 관리자 최종 승인. (Manager final approval of Chapter 2 Draft 2.)**
 
-Chapter 1 본문과 정답·상세해설은 관리자 최종 승인 완료 상태다. Chapter 2는 Draft 1이며 아직 승인되지 않았다. Chapter 2 정답·해설과 Chapter 3은 시작하지 않았다.
+Chapter 1 본문과 정답·상세해설은 관리자 최종 승인 완료 상태다. Chapter 2는 Draft 2이며 아직 승인되지 않았다. Chapter 2 정답·해설과 Chapter 3은 시작하지 않았다.
