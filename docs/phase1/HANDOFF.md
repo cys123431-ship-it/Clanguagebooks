@@ -14,7 +14,9 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - Chapter 2 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter02-program-development-tools.md`). Targeted manager revisions A–D passed final review.
 - Chapter 2 solution file: **APPROVED (manager final approval 2026-09-30)**.
 - Exact solution path: `book/solutions/part1/chapter02-solutions.md`. Exercises 1–8 are all covered; Exercise 8 remains 〔심화·도전〕.
-- Chapter 3 manuscript: **Draft 2 / manager final approval pending** (`book/part1/chapter03-c-program-components.md`). Manager content review passed; GCC and MSVC verification are complete. Final-approved chapters remain **2**.
+- Chapter 3 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter03-c-program-components.md`). All six chapter examples passed GCC and MSVC verification; the approved manuscript remains unchanged.
+- Chapter 3 solution file: **Draft 1 / manager review pending** (`book/solutions/part1/chapter03-solutions.md`). Exercises 1–12 covered; #12 retains 〔심화·도전〕. The two new complete solution programs passed GCC; MSVC is unavailable in this writing environment and their MSVC checks are NOT RUN.
+- Final-approved chapters: **3**. Chapter 4 has not started.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Chapter 1 Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
@@ -30,12 +32,14 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - `book/part1/chapter01-programming-concepts.md` — Chapter 1 APPROVED manuscript: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
 - `book/solutions/part1/chapter01-solutions.md` — Chapter 1 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
 - `book/solutions/part1/chapter02-solutions.md` — Chapter 2 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript+solutions APPROVED; Chapter 2 manuscript+solutions APPROVED; Chapter 3 Draft 2 content-reviewed + dual-toolchain verification complete / manager final approval pending; final-approved chapters = 2.
+- `book/part1/chapter03-c-program-components.md` — Chapter 3 APPROVED manuscript: 12 original exercises; all six examples verified on GCC and MSVC.
+- `book/solutions/part1/chapter03-solutions.md` — Chapter 3 solution Draft 1: full answers + detailed explanations for exercises 1–12; manager review pending.
+- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapters 1–2 manuscript+solutions APPROVED; Chapter 3 manuscript APPROVED, solutions Draft 1 / manager review pending; final-approved chapters = 3.
 
 ## Incomplete files
 
 - Chapter 1 manuscript and Chapter 1 solution manuscript are both manager-approved.
-- Chapter 2 manuscript and solutions are **APPROVED**. Chapter 3 manuscript is **Draft 2 / manager final approval pending**; manager content review and GCC/MSVC verification are complete. Chapter 3 solutions and Chapter 4 have not started.
+- Chapter 2 manuscript and solutions and Chapter 3 manuscript are **APPROVED**. Chapter 3 solutions are **Draft 1 / manager review pending**; MSVC verification of the two new solution programs remains outstanding. Chapter 4 has not started.
 - No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
@@ -119,7 +123,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Manager final approval of Chapter 3.**
+**Manager review of Chapter 3 solution Draft 1.**
 
 ## Draft 1 self-review and checks
 
@@ -133,10 +137,10 @@ UNRESOLVED:
 ## README status
 
 - Checkpoints 1-8 checked; preparation/writing kickoff = 8/8.
-- Overall content percentage is not calculated from that milestone. Chapters 1–2 manuscripts are manager-approved; final-approved chapters = 2.
+- Overall content percentage is not calculated from that milestone. Chapters 1–3 manuscripts are manager-approved; final-approved chapters = 3.
 - Chapter 1 solution file is APPROVED; exercises 1–8 are covered.
 - Chapter 2 manuscript and solution file are APPROVED; solutions cover exercises 1–8.
-- Chapter 3 manuscript is Draft 2 / manager final approval pending. GCC PASS; MSVC verification PASS.
+- Chapter 3 manuscript is APPROVED. Its six examples passed GCC and MSVC. Chapter 3 solutions are Draft 1 / manager review pending; the new solution programs passed GCC, while their MSVC verification is NOT RUN.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -159,7 +163,7 @@ UNRESOLVED:
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapters 1–2 manuscripts and solutions are APPROVED and locked. Chapter 3 Draft 2 has passed content review and dual-toolchain verification; the next task is manager final approval. Do not create Chapter 3 solutions or start Chapter 4 before approval.
+- Chapters 1–2 manuscripts and solutions and the Chapter 3 manuscript are APPROVED and locked. Chapter 3 solutions are Draft 1 / manager review pending; the next task is their manager review. Do not start Chapter 4 before completing the current review stage.
 - Dated chapter sections below preserve historical statuses; Current status and the final Chapter 3 section describe the present state.
 - Push target: origin main. Repo has single branch main.
 
@@ -479,3 +483,80 @@ gcc -std=c17 -Wall -Wextra tmp/ch3-tests/study_time.c -o tmp/ch3-tests/study_tim
 - Chapter 3 solutions: not yet created.
 - Chapter 4: not started.
 - Next exact task: create `book/solutions/part1/chapter03-solutions.md` Draft 1, then manager review before Chapter 4.
+
+## Chapter 3 solution Draft 1
+
+- Date: 2026-09-30.
+- Created: `book/solutions/part1/chapter03-solutions.md`.
+- Status: **Draft 1 / manager review pending**. The solution file is not approved yet.
+- Starting state: clean `main`; after fetch/fast-forward, actual HEAD = origin/main = `70d54ce3a67fa5669cc27e6f37e83c8e2cb433bb`. `git status`, current branch and last eight commits were checked before editing.
+- Required reading complete: README, approved Chapter 3 manuscript, approved Chapter 1–2 solutions, this HANDOFF and 06 chapter specification. Answers use the approved Chapter 3 as their authority; no textbook/K&R reanalysis or new external research was needed.
+- Coverage: **exercises 1–12, every subquestion**, with matching numbers/titles and separate `정답` / `상세해설` sections. Exercise 12 retains **〔심화·도전〕**.
+- Key checks: return status versus screen output; non-nesting block comments; preprocessing versus runtime; three arguments and `%c`/`%d` mapping; variable trace ending in `19 16`; arithmetic `4, 5, 33, 26, 30`; `%f` result `2.500000`; input 0 succeeds while `abc` does not assign an integer; checking input before using `count`; `&` as storage location rather than an input symbol.
+- Problem 9 uses a corrected code fragment. Problems **11 and 12 contain the only two complete new solution programs**, `printing_ticket.c` and `two_study_records.c`. Both retain canonical `int main(void)`, standard `scanf`, success `return 0;` and failure checks before destination-variable use. Problem 12 checks the two inputs independently before summing.
+- Scope: Chapter 1–3 concepts only; small input-error guards, assumed exercise ranges and simple integer arithmetic. No loops, helper functions, arrays, pointer mechanics, global variables, VLAs, source warning definitions, `scanf_s` substitution or `fflush(stdin)`.
+
+### Actual GCC verification of solution code
+
+- Environment: Linux; **GCC 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04)**.
+- The complete fenced listings were extracted unchanged to scratch `.c` files. Actual commands:
+
+```text
+gcc -std=c17 -Wall -Wextra /workspace/scratch/e5a9e4a0b851/tmp/ch3-solutions-tests/printing_ticket.c -o /workspace/scratch/e5a9e4a0b851/tmp/ch3-solutions-tests/printing_ticket
+gcc -std=c17 -Wall -Wextra /workspace/scratch/e5a9e4a0b851/tmp/ch3-solutions-tests/two_study_records.c -o /workspace/scratch/e5a9e4a0b851/tmp/ch3-solutions-tests/two_study_records
+```
+
+| Program | GCC build | Warnings | Errors | Complete-program runtime checks |
+|---|---|---:|---:|---|
+| Problem 11 `printing_ticket.c` | PASS | 0 | 0 | 5/5 PASS |
+| Problem 12 `two_study_records.c` | PASS | 0 | 0 | 7/7 PASS |
+
+All stdout, including prompts and newlines, stderr and process exit statuses were checked against expectations. Output below summarizes the result after the relevant input prompts; successful runs exited 0 and failure runs exited 1.
+
+| Program | Input | Actual result | Exit |
+|---|---|---|---:|
+| 11 | `0` | `Total: 0 won` | 0 |
+| 11 | `4` | `Total: 600 won` | 0 |
+| 11 | `20` | `Total: 3000 won` | 0 |
+| 11 | `abc` | `Input failed.`; no total output | 1 |
+| 11 | immediate EOF | `Input failed.`; no total output | 1 |
+| 12 | `120`, then `90` | `Total: 3 h 30 min` | 0 |
+| 12 | `0`, then `0` | `Total: 0 h 0 min` | 0 |
+| 12 | `600`, then `600` | `Total: 20 h 0 min` | 0 |
+| 12 | first input `abc` (followed by unused `90`) | immediate failure; no afternoon prompt or total output | 1 |
+| 12 | first `120`, second `abc` | failure after afternoon prompt; no total output | 1 |
+| 12 | immediate EOF at first read | immediate failure; no afternoon prompt or total output | 1 |
+| 12 | `120`, then EOF at second read | failure after afternoon prompt; no total output | 1 |
+
+- **2 complete programs, 12 runtime checks PASS on GCC.** EOF tests actually used closed redirected standard input, not an assumed result.
+- Supplementary checks: five temporary C17 wrappers for readable/corrected snippets in Problems 4–7 and 9, each built with `-std=c17 -Wall -Wextra`, 0 warnings/0 errors; **9 executions PASS**. Confirmed Problem 4 output and successful `printf` return 16, Problem 5 output `19 16`, Problem 6 results `4 5 33 26 30`, Problem 7 four formatted lines, and corrected Problem 9 results for 0/4/20/abc/EOF. The original unchecked-input bug fragment was not executed.
+- Test script, generated sources, binaries and detailed JSON results remain in scratch, outside the repository. Only the requested manuscript/status files are committed.
+
+### MSVC / C4996 handling and remaining limitation
+
+- **MSVC solution verification: NOT RUN.** This Linux environment has no `cl`, `clang-cl`, Windows runtime (`wine`) or `pwsh`. No actual MSVC build or runtime claim is made for the new solution programs.
+- The approved Chapter 3's earlier Windows/MSVC PASS is evidence for its six examples only; it does not verify the newly created Problem 11/12 programs.
+- Baseline commands to run in an MSVC developer environment:
+
+```text
+cl /std:c17 /W4 printing_ticket.c
+cl /std:c17 /W4 two_study_records.c
+```
+
+- Record each baseline's actual C4996 count/severity and build result before applying the chapter-established adjusted setting:
+
+```text
+cl /std:c17 /W4 /D_CRT_SECURE_NO_WARNINGS printing_ticket.c
+cl /std:c17 /W4 /D_CRT_SECURE_NO_WARNINGS two_study_records.c
+```
+
+- Exact handling used here: **no suppression was applied**. The `/D_CRT_SECURE_NO_WARNINGS` method is documented only for these MSVC input exercises. It was not inserted into canonical source or passed to GCC. `/W4` remains required; standard `scanf` and both input checks remain unchanged.
+- Remaining verification: run both MSVC baseline and adjusted builds, record compiler version/diagnostics, then repeat normal, invalid-first/invalid-second and EOF cases where applicable. Do not describe `/W4` alone as warnings-clean without its actual diagnostic record.
+
+### Status and locked-file review
+
+- Chapter 1 manuscript, Chapter 1 solutions, Chapter 2 manuscript, Chapter 2 solutions and **Chapter 3 approved manuscript remain unchanged / APPROVED**. Full solutions were added only to the separate solution file.
+- No architecture changes. In particular, the manager-corrected `덧셈 프로그램 #1/#2` and the Chapter 12 `&` forward reference were preserved without editing 01/03.
+- README updated to Chapter 3 solutions **Draft 1 / manager review pending**. Final-approved chapter count remains **3**; PHASE 1 setup/writing kickoff remains **8 / 8**. Current-status entries above were reconciled with the already recorded Chapter 3 approval; dated history remains intact.
+- **No Chapter 4 work.** Expected changed files only: the Chapter 3 solution manuscript, README and HANDOFF.
+- Next exact task: **Manager review of Chapter 3 solution Draft 1**.
