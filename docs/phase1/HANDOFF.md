@@ -392,3 +392,14 @@ gcc -std=c17 -Wall -Wextra tmp/ch3-tests/study_time.c -o tmp/ch3-tests/study_tim
 - README updated to Chapter 3 Draft 1 / manager review pending; approved chapter count remains 2; PHASE 1 setup/writing kickoff remains **8 / 8**. Stale current-status references to Chapter 2 solution Draft 1 were reconciled to its already recorded approval; historical entries retained.
 - **Unresolved publication gate:** MSVC compilation/execution and C4996 baseline/adjusted results. Manager review must not treat GCC evidence as dual-toolchain PASS.
 - Next exact task: **Manager review of Chapter 3 Draft 1**.
+
+## Chapter 3 manager review — Draft 1 content pass
+
+- Date: 2026-09-30
+- Manager reviewed the full Draft 1 manuscript against the approved Ch3 scope, Chapter 1–2 continuity, 06 writing specification, 03 crosswalk, and 04 gap analysis.
+- Content verdict: **PASS pending toolchain gate**. No broad rewrite is required.
+- Confirmed strengths: accurate `main`/header/directive framing; function preview kept shallow; variables/arithmetic stop before Ch4/Ch5 depth; `printf` formats are type-consistent; B5 `scanf` return checking is implemented; `&` is limited to a pointer-forward preview; input failure is separated from the value read; no `fflush(stdin)`/blanket `scanf_s` substitution; 12 original exercises satisfy output-predict/find-fix/write-from-scratch requirements.
+- Approval blocker: the project requires examples to be verified on both GCC and MSVC. GCC evidence exists; MSVC `/std:c17 /W4` and the C4996 baseline/adjusted behavior are still unverified for the six Chapter 3 complete examples.
+- Manager cleanup performed separately: source-outline titles `맛샘 프로그램 #1/#2` corrected to verified `덧셈 프로그램 #1/#2`; Ch3 `&` forward reference in the crosswalk corrected from Ch11 to Ch12, matching the approved final TOC.
+- Chapter 3 remains **Draft 1**, not APPROVED, until the MSVC gate is closed.
+- Next exact task: run narrow-scope MSVC verification of all six complete examples and C4996 handling, record actual compiler version/diagnostics/output/exit codes, then return for final manager approval. Do not start Chapter 4 or Chapter 3 solutions.
