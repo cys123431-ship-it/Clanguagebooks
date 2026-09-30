@@ -560,3 +560,17 @@ cl /std:c17 /W4 /D_CRT_SECURE_NO_WARNINGS two_study_records.c
 - README updated to Chapter 3 solutions **Draft 1 / manager review pending**. Final-approved chapter count remains **3**; PHASE 1 setup/writing kickoff remains **8 / 8**. Current-status entries above were reconciled with the already recorded Chapter 3 approval; dated history remains intact.
 - **No Chapter 4 work.** Expected changed files only: the Chapter 3 solution manuscript, README and HANDOFF.
 - Next exact task: **Manager review of Chapter 3 solution Draft 1**.
+
+## Chapter 3 solution Draft 1 — manager content review
+
+- Date: 2026-09-30
+- Manager reviewed `book/solutions/part1/chapter03-solutions.md` end-to-end against the approved Chapter 3 exercise set.
+- Content verdict: **PASS pending MSVC gate**. No substantive rewrite is required.
+- Coverage verified: exercises 1–12 and every subquestion; Exercise 12 remains `〔심화·도전〕`.
+- Technical checks passed: program components and `main` status semantics; non-nesting block comments; directive-vs-statement distinction; Problem 4 has 3 arguments, `%c`→`'D'`, `%d`→`8`, and successful `printf` return 16; Problem 5 ends `19 16`; Problem 6 gives `4, 5, 33, 26, 30`; Problem 7 formats correctly; Problem 8 distinguishes successful input `0` from failed conversion; Problem 9 checks `scanf` before use; Problem 10 explains `&` as storage location/address, not an input symbol; Problems 11–12 stay within Chapter 3 scope and check every input before calculation.
+- GCC verification for the two new complete solution programs is accepted: C17 `-Wall -Wextra`, 0 warnings/errors, normal/invalid/EOF paths checked.
+- Remaining approval blocker: the two **new solution programs** have not yet been verified with MSVC. The earlier Chapter 3 manuscript MSVC PASS does not automatically cover these new listings.
+- Required next verification: `printing_ticket.c` and `two_study_records.c` with baseline `cl /std:c17 /W4`, record actual C4996 behavior, then warnings-clean adjusted builds with `/D_CRT_SECURE_NO_WARNINGS`, plus normal/invalid/EOF runtime paths.
+- Chapter 3 solutions remain **Draft 1**, not APPROVED, until this gate is closed.
+- Do not start Chapter 4 before final manager approval of Chapter 3 solutions.
+- Next exact task: narrow-scope MSVC verification of the two complete Chapter 3 solution programs, then manager final approval.
