@@ -1,5 +1,5 @@
 <!--
-Chapter: 3 | Part: 1 | Status: Draft 2 (manager final approval pending)
+Chapter: 3 | Part: 1 | Status: APPROVED (manager-approved 2026-09-30)
 Goal: C 소스의 구성요소를 읽고, 입력 성공 여부를 확인하는 작은 계산 프로그램을 작성한다.
 Prereq secs: Ch1 §1.4 입력·처리·출력과 결과 확인; Ch2 §2.2 빌드 단계, §2.4-2.7 .c/C17/진단/실행.
 Primary source [T]: 천인국, 쉽게 풀어쓴 C언어 Express 개정4판, Ch03.
