@@ -39,7 +39,7 @@
 
 | Sec | Title | Concepts (i) | Syntax/API | Pre -> Next |
 |---|---|---|---|---|
-| 3.1 | 맛샘 프로그램 #1 | main; `#include`; `return` | `int main(void)` | Ch02 -> 3.2 |
+| 3.1 | 덧셈 프로그램 #1 | main; `#include`; `return` | `int main(void)` | Ch02 -> 3.2 |
 | 3.2 | 주석 | `//`, `/* */` | - | 3.1 -> 3.3 |
 | 3.3 | 전처리기 | `#include <stdio.h>`; directive vs statement (i) | `#include` | 3.2 -> 3.4 |
 | 3.4 | 함수 | call; args; return (preview) | `printf` | 3.3 -> 3.5 |
@@ -48,7 +48,7 @@
 | 3.7 | printf() | format specifiers | `%d %f %c %s`, `\n` | 3.6 -> 3.8 |
 | Lab | 사칙 연산 | four operations | - | 3.7 |
 | 3.8 | scanf() | input; address-of preview (`&`) | `%d`, `&` | 3.7 -> 3.9 |
-| 3.9 | 맛샘 프로그램 #2 | assemble full program (i) | - | 3.8 -> Lab |
+| 3.9 | 덧셈 프로그램 #2 | assemble full program (i) | - | 3.8 -> Lab |
 | Lab | 원의 면적 / 환율계산 / 평균 계산하기 | applied mini programs | - | 3.9 |
 | MiniProject | 사각형의 둘레와 면적 (verified book p.116) | rect w*h, 2*(w+h); rect_area.c | - -> Ch04 | - |
 
