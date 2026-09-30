@@ -1,5 +1,5 @@
 <!--
-Chapter: 2 | Part: 1 | Status: Draft 2 (manager final approval pending)
+Chapter: 2 | Part: 1 | Status: APPROVED (manager-approved 2026-09-30)
 Goal: 소스 파일이 실행 파일이 되어 실행되기까지의 과정과, 그 과정을 담당하는 도구·설정·진단 메시지를 이해한다.
 Prereq secs: Ch1 §1.2(번역과 실행), §1.3(이 책의 기준), §1.4(결과 확인 습관).
 Primary source [T]: 천인국, 쉽게 풀어쓴 C언어 Express 개정4판, Ch02 "프로그래밍 작성 과정",
@@ -26,7 +26,7 @@ Toolchain verification (2026-09-30, 실제 실행):
 Roles: 기본 / 보강 / 추가. 출처 태그와 역할은 별개.
 Originality: 본문·도식·실험·문제는 새로 작성. 원전 문장·그림·연습문제 복제 없음.
   첫 예제는 관용적인 최소 C 프로그램이며 원전의 예제 문구를 그대로 쓰지 않음.
-Exercise policy: 개념·실습형 8문항(8번 = 심화·도전). 학생용 본문에는 문제와 짧은 힌트만 둔다.
+Exercise policy: 개념·실습형 8문항(8번 = 심화·도전). 학생용 본문에는 문제와 짧은 힌트만 둔다. Manager-approved.
   전체 정답·해설은 book/solutions/part1/chapter02-solutions.md에 둔다(원고 승인 후 작성, 현재 없음).
 -->
 
