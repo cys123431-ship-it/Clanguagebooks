@@ -11,7 +11,7 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - Exact manuscript path: `book/part1/chapter01-programming-concepts.md`.
 - Chapter 1 solution file: **APPROVED (manager final approval 2026-09-30)**.
 - Exact solution path: `book/solutions/part1/chapter01-solutions.md`. Exercises 1–8 are all covered; the approved Chapter 1 manuscript remains unchanged.
-- Chapter 2 manuscript: **Draft 2 complete / manager final approval pending** (`book/part1/chapter02-program-development-tools.md`). Targeted manager revisions A–D completed; no Chapter 2 solutions or Chapter 3 work started.
+- Chapter 2 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter02-program-development-tools.md`). Targeted manager revisions A–D passed final review; no Chapter 2 solutions or Chapter 3 work started.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Chapter 1 Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
@@ -26,12 +26,12 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - docs/phase1/06-chapter-specification.md — FINAL grouped template (MANDATORY/OPTIONAL/TOPIC-SPECIFIC) + MSVC+GCC verify rule + answer-key policy (DECIDED: solutions under `book/solutions/`).
 - `book/part1/chapter01-programming-concepts.md` — Chapter 1 APPROVED manuscript: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
 - `book/solutions/part1/chapter01-solutions.md` — Chapter 1 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript and solutions APPROVED; Chapter 2 Draft 2 / manager final approval pending; final-approved chapters = 1.
+- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript+solutions APPROVED; Chapter 2 manuscript APPROVED; final-approved chapters = 2.
 
 ## Incomplete files
 
 - Chapter 1 manuscript and Chapter 1 solution manuscript are both manager-approved.
-- Chapter 2 manuscript: **Draft 2 complete, manager final approval pending** (`book/part1/chapter02-program-development-tools.md`). Chapter 2 solution file NOT started. No Chapter 3 work started.
+- Chapter 2 manuscript: **APPROVED** (`book/part1/chapter02-program-development-tools.md`). Chapter 2 solution file NOT started. No Chapter 3 work started.
 - No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
@@ -115,7 +115,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Manager final approval of Chapter 2 Draft 2.** Do not start Chapter 3 or the Chapter 2 solution file before approval.
+**Create `book/solutions/part1/chapter02-solutions.md` from the approved Chapter 2 exercises, then manager-review the solutions before Chapter 3.**
 
 ## Draft 1 self-review and checks
 
@@ -129,9 +129,9 @@ UNRESOLVED:
 ## README status
 
 - Checkpoints 1-8 checked; preparation/writing kickoff = 8/8.
-- Overall content percentage is not calculated from that milestone. Chapter 1 is manager-approved; final-approved chapters = 1.
+- Overall content percentage is not calculated from that milestone. Chapters 1–2 manuscripts are manager-approved; final-approved chapters = 2.
 - Chapter 1 solution file is APPROVED; exercises 1–8 are covered.
-- Chapter 2 is Draft 2 / manager final approval pending.
+- Chapter 2 manuscript is APPROVED; Chapter 2 solutions are not yet written.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -154,7 +154,7 @@ UNRESOLVED:
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapter 1 and its solution file are approved. Chapter 2 is at Draft 2 (manager final approval pending); do not infer approval, write `book/solutions/part1/chapter02-solutions.md`, or start Chapter 3 without the next instruction.
+- Chapter 1 manuscript and solutions are approved. Chapter 2 manuscript is approved. The next authorized task is `book/solutions/part1/chapter02-solutions.md`; do not start Chapter 3 until that solution file is manager-reviewed.
 - Push target: origin main. Repo has single branch main.
 
 
@@ -253,11 +253,11 @@ UNRESOLVED:
 - All 8 exercises retained by manager decision, including Exercise 8 as `〔심화·도전〕`. This explicitly overrides the reduced template's 2–3 recommendation for Chapter 2.
 
 - No Chapter 3 work started. No Chapter 2 solution file created. No architecture docs changed.
-- Next exact task: **Manager final approval of Chapter 2 Draft 2.**
+- Next exact task: **Create Chapter 2 solution Draft 1, then manager review.**
 
 ## Chapter 2 Draft 2 — targeted manager revisions
 
-- Status: **Draft 2 complete / manager final approval pending**. Chapter 2 is not approved yet.
+- Status: **APPROVED (manager final approval 2026-09-30)**.
 - Starting state verified: `main`, clean, local HEAD = remote `main` = `11c958947e5d2e60654e580ae25153ce6aec308a`.
 - A. Derived build outputs wording corrected (§2.1): human-maintained source code is distinguished from object/executable outputs; rebuilding also requires dependencies and the build environment. Distribution may include runtime libraries or data files.
 - B. Failed-current-build vs old executable clarified (§2.6): an error prevents the current output from being successfully produced/updated; an earlier executable may remain. The existing last-successful-build warning box is retained; related link/experiment wording and Exercise 3 items 1–2 are aligned.
@@ -267,3 +267,14 @@ UNRESOLVED:
 - Verification: full chapter reread; textual consistency, preserved sections/example/commands, and restricted three-file scope checked. Executable code and commands are unchanged, so the previously passed MSVC `/std:c17 /W4` and GCC `-std=c17 -Wall -Wextra` experiments were not rerun.
 - Chapter 1 manuscript and solutions unchanged / APPROVED. Architecture documents unchanged. PHASE 1 setup/writing kickoff remains 8/8. No Chapter 2 solutions or Chapter 3 created.
 - Next exact task: **Manager final approval of Chapter 2 Draft 2.**
+
+## Chapter 2 manager final approval
+
+- Date: 2026-09-30
+- Approved manuscript: `book/part1/chapter02-program-development-tools.md`
+- Basis: Draft 2 reviewed end-to-end after targeted corrections to rebuild dependencies, stale executables, runtime-vs-logic classification, and portability wording.
+- Retained by manager decision: GCC stage-by-stage box, 3 deliberate-error experiments, all 8 exercises, VS2022-primary/GCC-secondary toolchain framing.
+- Toolchain evidence from Draft 1 remains valid because executable examples and commands were unchanged in Draft 2.
+- Result: APPROVED. No further Chapter 2 body revision required before producing the separate solution file.
+- Final-approved chapters: 2.
+- Next: `book/solutions/part1/chapter02-solutions.md` Draft 1.
