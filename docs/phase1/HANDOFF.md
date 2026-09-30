@@ -401,8 +401,8 @@ gcc -std=c17 -Wall -Wextra tmp/ch3-tests/study_time.c -o tmp/ch3-tests/study_tim
 - Confirmed strengths: accurate `main`/header/directive framing; function preview kept shallow; variables/arithmetic stop before Ch4/Ch5 depth; `printf` formats are type-consistent; B5 `scanf` return checking is implemented; `&` is limited to a pointer-forward preview; input failure is separated from the value read; no `fflush(stdin)`/blanket `scanf_s` substitution; 12 original exercises satisfy output-predict/find-fix/write-from-scratch requirements.
 - Approval blocker: the project requires examples to be verified on both GCC and MSVC. GCC evidence exists; MSVC `/std:c17 /W4` and the C4996 baseline/adjusted behavior are still unverified for the six Chapter 3 complete examples.
 - Manager cleanup performed separately: source-outline titles `맛샘 프로그램 #1/#2` corrected to verified `덧셈 프로그램 #1/#2`; Ch3 `&` forward reference in the crosswalk corrected from Ch11 to Ch12, matching the approved final TOC.
-- Chapter 3 remains **Draft 1**, not APPROVED, until the MSVC gate is closed.
-- Next exact task: run narrow-scope MSVC verification of all six complete examples and C4996 handling, record actual compiler version/diagnostics/output/exit codes, then return for final manager approval. Do not start Chapter 4 or Chapter 3 solutions.
+- Chapter 3 content review gate was closed after MSVC verification; see final approval record below.
+- MSVC verification completed successfully; final manager approval recorded below.
 
 
 ## Chapter 3 MSVC verification — gate closed
@@ -460,9 +460,22 @@ gcc -std=c17 -Wall -Wextra tmp/ch3-tests/study_time.c -o tmp/ch3-tests/study_tim
 
 - MSVC gate: **PASS**.
 - Existing Chapter 3 claims about `/std:c17`, `/W4`, C4996, `_CRT_SECURE_NO_WARNINGS`, checked `scanf` return values, stdout, and exit values remain truthful.
-- Reader-facing Chapter 3 body required **no factual correction**. Only hidden metadata was updated, so the manuscript status is now **Draft 2 (manager final approval pending)**.
+- Reader-facing Chapter 3 body required **no factual correction**. Hidden verification metadata was updated before final manager approval.
 - GCC evidence remains unchanged and valid; it was not rerun.
 - Chapter 1–2 files remain untouched and APPROVED.
 - Manager cleanup in `docs/phase1/01-textbook-outline.md` and `docs/phase1/03-crosswalk.md` was not changed.
 - No Chapter 3 solution file or Chapter 4 work was created.
-- Next exact task: **Manager final approval of Chapter 3**.
+- Next exact task: **Create `book/solutions/part1/chapter03-solutions.md` Draft 1, then manager-review it before Chapter 4.**
+
+## Chapter 3 manager final approval
+
+- Date: 2026-09-30
+- Approved manuscript: `book/part1/chapter03-c-program-components.md`
+- Basis: Draft 1 passed manager content review; the remaining dual-toolchain gate was then closed with actual MSVC 19.51.36260 verification on Windows Server 2025 / Visual Studio Enterprise 2026 18.10.2.
+- Toolchain result: GCC and MSVC both verified all six complete examples. MSVC baseline `scanf` builds reproduced C4996 as a warning; `/D_CRT_SECURE_NO_WARNINGS` + `/W4` produced 0 warnings/0 errors for the input examples; valid/invalid/EOF runtime behavior matched the manuscript.
+- Reader-facing body required no correction after MSVC verification.
+- Result: **APPROVED**.
+- Final-approved chapters: 3.
+- Chapter 3 solutions: not yet created.
+- Chapter 4: not started.
+- Next exact task: create `book/solutions/part1/chapter03-solutions.md` Draft 1, then manager review before Chapter 4.
