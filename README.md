@@ -44,7 +44,7 @@ flowchart TD
 ### 현재 위치
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
-현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료** 상태다. **Chapter 3 본문은 Draft 1 / manager review pending**이다.
+현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료** 상태다. **Chapter 3 Draft 1은 내용 검토를 통과했으며 MSVC 실측 검증만 남아 있다.**
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -79,7 +79,7 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 Draft 1 / manager review pending
+본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 Draft 1 content-reviewed / MSVC verification pending
 최종 승인된 Chapter: 2
 ```
 
@@ -91,7 +91,7 @@ START
 | [Chapter 1. 정답·상세해설](book/solutions/part1/chapter01-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 2. 프로그램 작성 과정과 개발 도구](book/part1/chapter02-program-development-tools.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 2. 정답·상세해설](book/solutions/part1/chapter02-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
-| [Chapter 3. C 프로그램 구성요소](book/part1/chapter03-c-program-components.md) | Draft 1 / manager review pending | 관리자 검토 · MSVC 실측 검증 보완 |
+| [Chapter 3. C 프로그램 구성요소](book/part1/chapter03-c-program-components.md) | Draft 1 내용 검토 통과 / MSVC 검증 대기 | MSVC·C4996 실측 검증 |
 | Chapter 4 이후 | 미집필 | 이전 장 승인 후 순차 집필 |
 
 | Phase | 내용 | 상태 |
@@ -446,6 +446,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Manager review of Chapter 3 Draft 1.**
+**다음 작업: Chapter 3의 MSVC `/std:c17 /W4` 및 C4996 실측 검증.**
 
-Chapter 1–2 본문과 정답·상세해설은 모두 APPROVED이며 변경하지 않았다. Chapter 3 본문 Draft 1을 작성했다. 완전한 예제 6개는 GCC C17에서 경고 없이 빌드·실행을 확인했다. MSVC는 이번 실행 환경에 없어 실측 검증이 남아 있으며, 출판 전 이중 도구 검증 요건은 아직 충족하지 못했다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
+Chapter 1–2 본문과 정답·상세해설은 모두 APPROVED이며 변경하지 않았다. Chapter 3 Draft 1은 관리자 내용 검토를 통과했다. 완전한 예제 6개는 GCC C17에서 경고 없이 빌드·실행을 확인했지만, MSVC 실측과 C4996 baseline/adjusted 결과가 남아 있어 아직 Chapter 3 최종 승인은 보류한다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
