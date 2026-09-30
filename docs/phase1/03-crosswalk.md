@@ -12,7 +12,7 @@
 | Ch2 | edit-compile-link-run; VS2022 | - (preface/env) | textbook | CORE | modernize: gcc+VS both |
 | Ch2 | error kinds (syntax/link/logic) | - | textbook | K&R-ENHANCE | add K&R-style terse examples purpose |
 | Ch3 | main/#include/printf/scanf first use | 1.1, 7.2, 7.4 | both | CORE | order: output before input |
-| Ch3 | `&` in scanf (preview) | 5.2 (full reason) | K&R stronger | K&R-ENHANCE | forward-ref to Ch11; VISUAL later |
+| Ch3 | `&` in scanf (preview) | 5.2 (full reason) | K&R stronger | K&R-ENHANCE | forward-ref to Ch12; VISUAL later |
 
 ## B. Types / operators (Txt Ch4-5)
 
