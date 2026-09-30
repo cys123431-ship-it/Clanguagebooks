@@ -1,5 +1,5 @@
 <!--
-Chapter: 3 | Part: 1 | Status: Draft 1 (manager review pending)
+Chapter: 3 | Part: 1 | Status: Draft 2 (manager final approval pending)
 Goal: C 소스의 구성요소를 읽고, 입력 성공 여부를 확인하는 작은 계산 프로그램을 작성한다.
 Prereq secs: Ch1 §1.4 입력·처리·출력과 결과 확인; Ch2 §2.2 빌드 단계, §2.4-2.7 .c/C17/진단/실행.
 Primary source [T]: 천인국, 쉽게 풀어쓴 C언어 Express 개정4판, Ch03.
@@ -17,11 +17,16 @@ Toolchains: MSVC .c /std:c17 /W4; GCC -std=c17 -Wall -Wextra.
 Gap IDs: B5 scanf 반환값 확인 REQUIRED BOX; C24 C17 정책 유지.
 VISUALs: 프로그램 구성 표, 함수 호출 구성 표, 변수 상자, 입력 성공/실패 흐름.
 Est. pages: 16-20 (편집 전 추정) | DS-flag: 직접적인 DS 진입 단원 아님; 공통 문법 기초.
-Toolchain verification (2026-09-30): GCC 13.3.0, .c -std=c17 -Wall -Wextra,
-  완전한 예제 A-F 6개 빌드 PASS/경고 0; 실행 14건의 출력·종료값 PASS.
-  E: 42/0/abc/입력 종료, F: 135/60/0/1440/abc/입력 종료 확인.
-  MSVC는 현 Linux 환경에 없어 6개 모두 실행 미검증. 출판 전 이중 도구 검증은 미충족.
-  MSVC의 기본 진단 및 /D_CRT_SECURE_NO_WARNINGS 적용 결과는 아직 PASS로 간주하지 않음.
+Toolchain verification (2026-09-30):
+  GCC 13.3.0, .c -std=c17 -Wall -Wextra — 완전한 예제 A-F 6개 빌드 PASS/경고 0;
+  실행 14건의 출력·종료값 PASS.
+  MSVC: GitHub-hosted Windows Server 2025, image windows-2025-vs2026,
+  Visual Studio Enterprise 2026 18.10.2, cl.exe 19.51.36260 x64.
+  A-D: cl /std:c17 /W4 — 빌드 PASS, 각 경고 0/오류 0, 출력·exit 0 일치.
+  E/F baseline: cl /std:c17 /W4 — 빌드 PASS, 각각 C4996 경고 1/오류 0;
+  adjusted /D_CRT_SECURE_NO_WARNINGS — 빌드 PASS, 각각 경고 0/오류 0.
+  E: 42/0 exit 0, abc/EOF exit 1; F: 135/60/0/1440 exit 0, abc/EOF exit 1;
+  stdout와 종료값 모두 기대와 일치. 이중 도구 검증 완료; 본문 사실 수정 불필요.
 Originality: 설명·수치·예제·도식·12문항 독자 작성. 원전의 계산기/원/환율/평균/사각형 프로그램 복제 없음.
 Exercise policy: 문제와 짧은 힌트만 제공. 승인 후 별도 해설 작성; Chapter 3 해설 파일은 생성하지 않음.
 Roles: 기본 / 보강 / 추가. 출처와 역할은 독립적으로 기록.

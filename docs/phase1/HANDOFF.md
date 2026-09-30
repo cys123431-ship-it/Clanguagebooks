@@ -14,7 +14,7 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - Chapter 2 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter02-program-development-tools.md`). Targeted manager revisions A–D passed final review.
 - Chapter 2 solution file: **APPROVED (manager final approval 2026-09-30)**.
 - Exact solution path: `book/solutions/part1/chapter02-solutions.md`. Exercises 1–8 are all covered; Exercise 8 remains 〔심화·도전〕.
-- Chapter 3 manuscript: **Draft 1 / manager review pending** (`book/part1/chapter03-c-program-components.md`). GCC verification complete; MSVC execution unavailable and pending. Final-approved chapters remain **2**.
+- Chapter 3 manuscript: **Draft 2 / manager final approval pending** (`book/part1/chapter03-c-program-components.md`). Manager content review passed; GCC and MSVC verification are complete. Final-approved chapters remain **2**.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Chapter 1 Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
@@ -30,12 +30,12 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - `book/part1/chapter01-programming-concepts.md` — Chapter 1 APPROVED manuscript: 5 goals, sections 1.1-1.4, original guided examples, conceptual diagrams, mistakes table, 7 summary points, 8 original exercises with hints, Chapter 2 bridge.
 - `book/solutions/part1/chapter01-solutions.md` — Chapter 1 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
 - `book/solutions/part1/chapter02-solutions.md` — Chapter 2 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript+solutions APPROVED; Chapter 2 manuscript APPROVED; Chapter 2 solutions APPROVED; Chapter 3 Draft 1 / manager review pending; final-approved chapters = 2.
+- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapter 1 manuscript+solutions APPROVED; Chapter 2 manuscript+solutions APPROVED; Chapter 3 Draft 2 content-reviewed + dual-toolchain verification complete / manager final approval pending; final-approved chapters = 2.
 
 ## Incomplete files
 
 - Chapter 1 manuscript and Chapter 1 solution manuscript are both manager-approved.
-- Chapter 2 manuscript: **APPROVED** (`book/part1/chapter02-program-development-tools.md`). Chapter 2 solution file is **APPROVED**. Chapter 3 manuscript Draft 1 is written; manager review and MSVC execution verification remain pending.
+- Chapter 2 manuscript and solutions are **APPROVED**. Chapter 3 manuscript is **Draft 2 / manager final approval pending**; manager content review and GCC/MSVC verification are complete. Chapter 3 solutions and Chapter 4 have not started.
 - No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
@@ -119,7 +119,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Manager review of Chapter 3 Draft 1.**
+**Manager final approval of Chapter 3.**
 
 ## Draft 1 self-review and checks
 
@@ -136,7 +136,7 @@ UNRESOLVED:
 - Overall content percentage is not calculated from that milestone. Chapters 1–2 manuscripts are manager-approved; final-approved chapters = 2.
 - Chapter 1 solution file is APPROVED; exercises 1–8 are covered.
 - Chapter 2 manuscript and solution file are APPROVED; solutions cover exercises 1–8.
-- Chapter 3 manuscript is Draft 1 / manager review pending. GCC PASS; MSVC verification pending.
+- Chapter 3 manuscript is Draft 2 / manager final approval pending. GCC PASS; MSVC verification PASS.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -159,7 +159,7 @@ UNRESOLVED:
 ## Notes for next AI
 
 - Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapters 1–2 manuscripts and solutions are APPROVED and locked. Chapter 3 Draft 1 is ready for manager review, with MSVC verification explicitly outstanding. Do not create Chapter 3 solutions or start Chapter 4 during this review.
+- Chapters 1–2 manuscripts and solutions are APPROVED and locked. Chapter 3 Draft 2 has passed content review and dual-toolchain verification; the next task is manager final approval. Do not create Chapter 3 solutions or start Chapter 4 before approval.
 - Dated chapter sections below preserve historical statuses; Current status and the final Chapter 3 section describe the present state.
 - Push target: origin main. Repo has single branch main.
 
@@ -403,3 +403,66 @@ gcc -std=c17 -Wall -Wextra tmp/ch3-tests/study_time.c -o tmp/ch3-tests/study_tim
 - Manager cleanup performed separately: source-outline titles `맛샘 프로그램 #1/#2` corrected to verified `덧셈 프로그램 #1/#2`; Ch3 `&` forward reference in the crosswalk corrected from Ch11 to Ch12, matching the approved final TOC.
 - Chapter 3 remains **Draft 1**, not APPROVED, until the MSVC gate is closed.
 - Next exact task: run narrow-scope MSVC verification of all six complete examples and C4996 handling, record actual compiler version/diagnostics/output/exit codes, then return for final manager approval. Do not start Chapter 4 or Chapter 3 solutions.
+
+
+## Chapter 3 MSVC verification — gate closed
+
+- Date: 2026-09-30.
+- Verification environment: GitHub-hosted **Microsoft Windows Server 2025** runner, image `windows-2025-vs2026` version `20260925.250.1`.
+- Installed toolchain selected by `vswhere`: **Visual Studio Enterprise 2026 18.10.2**.
+- `cl.exe`: `C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\bin\HostX64\x64\cl.exe`.
+- Compiler banner: **Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36260 for x64**.
+- The exact six complete fenced C listings in `book/part1/chapter03-c-program-components.md` were extracted unchanged before compilation. No `scanf_s` substitution, source macro insertion, warning-level reduction, or return-check removal was used.
+
+### A–D baseline build and runtime
+
+| Example | Command | Build | Warnings | Errors | Actual stdout | Exit |
+|---|---|---|---:|---:|---|---:|
+| A `ready.c` | `cl /std:c17 /W4 ready.c` | PASS | 0 | 0 | `Study log ready.` | 0 |
+| B `minutes.c` | `cl /std:c17 /W4 minutes.c` | PASS | 0 | 0 | `Study: 35 min` | 0 |
+| C `split_time.c` | `cl /std:c17 /W4 split_time.c` | PASS | 0 | 0 | `2 h 15 min` | 0 |
+| D `formats.c` | `cl /std:c17 /W4 formats.c` | PASS | 0 | 0 | `Sessions: 3` / `Hours: 1.500000` / `Group: B` / `Topic: Review` | 0 |
+
+### E–F scanf baseline and adjusted build
+
+- E baseline command: `cl /std:c17 /W4 read_number.c`
+  - Result: **PASS**, exit 0; warnings **1**, errors **0**.
+  - Actual diagnostic: `read_number.c(7): warning C4996: 'scanf': This function or variable may be unsafe...`
+  - Link completed and `read_number.exe` was produced.
+- E adjusted command: `cl /std:c17 /W4 /D_CRT_SECURE_NO_WARNINGS read_number.c`
+  - Result: **PASS**, exit 0; warnings **0**, errors **0**.
+- F baseline command: `cl /std:c17 /W4 study_time.c`
+  - Result: **PASS**, exit 0; warnings **1**, errors **0**.
+  - Actual diagnostic: `study_time.c(7): warning C4996: 'scanf': This function or variable may be unsafe...`
+  - Link completed and `study_time.exe` was produced.
+- F adjusted command: `cl /std:c17 /W4 /D_CRT_SECURE_NO_WARNINGS study_time.c`
+  - Result: **PASS**, exit 0; warnings **0**, errors **0**.
+- Actual baseline behavior in this environment: C4996 is a **warning**, not an error, under the exact command-line `/std:c17 /W4` configuration. The documented `/D_CRT_SECURE_NO_WARNINGS` method removes that diagnostic while preserving `/W4`.
+
+### Runtime verification
+
+- E `read_number.exe` after the adjusted warnings-clean build:
+  - input `42` → `Enter an integer:` then `Read: 42`; exit **0**.
+  - input `0` → `Enter an integer:` then `Read: 0`; exit **0**.
+  - input `abc` → `Enter an integer:` then `Input failed.`; no `Read:` output; exit **1**.
+  - immediate EOF → `Enter an integer:` then `Input failed.`; no `Read:` output; exit **1**.
+- F `study_time.exe` after the adjusted warnings-clean build:
+  - `135` → `Study: 2 h 15 min`; exit **0**.
+  - `60` → `Study: 1 h 0 min`; exit **0**.
+  - `0` → `Study: 0 h 0 min`; exit **0**.
+  - `1440` → `Study: 24 h 0 min`; exit **0**.
+  - `abc` → `Input failed.`; no calculation result; exit **1**.
+  - immediate EOF → `Input failed.`; no calculation result; exit **1**.
+- EOF was actually tested by starting each Windows process with redirected standard input and immediately closing its stdin stream. It was not inferred.
+- All runtime stdout and process exit statuses matched the manuscript expectations.
+
+### Verification conclusion
+
+- MSVC gate: **PASS**.
+- Existing Chapter 3 claims about `/std:c17`, `/W4`, C4996, `_CRT_SECURE_NO_WARNINGS`, checked `scanf` return values, stdout, and exit values remain truthful.
+- Reader-facing Chapter 3 body required **no factual correction**. Only hidden metadata was updated, so the manuscript status is now **Draft 2 (manager final approval pending)**.
+- GCC evidence remains unchanged and valid; it was not rerun.
+- Chapter 1–2 files remain untouched and APPROVED.
+- Manager cleanup in `docs/phase1/01-textbook-outline.md` and `docs/phase1/03-crosswalk.md` was not changed.
+- No Chapter 3 solution file or Chapter 4 work was created.
+- Next exact task: **Manager final approval of Chapter 3**.
