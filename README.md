@@ -2,7 +2,7 @@
 
 > **C 언어 입문부터 포인터·메모리, 표준 라이브러리, 자료구조, 알고리즘, 실전 프로젝트까지 한 흐름으로 연결하는 개인 종합 교재 제작 프로젝트**
 
-![Status](https://img.shields.io/badge/status-Chapter%203%20Draft%202-yellow)
+![Status](https://img.shields.io/badge/status-Chapter%203%20Approved-brightgreen)
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Roadmap](https://img.shields.io/badge/roadmap-active-brightgreen)
 
@@ -44,7 +44,7 @@ flowchart TD
 ### 현재 위치
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
-현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료** 상태다. **Chapter 3 Draft 2는 내용 검토를 통과했고 MSVC 실측 검증까지 완료되어 관리자 최종 승인만 남아 있다.**
+현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료**, **Chapter 3 본문도 관리자 최종 승인 완료** 상태다.
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -79,8 +79,8 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 Draft 2 content-reviewed / MSVC verification complete / manager final approval pending
-최종 승인된 Chapter: 2
+본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 manuscript approved / Chapter 3 solutions not started
+최종 승인된 Chapter: 3
 ```
 
 **Chapter별 본문 집필을 시작했다.** 준비 체크포인트의 8 / 8을 전체 교재의 완성률로 환산하지 않는다. 초안 작성과 최종 승인은 구분하여 관리한다.
@@ -91,7 +91,7 @@ START
 | [Chapter 1. 정답·상세해설](book/solutions/part1/chapter01-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 2. 프로그램 작성 과정과 개발 도구](book/part1/chapter02-program-development-tools.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 2. 정답·상세해설](book/solutions/part1/chapter02-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
-| [Chapter 3. C 프로그램 구성요소](book/part1/chapter03-c-program-components.md) | Draft 2 내용 검토 통과 / MSVC 검증 완료 / 관리자 최종 승인 대기 | 관리자 최종 승인 |
+| [Chapter 3. C 프로그램 구성요소](book/part1/chapter03-c-program-components.md) | ✅ 관리자 최종 승인 | 정답·상세해설 Draft 작성 |
 | Chapter 4 이후 | 미집필 | 이전 장 승인 후 순차 집필 |
 
 | Phase | 내용 | 상태 |
@@ -446,6 +446,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Chapter 3 관리자 최종 승인.**
+**다음 작업: Chapter 3 정답·상세해설 Draft 1 작성.**
 
-Chapter 1–2 본문과 정답·상세해설은 모두 APPROVED이며 변경하지 않았다. Chapter 3 Draft 2는 관리자 내용 검토를 통과했고, 완전한 예제 6개의 MSVC `/std:c17 /W4` 검증과 C4996 baseline/adjusted 검증까지 완료했다. 승인된 Chapter 수는 아직 2이며, Chapter 3은 관리자 최종 승인 전이다. Chapter 3 정답·해설과 Chapter 4는 시작하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
+Chapter 1–2 본문과 정답·상세해설은 모두 APPROVED이고, Chapter 3 본문도 관리자 최종 승인 완료했다. 완전한 예제 6개의 GCC/MSVC 이중 검증과 C4996 baseline/adjusted 검증도 완료됐다. Chapter 3 정답·해설과 Chapter 4는 아직 시작하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
