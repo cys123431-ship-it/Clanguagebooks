@@ -2,7 +2,7 @@
 
 > **C 언어 입문부터 포인터·메모리, 표준 라이브러리, 자료구조, 알고리즘, 실전 프로젝트까지 한 흐름으로 연결하는 개인 종합 교재 제작 프로젝트**
 
-![Status](https://img.shields.io/badge/status-Chapter%203%20Approved-brightgreen)
+![Status](https://img.shields.io/badge/status-Chapter%204%20Draft%201-yellow)
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Roadmap](https://img.shields.io/badge/roadmap-active-brightgreen)
 
@@ -45,6 +45,7 @@ flowchart TD
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
 현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료**, **Chapter 3 본문도 관리자 최종 승인 완료** 상태다. **Chapter 3 정답·상세해설도 관리자 최종 승인 완료되어 Chapter 3 전체가 완료 상태다.**
+**Chapter 4 「변수와 자료형」 본문은 Draft 1 / 관리자 검토 대기** 상태다. 완성 예제 7개는 GCC와 실제 Windows/MSVC에서 모두 경고·오류 없이 검증했다.
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -79,7 +80,7 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 complete / Chapter 4 not started
+본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 complete / Chapter 4 Draft 1 (manager review pending)
 최종 승인된 Chapter: 3
 ```
 
@@ -93,7 +94,8 @@ START
 | [Chapter 2. 정답·상세해설](book/solutions/part1/chapter02-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 3. C 프로그램 구성요소](book/part1/chapter03-c-program-components.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 3. 정답·상세해설](book/solutions/part1/chapter03-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
-| Chapter 4 이후 | 미집필 | Chapter 4 원고 집필 |
+| [Chapter 4. 변수와 자료형](book/part1/chapter04-variables-data-types.md) | 🟡 Draft 1 / 관리자 검토 대기 | Chapter 4 Draft 1 관리자 검토 |
+| Chapter 5 이후 | 미집필 | 후속 Chapter 집필 |
 
 | Phase | 내용 | 상태 |
 |---|---|---|
@@ -447,6 +449,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Chapter 4 「변수와 자료형」 원고 집필.**
+**다음 작업: Manager review of Chapter 4 Draft 1.**
 
-Chapter 1–2 본문과 정답·상세해설은 모두 APPROVED이고, Chapter 3 본문도 관리자 최종 승인 완료했다. 본문 예제 6개의 GCC/MSVC 이중 검증과 C4996 baseline/adjusted 검증도 완료됐다. Chapter 3 정답·상세해설은 관리자 내용 검토와 완성 프로그램 2개의 GCC/MSVC 검증을 모두 통과하여 최종 승인 완료했다. MSVC 기본 빌드에서 C4996을 확인한 뒤, `/W4`를 유지하고 `/D_CRT_SECURE_NO_WARNINGS`를 적용한 빌드는 모두 경고·오류 0개였고, 정상·잘못된 입력·실제 EOF에 대한 12건의 MSVC 실행 검사도 통과했다. Chapter 4는 아직 시작하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
+Chapter 1–3 본문과 정답·상세해설은 모두 APPROVED이며 이번 작업에서 변경하지 않았다. Chapter 4 본문 Draft 1은 14개 연습문제와 개념적 메모리 도식을 포함한다. 예제 7개는 GCC 13.3.0 및 Windows의 Visual Studio Enterprise 2026 / MSVC 19.51.36257에서 C17 경고 설정으로 모두 통과했다. 실제 자료형 크기·한계의 환경 차이를 기록했으며, 이번 예제에는 `scanf`나 경고 억제 설정이 없다. 최종 승인된 Chapter 수는 3이고, Chapter 4 정답·상세해설과 Chapter 5 본문은 작성하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.

@@ -15,8 +15,9 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - Chapter 2 solution file: **APPROVED (manager final approval 2026-09-30)**.
 - Exact solution path: `book/solutions/part1/chapter02-solutions.md`. Exercises 1–8 are all covered; Exercise 8 remains 〔심화·도전〕.
 - Chapter 3 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter03-c-program-components.md`). All six chapter examples passed GCC and MSVC verification; the approved manuscript remains unchanged.
-- Chapter 3 solution file: **Draft 2 / manager final approval pending** (`book/solutions/part1/chapter03-solutions.md`). Manager content review and GCC/MSVC verification passed; exercises 1–12 covered and #12 retains 〔심화·도전〕. Both exact complete solution programs passed MSVC adjusted builds and all 12 runtime checks. Reader-facing solution body unchanged.
-- Final-approved chapters: **3**. Chapter 4 has not started.
+- Chapter 3 solution file: **APPROVED (manager final approval 2026-10-01)** (`book/solutions/part1/chapter03-solutions.md`). Content review and GCC/MSVC verification passed; exercises 1–12 covered. Approval history below retained; approved file unchanged in Chapter 4 work.
+- Chapter 4 manuscript: **Draft 1 / manager review pending** (`book/part1/chapter04-variables-data-types.md`), architecture Part 2. Seven complete examples passed actual GCC/MSVC builds and executions; 14 original exercises. Details in the Chapter 4 section below.
+- Final-approved chapters: **3**. No Chapter 4 solutions or Chapter 5 work.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Chapter 1 Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
@@ -33,13 +34,14 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - `book/solutions/part1/chapter01-solutions.md` — Chapter 1 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
 - `book/solutions/part1/chapter02-solutions.md` — Chapter 2 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
 - `book/part1/chapter03-c-program-components.md` — Chapter 3 APPROVED manuscript: 12 original exercises; all six examples verified on GCC and MSVC.
-- `book/solutions/part1/chapter03-solutions.md` — Chapter 3 solution Draft 2: full answers + detailed explanations for exercises 1–12; content review and dual-toolchain verification passed, manager final approval pending.
-- README.md — checkpoint 8 checked, setup/kickoff progress 8/8; Chapters 1–2 manuscript+solutions APPROVED; Chapter 3 manuscript APPROVED, solutions Draft 2 / manager final approval pending; final-approved chapters = 3.
+- `book/solutions/part1/chapter03-solutions.md` — Chapter 3 APPROVED solutions: exercises 1–12; content review and dual-toolchain verification passed.
+- `book/part1/chapter04-variables-data-types.md` — Chapter 4 Draft 1 manuscript: §4.1–4.5, required boxes, seven original complete programs, conceptual memory diagram, 14 exercises; manager review pending.
+- README.md — setup/kickoff 8/8; Chapters 1–3 manuscript+solutions APPROVED; Chapter 4 Draft 1 / manager review pending; final-approved chapters = 3.
 
 ## Incomplete files
 
 - Chapter 1 manuscript and Chapter 1 solution manuscript are both manager-approved.
-- Chapter 2 manuscript and solutions and Chapter 3 manuscript are **APPROVED**. Chapter 3 solutions are **Draft 2 / manager final approval pending**; content review and both GCC/MSVC gates are complete. Chapter 4 has not started.
+- Chapters 1–3 manuscripts and solutions are **APPROVED**. Chapter 4 Draft 1 awaits manager review; its GCC/MSVC verification is complete. No Chapter 4 solutions or Chapter 5 body started.
 - No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
@@ -123,7 +125,7 @@ UNRESOLVED:
 
 ## Next exact task
 
-**Manager final approval of Chapter 3 solutions.**
+**Manager review of Chapter 4 Draft 1.**
 
 ## Draft 1 self-review and checks
 
@@ -140,7 +142,8 @@ UNRESOLVED:
 - Overall content percentage is not calculated from that milestone. Chapters 1–3 manuscripts are manager-approved; final-approved chapters = 3.
 - Chapter 1 solution file is APPROVED; exercises 1–8 are covered.
 - Chapter 2 manuscript and solution file are APPROVED; solutions cover exercises 1–8.
-- Chapter 3 manuscript is APPROVED. Its six examples passed GCC and MSVC. Chapter 3 solutions are Draft 2 / manager final approval pending; the new solution programs passed GCC and actual MSVC baseline/adjusted/runtime verification.
+- Chapter 3 manuscript and solutions are APPROVED; existing verification evidence remains intact.
+- Chapter 4 manuscript is Draft 1 / manager review pending, with seven dual-toolchain verified examples and 14 exercises. Chapter 4 solutions are not created.
 - PHASE 1 learner-outcome completion criteria remain outstanding; PHASE 2 remains planned.
 
 ## Last known commit
@@ -162,9 +165,9 @@ UNRESOLVED:
 
 ## Notes for next AI
 
-- Keep architecture-analysis documents compact; manuscript prose belongs in `book/part1/chapter01-programming-concepts.md`.
-- Chapters 1–2 manuscripts and solutions and the Chapter 3 manuscript are APPROVED and locked. Chapter 3 solutions are Draft 2 / manager final approval pending; content review and GCC/MSVC verification passed. Do not start Chapter 4 before their final manager approval.
-- Dated chapter sections below preserve historical statuses; Current status and the final Chapter 3 section describe the present state.
+- Architecture is binding. Chapter 4 belongs to Part 2; its explicit task-specified file path remains `book/part1/chapter04-variables-data-types.md`. No architecture redesign was needed.
+- Chapters 1–3 manuscripts and solutions are APPROVED and locked. Next is manager review of Chapter 4 Draft 1. Do not create Chapter 4 solutions before its manuscript approval or start Chapter 5 in this task.
+- Dated sections below preserve historical statuses; Current status and the final Chapter 4 section describe the present state.
 - Push target: origin main. Repo has single branch main.
 
 
@@ -674,3 +677,240 @@ EOF was **actually tested**, not inferred: each Windows process was started thro
 - Final-approved chapters: 3.
 - Chapter 4: not started.
 - Next exact task: Chapter 4 manuscript writing (`Chapter 4 — 변수와 자료형`).
+
+
+## Chapter 4 Draft 1 — 변수와 자료형
+
+### Status and scope (2026-10-01)
+
+- Starting repository state verified before edits: clean `main`, HEAD/origin main `2cdfd6706a9fb9a5b1d154086bf534751f84a062`; `git status`, branch and last eight commits inspected. Actual remote HEAD rechecked rather than assuming the supplied SHA.
+- Required README, approved Chapter 3 manuscript, HANDOFF and phase1 documents 01–07 read completely. Architecture remains binding and unchanged; no blocking contradiction found.
+- Created `book/part1/chapter04-variables-data-types.md`: **Chapter 4 Draft 1 / manager review pending**. Architecture Part **2** is recorded in hidden metadata; the file follows the explicit path in this task. No duplicate Part 2 path was created.
+- Retained primary textbook sequence §4.1–4.5. Added original cumulative examples, conceptual memory boxes, measured-size table, mistakes, seven summary points and **14 original exercises** with short hints only.
+- All six approved Chapters 1–3 manuscript/solution files remain byte-for-byte unchanged, including their approval metadata. Current-status sections above now reflect the already recorded Chapter 3 solution approval; dated historical records remain intact.
+- Final-approved chapter count remains **3**. PHASE 1 preparation/writing kickoff remains **8 / 8**. No whole-book percentage, Chapter 4 approval, Chapter 4 solution file, Chapter 5 body, PDF/DOCX manuscript or architecture changes.
+
+### Original sources actually consulted
+
+Page numbers are 1-based. Source PDFs and renderings stayed outside the repository.
+
+- Primary source: `c언어 압축 (1).pdf`, 750-page image-only original. Cover visually verifies **쉽게 풀어쓴 C언어 Express, 개정4판, Visual Studio 2022, 천인국**.
+- Every Chapter 4 page was rendered locally with PyMuPDF and visually inspected: **book pp.124–162 = PDF pp.126–164**, inclusive (39 pages). Covers PDF pp.1–2 also inspected. Rendered two-by-two contact sheets were read at original resolution.
+
+| Primary area | Book pages | PDF pages | Use |
+|---|---|---|---|
+| §4.1 variables/constants | 124–127 | 126–129 | Named storage, declaration/assignment; original prose |
+| §4.2 data types/sizeof | 127–129 | 129–131 | Type categories, storage size; size_t/%zu correction |
+| §4.3 integer types/constants/representation | 129–142 | 131–144 | Type family, signed/unsigned, limits, suffixes, symbolic constants; bit-layout detail deferred |
+| §4.4 floating point | 142–149 | 144–151 | Range vs precision, literal suffixes, output, approximation |
+| §4.5 characters | 149–155 | 151–157 | Character codes, ASCII context, escapes; plain-char signedness corrected |
+| Lab / MiniProject | 156–157 | 158–159 | Initialization discipline and integrated calculation goals only; no source code/contexts reproduced |
+| Q&A / Summary / Exercise / Programming | 158–162 | 160–164 | Coverage and originality check; no exercise wording copied |
+
+- Verified K&R **Second Edition**, Brian W. Kernighan and Dennis M. Ritchie, using the available file **`C Programming Language - 2nd Edition (OCR).pdf`**, **238 PDF pages**. Title and authors visually confirmed on PDF p.1; contents p.2 inspected. This is a reflowed/OCR copy, not the formerly catalogued 288-page `C_Programming.pdf`; PDF numbers below are not claimed as printed-book/older-scan page numbers.
+
+| K&R section actually consulted | This copy's PDF pages | Use |
+|---|---|---|
+| §1.4 Symbolic Constants | 17 | Meaningful names, #define as replacement; no original temperature example copied |
+| §2.1 Variable Names | 35 | Identifiers, case sensitivity, practical underscore convention |
+| §2.2 Data Types and Sizes | 35–36 | Implementation-dependent sizes, char signedness, limits headers |
+| §2.3 Constants | 36–39 | Integer/floating suffixes, character vs string, enum constant preview |
+| §2.4 Declarations | 39 | Declaration, initialization, const; legacy uninitialized-value wording modernized |
+| §2.7 Type Conversions | 41–44 | Only signed/unsigned caution and printf promotions used; full rules left to Chapter 5 |
+| §4.9 Initialization, scalar introductory portion | 76 end–77 | Initial value and initialization-rule boundary; scope/storage duration/array detail not imported |
+| Appendix B §B.11 Implementation-defined Limits | 234 end heading–235 body | <limits.h>/<float.h> and minimum-vs-actual limits |
+
+K&R text was extracted from its text layer; PDF pp.35,39,235 were also visually inspected to confirm the extraction. No source paragraphs, diagrams, distinctive code or exercises were copied.
+
+### External authoritative checks actually used
+
+Checked 2026-10-01; external references correct/verify the textbook, not replace its teaching skeleton.
+
+- WG14 **N1570**, public C11 committee draft, https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf — clauses for these basic rules retained in the C17 baseline:
+  - §3.4.1/3 and §3.6: implementation-defined/undefined vocabulary and byte;
+  - §5.2.4.2.1–2: minimum integer limits, CHAR_BIT, floating precision/range macros;
+  - §6.2.5p3–10/15: basic types, character properties, corresponding unsigned range/modulo semantics, floating value sets;
+  - §6.3.1.1/1.8 and §6.5.2.2p6: integer conversions and variadic argument promotions (used only as an introductory warning/printf note);
+  - §6.3.2.1p1–2, §6.7.3 and §6.7.9p10: modifiable lvalue/const, indeterminate automatic initialization, the specific uninitialized read;
+  - §6.4.4–5, §6.6p6, §6.7.2.2: literal types, suffixes, escapes, string distinction, integer constant expressions and enum constants;
+  - §6.5p5 and §6.5.3.4p2/4/5: signed-overflow UB, sizeof bytes/char=1/size_t;
+  - §7.18, §7.19, §7.20.1.1 and §7.21.6.1: C17-era bool macros, size_t declaration, optional exact-width types, printf formats including z length modifier.
+- Microsoft Learn, **Storage of basic types**, https://learn.microsoft.com/en-us/cpp/c-language/storage-of-basic-types?view=msvc-170 — implementation-specific MSVC size table used as a cross-check; independent actual measurements below are the evidence for the manuscript table. No C++-only type rules imported.
+- GCC manual, **Warning Options**, https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html — checked -Wall/-Wextra and format diagnostics. Compiler version actually used is recorded below.
+- N2176 PDF parsing and the Microsoft /std page could not be fetched through web retrieval; neither is listed as a successfully read reference or used to fabricate verification. Actual C17 compiler invocations are recorded below.
+
+### Required technical corrections and depth boundaries
+
+- **B4:** required box uses indeterminate values and initialization-before-read; no meaningful "garbage value" output and no unsafe run. Static-storage rules only forward-referenced to Chapter 9.
+- **C1:** required size_t/%zu box, explicit <stddef.h>, actual size experiment, char=1 versus CHAR_BIT distinction.
+- **C2:** required introductory signed/unsigned comparison warning; full conversion laws remain Chapter 5.
+- **C3:** signed overflow is undefined, shown only as non-executable warning material. The only wrap experiment uses unsigned int + 1U; unsigned is not sold as general overflow safety.
+- **C5:** short defined/implementation-defined/undefined vocabulary box; consolidation remains Chapter 24. Source short overflow/narrowing examples were not executed or mechanically labeled as int-overflow UB; the new warning uses INT_MAX + 1 unambiguously.
+- **C7:** const object versus integer constant expression; tiny #define/enum preview. No VLA or pointer const material.
+- **C11:** optional C17 bool/stdint note only; fixed-width types are optional when supported. _Static_assert remains later material.
+- Floating output digits are labeled as tested-environment observations; ASCII is context, not the universal C execution-character-set mandate. Every actual printf format matches its value type.
+
+### Actual toolchains and exact listing verification
+
+- GCC: **Ubuntu 24.04, Linux x86_64**, `gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0`; kernel observed `6.18.44`, host `6ff43ba18237`.
+- MSVC: actual GitHub-hosted **Windows Server 2025**, Python reports `Windows-2025Server-10.0.26100-SP0`; image `win25-vs2026`, image version `20260922.246.2`.
+- Installed IDE: **Visual Studio Enterprise 2026 18.10.1**, installation/build `18.10.12210.168`, not VS2022. Compiler banner: **cl.exe 19.51.36257 for x64**; linker `14.51.36257.0`. VsDevCmd initialized x64 host/target.
+- VS2022 remains the book's primary teaching environment; this task honestly records the actual installed MSVC edition. No VS2022 run or UI click verification is claimed.
+- Each complete listing A–G was extracted from the final Markdown as UTF-8 with LF plus terminal newline. MSVC received the identical bytes through the temporary workflow's embedded Base64 data. SHA-256 identity was checked against both toolchain results after the editorial pass.
+- All **7 GCC builds and 7 MSVC builds PASS**, each **0 warnings / 0 errors**, all **14 executions exit 0**, stderr empty. Full stdout was captured and reviewed; five environment-independent outputs match exactly between toolchains. Size and long-range differences are intentional.
+- No scanf in these examples: no C4996, no _CRT_SECURE_NO_WARNINGS define, no scanf_s, no warning suppression, no lowered warning level. No uninitialized read, signed overflow or format mismatch was run.
+
+| Example / exact extracted file | GCC command actually run | MSVC command actually run | Build / warnings / errors / runtime exit (both) |
+|---|---|---|---|
+| A `rack_stock.c` | `gcc -std=c17 -Wall -Wextra rack_stock.c -o rack_stock` | `cl /std:c17 /W4 rack_stock.c /Fe:rack_stock.exe /Fo:rack_stock.obj` | PASS / 0 / 0 / 0 |
+| B `type_sizes.c` | `gcc -std=c17 -Wall -Wextra type_sizes.c -o type_sizes` | `cl /std:c17 /W4 type_sizes.c /Fe:type_sizes.exe /Fo:type_sizes.obj` | PASS / 0 / 0 / 0 |
+| C `integer_records.c` | `gcc -std=c17 -Wall -Wextra integer_records.c -o integer_records` | `cl /std:c17 /W4 integer_records.c /Fe:integer_records.exe /Fo:integer_records.obj` | PASS / 0 / 0 / 0 |
+| D `integer_limits.c` | `gcc -std=c17 -Wall -Wextra integer_limits.c -o integer_limits` | `cl /std:c17 /W4 integer_limits.c /Fe:integer_limits.exe /Fo:integer_limits.obj` | PASS / 0 / 0 / 0 |
+| E `unsigned_cycle.c` | `gcc -std=c17 -Wall -Wextra unsigned_cycle.c -o unsigned_cycle` | `cl /std:c17 /W4 unsigned_cycle.c /Fe:unsigned_cycle.exe /Fo:unsigned_cycle.obj` | PASS / 0 / 0 / 0 |
+| F `floating_reading.c` | `gcc -std=c17 -Wall -Wextra floating_reading.c -o floating_reading` | `cl /std:c17 /W4 floating_reading.c /Fe:floating_reading.exe /Fo:floating_reading.obj` | PASS / 0 / 0 / 0 |
+| G `character_label.c` | `gcc -std=c17 -Wall -Wextra character_label.c -o character_label` | `cl /std:c17 /W4 character_label.c /Fe:character_label.exe /Fo:character_label.obj` | PASS / 0 / 0 / 0 |
+
+Listing SHA-256 values (same on GCC and MSVC):
+
+| File | SHA-256 |
+|---|---|
+| `rack_stock.c` | `61d14ff73869c996407cd7a114cef14a42051eacb65605d67130e7b59bb62f43` |
+| `type_sizes.c` | `ecc2f196ad34b135fa211a7c7f016e2e4dfe8668f4720dc5a0c01c9e883622d9` |
+| `integer_records.c` | `6afbb189f3f71dbac5e3ff176b7f78cc9937609e5d3cbed222c61903029764fe` |
+| `integer_limits.c` | `8f466dff15d79c6c14021b0f5f50b8454ee7945aaeced4234ab3908a5a11a66a` |
+| `unsigned_cycle.c` | `ff1545e9a5f92b8f8f67ad29f2d48476934415aacbc91e9dbf89316ea1c97e4f` |
+| `floating_reading.c` | `e054a2c9d4d7ef4f6a559954cbd98bd1eef7af40ef579eaf3eea29491f4447cf` |
+| `character_label.c` | `46efe372a781cbaabef4e1e9d52b347b5512fabbe7ecd83003000d656bab181f` |
+
+### Runtime stdout and observed portability measurements
+
+The following are actual stdout records; code fences preserve tabs/line breaks. Every execution returned 0. No stdin was needed.
+
+**A — `rack_stock.c`**
+
+GCC and MSVC, identical:
+
+```text
+Stock: 20
+Mass: 2.500 kg
+```
+
+**B — `type_sizes.c`**
+
+GCC:
+
+```text
+char: 1
+short: 2
+int: 4
+long: 8
+long long: 8
+float: 4
+double: 8
+long double: 16
+temperature: 8
+CHAR_BIT: 8
+```
+
+MSVC:
+
+```text
+char: 1
+short: 2
+int: 4
+long: 4
+long long: 8
+float: 4
+double: 8
+long double: 8
+temperature: 8
+CHAR_BIT: 8
+```
+
+**C — `integer_records.c`**
+
+GCC and MSVC, identical:
+
+```text
+Adjustment: -3
+Boxes: 24
+Recorded: 1200000 bytes
+Archive: 5000000000 bytes
+```
+
+**D — `integer_limits.c`**
+
+GCC:
+
+```text
+INT_MIN: -2147483648
+INT_MAX: 2147483647
+UINT_MAX: 4294967295
+LONG_MIN: -9223372036854775808
+LONG_MAX: 9223372036854775807
+LLONG_MAX: 9223372036854775807
+```
+
+MSVC:
+
+```text
+INT_MIN: -2147483648
+INT_MAX: 2147483647
+UINT_MAX: 4294967295
+LONG_MIN: -2147483648
+LONG_MAX: 2147483647
+LLONG_MAX: 9223372036854775807
+```
+
+**E — `unsigned_cycle.c`**
+
+GCC and MSVC, identical:
+
+```text
+Before: 4294967295
+After: 0
+```
+
+**F — `floating_reading.c`**
+
+GCC and MSVC, identical:
+
+```text
+Sensor: 21.375
+Total (2): 0.30
+Total (17): 0.30000000000000004
+Digits: 6 15
+Maximum: 3.402823e+38 1.797693e+308
+```
+
+**G — `character_label.c`**
+
+GCC and MSVC, identical:
+
+```text
+Label: R
+Code: 82
+Text: R
+Quote: '
+Folder: data\logs
+Message: "Ready"
+Column	Value
+```
+
+Observed byte counts, in order char/short/int/long/long long/float/double/long double:
+
+- MSVC: **1 / 2 / 4 / 4 / 8 / 4 / 8 / 8**.
+- GCC: **1 / 2 / 4 / 8 / 8 / 4 / 8 / 16**.
+- Both CHAR_BIT=8, INT_MIN=-2147483648, INT_MAX=2147483647, UINT_MAX=4294967295, LLONG_MAX=9223372036854775807, FLT_DIG=6, DBL_DIG=15.
+- LONG_MIN/LONG_MAX: MSVC **-2147483648 / 2147483647**; GCC **-9223372036854775808 / 9223372036854775807**.
+- These are measurements of the stated compiler/target pairs, not universal C size/range rules. The reader-facing size table and long portability box are based on these actual observations.
+
+### Temporary infrastructure, review and next task
+
+- Windows verification run: https://github.com/cys123431-ship-it/Clanguagebooks/actions/runs/36814578505 — success; job ID `110216750101`. Logs contain compiler/VS metadata, complete build diagnostics, stdout, exit codes and hashes.
+- Temporary workflow introduced by `0e028f9ecbcfde27a97c2f36523720cf80dce864` and removed by `3b8e5b7e0416edb9a1aa38f7d03ea4208ac375bb`. The removal tree exactly matches original baseline tree `f09c3c101da38b74291355899380d83157be9547`. No temporary workflow/test sources/binaries remain in the final repository. Scratch extraction scripts/results are outside the repository.
+- Entire Chapter 4 reread for Korean clarity, correctness and depth. Every complete listing remains identical to the tested source. No VLA, unexplained global, main-form error, blanket warning suppression or unsafe executable demonstration.
+- **14 exercises:** output prediction #1; find/fix #5/#10; write-from-scratch #8/#14; memory/size diagram #4. #14 retains 〔심화·도전〕. Questions and short hints only; no solutions created.
+- **Unresolved verification: none for the claimed GCC/MSVC configurations.** Exact VS2022 execution was not performed; MSVC edition/version is explicitly recorded. Source OCR/reflow pagination differs from the older K&R catalogue. Types and floating behavior outside these tested environments are not asserted as measurements.
+- Expected final content diff from the starting approved tip: only Chapter 4 manuscript, README and HANDOFF. Final manuscript commit: `docs: draft chapter 4 variables and data types`; obtain SHA from git log. Verify actual remote main after push.
+- Next exact task: **Manager review of Chapter 4 Draft 1**.
