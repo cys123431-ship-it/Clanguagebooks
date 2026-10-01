@@ -4,7 +4,7 @@ Chapter: 4
 Type: Solutions
 Manuscript source: book/part2/chapter04-variables-data-types.md
 Manuscript status: APPROVED
-Solution status: Draft 1 (manager review pending)
+Solution status: APPROVED (manager-approved 2026-10-02)
 Baseline: C17
 Toolchains: MSVC /std:c17 /W4 | GCC -std=c17 -Wall -Wextra
 Coverage: exercises 1–14, all subquestions; #14 retains 〔심화·도전〕.
