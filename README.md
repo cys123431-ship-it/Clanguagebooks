@@ -45,7 +45,7 @@ flowchart TD
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
 현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료**, **Chapter 3 본문도 관리자 최종 승인 완료** 상태다. **Chapter 3 정답·상세해설도 관리자 최종 승인 완료되어 Chapter 3 전체가 완료 상태다.**
-**Chapter 4 「변수와 자료형」 본문은 Draft 1 / 관리자 검토 대기** 상태다. 완성 예제 7개는 GCC와 실제 Windows/MSVC에서 모두 경고·오류 없이 검증했다.
+**Chapter 4 「변수와 자료형」 본문도 관리자 최종 승인 완료** 상태다. 완성 예제 7개는 GCC와 실제 Windows/MSVC에서 모두 경고·오류 없이 검증했다.
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -80,8 +80,8 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 complete / Chapter 4 Draft 1 (manager review pending)
-최종 승인된 Chapter: 3
+본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 complete / Chapter 4 manuscript approved / Chapter 4 solutions not started
+최종 승인된 Chapter: 4
 ```
 
 **Chapter별 본문 집필을 시작했다.** 준비 체크포인트의 8 / 8을 전체 교재의 완성률로 환산하지 않는다. 초안 작성과 최종 승인은 구분하여 관리한다.
@@ -94,7 +94,7 @@ START
 | [Chapter 2. 정답·상세해설](book/solutions/part1/chapter02-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 3. C 프로그램 구성요소](book/part1/chapter03-c-program-components.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 3. 정답·상세해설](book/solutions/part1/chapter03-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
-| [Chapter 4. 변수와 자료형](book/part1/chapter04-variables-data-types.md) | 🟡 Draft 1 / 관리자 검토 대기 | Chapter 4 Draft 1 관리자 검토 |
+| [Chapter 4. 변수와 자료형](book/part2/chapter04-variables-data-types.md) | ✅ 관리자 최종 승인 | 정답·상세해설 Draft 작성 |
 | Chapter 5 이후 | 미집필 | 후속 Chapter 집필 |
 
 | Phase | 내용 | 상태 |
@@ -449,6 +449,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Manager review of Chapter 4 Draft 1.**
+**다음 작업: Chapter 4 정답·상세해설 Draft 1 작성.**
 
-Chapter 1–3 본문과 정답·상세해설은 모두 APPROVED이며 이번 작업에서 변경하지 않았다. Chapter 4 본문 Draft 1은 14개 연습문제와 개념적 메모리 도식을 포함한다. 예제 7개는 GCC 13.3.0 및 Windows의 Visual Studio Enterprise 2026 / MSVC 19.51.36257에서 C17 경고 설정으로 모두 통과했다. 실제 자료형 크기·한계의 환경 차이를 기록했으며, 이번 예제에는 `scanf`나 경고 억제 설정이 없다. 최종 승인된 Chapter 수는 3이고, Chapter 4 정답·상세해설과 Chapter 5 본문은 작성하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
+Chapter 1–3 본문과 정답·상세해설은 모두 APPROVED이고, Chapter 4 본문도 관리자 최종 승인 완료했다. Chapter 4는 승인 아키텍처의 PART 2 시작 장이므로 원고 경로를 `book/part2/chapter04-variables-data-types.md`로 정리했다. 예제 7개는 GCC 13.3.0 및 Windows의 Visual Studio Enterprise 2026 / MSVC 19.51.36257에서 C17 경고 설정으로 모두 통과했다. 실제 자료형 크기·한계의 환경 차이를 기록했으며, 이번 예제에는 `scanf`나 경고 억제 설정이 없다. 최종 승인된 Chapter 수는 4이고, Chapter 4 정답·상세해설과 Chapter 5 본문은 아직 작성하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
