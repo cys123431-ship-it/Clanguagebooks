@@ -4,7 +4,7 @@ Chapter: 3
 Type: Solutions
 Manuscript source: book/part1/chapter03-c-program-components.md
 Manuscript status: APPROVED
-Solution status: Draft 2 (manager content review passed; GCC/MSVC verification passed; manager final approval pending)
+Solution status: APPROVED (manager-approved 2026-10-01)
 Baseline: C17
 Toolchains: MSVC /std:c17 /W4 | GCC -std=c17 -Wall -Wextra
 Policy: Separate full solutions; student manuscript retains questions + short hints only.
