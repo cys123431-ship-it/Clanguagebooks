@@ -55,9 +55,12 @@ jobs:
             $errors=([regex]::Matches($buildText,'(?im)\b(?:fatal\s+)?error\s+(?:C|LNK)\d+\b')).Count
             Write-Host "BUILD_RESULT|$src|exit=$buildExit|warnings=$warnings|errors=$errors"
             if($buildExit -ne 0 -or $warnings -ne 0 -or $errors -ne 0){throw "Build failed or not warnings-clean: $src"}
-            $p = Start-Process -FilePath ".\$exe" -NoNewWindow -PassThru -RedirectStandardOutput "$exe.out" -RedirectStandardError "$exe.err" -Wait
-            $stdout=[IO.File]::ReadAllText("$exe.out") -replace "`r`n","`n"
-            $stderr=[IO.File]::ReadAllText("$exe.err") -replace "`r`n","`n"
+            $stdoutPath = Join-Path (Get-Location) "$exe.out"
+            $stderrPath = Join-Path (Get-Location) "$exe.err"
+            $exePath = Join-Path (Get-Location) $exe
+            $p = Start-Process -FilePath $exePath -NoNewWindow -PassThru -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath -Wait
+            $stdout=[IO.File]::ReadAllText($stdoutPath) -replace "`r`n","`n"
+            $stderr=[IO.File]::ReadAllText($stderrPath) -replace "`r`n","`n"
             Write-Host "RUN_RESULT|$src|exit=$($p.ExitCode)|stdout=$($stdout.Replace("`n","<LF>"))|stderr=$($stderr.Replace("`n","<LF>"))"
             if($p.ExitCode -ne 0){throw "Runtime exit mismatch for $src"}
             if($stderr -ne ""){throw "Unexpected stderr for $src"}
