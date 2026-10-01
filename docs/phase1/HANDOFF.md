@@ -914,3 +914,19 @@ Observed byte counts, in order char/short/int/long/long long/float/double/long d
 - **Unresolved verification: none for the claimed GCC/MSVC configurations.** Exact VS2022 execution was not performed; MSVC edition/version is explicitly recorded. Source OCR/reflow pagination differs from the older K&R catalogue. Types and floating behavior outside these tested environments are not asserted as measurements.
 - Expected final content diff from the starting approved tip: only Chapter 4 manuscript, README and HANDOFF. Final manuscript commit: `docs: draft chapter 4 variables and data types`; obtain SHA from git log. Verify actual remote main after push.
 - Next exact task: **Manager review of Chapter 4 Draft 1**.
+
+## Chapter 4 manager final approval
+
+- Date: 2026-10-01
+- Approved manuscript: `book/part2/chapter04-variables-data-types.md`
+- Manager review result: **APPROVED**. Draft 1 was reviewed end-to-end against the approved Chapter 4 scope, gap analysis, Chapter 3 continuity, and Chapter 5 boundary.
+- Content checks passed: variable/declaration/initialization/assignment distinctions; accurate `const` treatment; `sizeof`/`size_t`/`%zu`; implementation-dependent type sizes; `<limits.h>`/`<float.h>` use; signed/unsigned preview; signed-overflow UB; unsigned modulo behavior; safe treatment of uninitialized automatic variables; floating approximation; `char` signedness; character-vs-string literals; escape sequences; optional C17 `bool`/`stdint.h` note.
+- Toolchain gate passed before approval: 7 complete examples verified warnings-clean on GCC 13.3.0 (`-std=c17 -Wall -Wextra`) and MSVC 19.51.36257 (`/std:c17 /W4`), with runtime output and portability measurements recorded above.
+- Exercise gate passed: 14 original exercises including output prediction, find/fix, write-from-scratch, and memory/size diagram work; no Chapter 4 solutions were created.
+- Manager path correction: Chapter 4 is the first chapter of approved **PART 2**, so the manuscript was moved from the task-prompt's mistaken `book/part1/...` path to `book/part2/chapter04-variables-data-types.md`. This is a manager correction, not an authoring-agent error.
+- Reader-facing Chapter 4 body required no substantive content rewrite during manager review.
+- Result: **APPROVED**.
+- Final-approved chapters: 4.
+- Chapter 4 solutions: not yet created.
+- Chapter 5: not started.
+- Next exact task: create `book/solutions/part2/chapter04-solutions.md` Draft 1, then manager review before Chapter 5.
