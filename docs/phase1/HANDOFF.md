@@ -659,3 +659,18 @@ EOF was **actually tested**, not inferred: each Windows process was started thro
 - Temporary `.github/workflows/ch3-solutions-msvc-verify.yml` removed before finalization. Extracted sources, scripts, executables and JSON/log copies are outside the final repository tree. Only the three requested manuscript/status files differ from the verified starting state; cleanup removes the temporary workflow introduced solely for this run.
 - README now shows content review and both verification gates complete, manager final approval pending. Final-approved chapter count remains **3**; PHASE 1 preparation/writing kickoff remains **8 / 8**.
 - Next exact task: **Manager final approval of Chapter 3 solutions**.
+
+## Chapter 3 solution manager final approval
+
+- Date: 2026-10-01
+- Approved solution file: `book/solutions/part1/chapter03-solutions.md`
+- Coverage: exercises 1–12, including every subquestion; Exercise 12 retained as `〔심화·도전〕`.
+- Manager content review had already passed with no substantive rewrite required.
+- Verification gate: GCC and MSVC both verified the two new complete solution programs (`printing_ticket.c`, `two_study_records.c`).
+- MSVC baseline reproduced C4996 as warnings; warnings-clean adjusted builds with `/D_CRT_SECURE_NO_WARNINGS` + `/W4` passed with 0 warnings/0 errors.
+- Normal, invalid-first, invalid-second, and actual EOF runtime paths all matched the solution manuscript; 12/12 MSVC runtime checks passed.
+- Reader-facing solution body required no factual correction after verification.
+- Result: **APPROVED**. Chapter 3 manuscript + solutions are both complete for the current writing stage.
+- Final-approved chapters: 3.
+- Chapter 4: not started.
+- Next exact task: Chapter 4 manuscript writing (`Chapter 4 — 변수와 자료형`).
