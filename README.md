@@ -44,7 +44,7 @@ flowchart TD
 ### 현재 위치
 
 **PHASE 1 아키텍처 확정과 본문 집필 착수 체크포인트는 8 / 8로 완료했다.**
-현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료**, **Chapter 3 본문도 관리자 최종 승인 완료** 상태다. **Chapter 3 정답·상세해설 Draft 2는 관리자 내용 검토와 GCC/MSVC 실측 검증을 통과했으며 관리자 최종 승인을 기다리고 있다.**
+현재는 Chapter별 원고 제작 단계이며 **Chapter 1과 Chapter 2는 본문·정답·상세해설까지 관리자 최종 승인 완료**, **Chapter 3 본문도 관리자 최종 승인 완료** 상태다. **Chapter 3 정답·상세해설도 관리자 최종 승인 완료되어 Chapter 3 전체가 완료 상태다.**
 이는 PHASE 1의 C 본문 전체 완성이나 PHASE 2로의 자동 전환을 뜻하지 않는다.
 
 ```text
@@ -79,7 +79,7 @@ START
 
 ```text
 전체 콘텐츠 완성률: 미산정
-본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 manuscript approved / Chapter 3 solutions Draft 2 content-reviewed / GCC+MSVC verified / manager final approval pending
+본문 현황: Chapter 1 complete / Chapter 2 complete / Chapter 3 complete / Chapter 4 not started
 최종 승인된 Chapter: 3
 ```
 
@@ -92,8 +92,8 @@ START
 | [Chapter 2. 프로그램 작성 과정과 개발 도구](book/part1/chapter02-program-development-tools.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 2. 정답·상세해설](book/solutions/part1/chapter02-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
 | [Chapter 3. C 프로그램 구성요소](book/part1/chapter03-c-program-components.md) | ✅ 관리자 최종 승인 | 완료 |
-| [Chapter 3. 정답·상세해설](book/solutions/part1/chapter03-solutions.md) | 🟡 Draft 2 내용 검토·GCC/MSVC 검증 통과 | 관리자 최종 승인 |
-| Chapter 4 이후 | 미집필 | 이전 장 승인 후 순차 집필 |
+| [Chapter 3. 정답·상세해설](book/solutions/part1/chapter03-solutions.md) | ✅ 관리자 최종 승인 | 완료 |
+| Chapter 4 이후 | 미집필 | Chapter 4 원고 집필 |
 
 | Phase | 내용 | 상태 |
 |---|---|---|
@@ -447,6 +447,6 @@ flowchart LR
 
 ## 📌 Next Action
 
-**다음 작업: Chapter 3 정답·상세해설 관리자 최종 승인.**
+**다음 작업: Chapter 4 「변수와 자료형」 원고 집필.**
 
-Chapter 1–2 본문과 정답·상세해설은 모두 APPROVED이고, Chapter 3 본문도 관리자 최종 승인 완료했다. 본문 예제 6개의 GCC/MSVC 이중 검증과 C4996 baseline/adjusted 검증도 완료됐다. 새 Chapter 3 정답·상세해설 Draft 2는 관리자 내용 검토와 완성 프로그램 2개의 GCC/MSVC 검증을 통과했다. MSVC 기본 빌드에서 C4996을 확인한 뒤, `/W4`를 유지하고 `/D_CRT_SECURE_NO_WARNINGS`를 적용한 빌드는 모두 경고·오류 0개였다. 정상·잘못된 입력·실제 EOF에 대한 12건의 MSVC 실행 검사도 통과했다. 해설 본문은 유지했으며 최종 승인은 대기 중이다. Chapter 4는 시작하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
+Chapter 1–2 본문과 정답·상세해설은 모두 APPROVED이고, Chapter 3 본문도 관리자 최종 승인 완료했다. 본문 예제 6개의 GCC/MSVC 이중 검증과 C4996 baseline/adjusted 검증도 완료됐다. Chapter 3 정답·상세해설은 관리자 내용 검토와 완성 프로그램 2개의 GCC/MSVC 검증을 모두 통과하여 최종 승인 완료했다. MSVC 기본 빌드에서 C4996을 확인한 뒤, `/W4`를 유지하고 `/D_CRT_SECURE_NO_WARNINGS`를 적용한 빌드는 모두 경고·오류 0개였고, 정상·잘못된 입력·실제 EOF에 대한 12건의 MSVC 실행 검사도 통과했다. Chapter 4는 아직 시작하지 않았다. 상세 검증 기록은 `docs/phase1/HANDOFF.md`에 있다.
