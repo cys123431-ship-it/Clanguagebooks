@@ -16,8 +16,9 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - Exact solution path: `book/solutions/part1/chapter02-solutions.md`. Exercises 1–8 are all covered; Exercise 8 remains 〔심화·도전〕.
 - Chapter 3 manuscript: **APPROVED (manager final approval 2026-09-30)** (`book/part1/chapter03-c-program-components.md`). All six chapter examples passed GCC and MSVC verification; the approved manuscript remains unchanged.
 - Chapter 3 solution file: **APPROVED (manager final approval 2026-10-01)** (`book/solutions/part1/chapter03-solutions.md`). Content review and GCC/MSVC verification passed; exercises 1–12 covered. Approval history below retained; approved file unchanged in Chapter 4 work.
-- Chapter 4 manuscript: **Draft 1 / manager review pending** (`book/part1/chapter04-variables-data-types.md`), architecture Part 2. Seven complete examples passed actual GCC/MSVC builds and executions; 14 original exercises. Details in the Chapter 4 section below.
-- Final-approved chapters: **3**. No Chapter 4 solutions or Chapter 5 work.
+- Chapter 4 manuscript: **APPROVED (manager final approval 2026-10-01)** (`book/part2/chapter04-variables-data-types.md`), first chapter of Part 2. Seven complete examples passed actual GCC/MSVC verification; approved manuscript remains unchanged.
+- Chapter 4 solution file: **Draft 1 / manager review pending** (`book/solutions/part2/chapter04-solutions.md`). Exercises 1–14 and every subquestion are covered; Exercise 14 retains 〔심화·도전〕. New complete solution programs #8/#14 passed GCC and MSVC verification.
+- Final-approved chapters: **4**. Chapter 5 has not started.
 - Chapter-by-chapter manuscript production has begun. No automatic transition to PHASE 2.
 - Chapter 1 Draft 2 starting state verified: `main`, clean, HEAD/origin main `4f70ba3b8e90484da67a4c81d7a146bb9ea41ce4` (Draft 1 commit). Draft 1 started from `47bf4dc`.
 - README and all phase1 documents 01-07 read before writing. Approved 05/06 remain binding; 07 remains an unchanged historical audit.
@@ -35,13 +36,14 @@ Textbook (primary) + K&R (enhancement) -> approved C-part architecture -> chapte
 - `book/solutions/part1/chapter02-solutions.md` — Chapter 2 APPROVED solution manuscript: full answers + detailed explanations for exercises 1–8.
 - `book/part1/chapter03-c-program-components.md` — Chapter 3 APPROVED manuscript: 12 original exercises; all six examples verified on GCC and MSVC.
 - `book/solutions/part1/chapter03-solutions.md` — Chapter 3 APPROVED solutions: exercises 1–12; content review and dual-toolchain verification passed.
-- `book/part1/chapter04-variables-data-types.md` — Chapter 4 Draft 1 manuscript: §4.1–4.5, required boxes, seven original complete programs, conceptual memory diagram, 14 exercises; manager review pending.
-- README.md — setup/kickoff 8/8; Chapters 1–3 manuscript+solutions APPROVED; Chapter 4 Draft 1 / manager review pending; final-approved chapters = 3.
+- `book/part2/chapter04-variables-data-types.md` — Chapter 4 APPROVED manuscript: §4.1–4.5, required boxes, seven verified complete programs, conceptual memory diagram, 14 exercises.
+- `book/solutions/part2/chapter04-solutions.md` — Chapter 4 solution Draft 1: full answers + detailed explanations for exercises 1–14; manager review pending.
+- README.md — setup/kickoff 8/8; Chapters 1–3 manuscript+solutions APPROVED; Chapter 4 manuscript APPROVED; Chapter 4 solutions Draft 1; final-approved chapters = 4.
 
 ## Incomplete files
 
 - Chapter 1 manuscript and Chapter 1 solution manuscript are both manager-approved.
-- Chapters 1–3 manuscripts and solutions are **APPROVED**. Chapter 4 Draft 1 awaits manager review; its GCC/MSVC verification is complete. No Chapter 4 solutions or Chapter 5 body started.
+- Chapters 1–3 manuscripts and solutions are **APPROVED**. Chapter 4 manuscript is **APPROVED**. Chapter 4 solution file is **Draft 1 / manager review pending**. Chapter 5 has not started.
 - No structural files are otherwise incomplete. The previously approximate titles and Advanced Topic checks were resolved against the source scan. Standing note only: `(i)` labels inferred from titles should be confirmed against body pages when each chapter is written.
 
 ## Source files
@@ -930,3 +932,109 @@ Observed byte counts, in order char/short/int/long/long long/float/double/long d
 - Chapter 4 solutions: not yet created.
 - Chapter 5: not started.
 - Next exact task: create `book/solutions/part2/chapter04-solutions.md` Draft 1, then manager review before Chapter 5.
+
+
+## Chapter 4 solution Draft 1
+
+- Date: 2026-10-02.
+- Approved Chapter 4 manuscript remained unchanged: `book/part2/chapter04-variables-data-types.md`.
+- Created: `book/solutions/part2/chapter04-solutions.md`.
+- Status: **Draft 1 / manager review pending**.
+- Coverage: exercises **1–14**, every subquestion; Exercise 14 retains **〔심화·도전〕**.
+- Scope remains within Chapters 1–4. No loops, arrays, pointer mechanics, user-defined helper functions, storage/linkage theory, structs, dynamic memory, IEEE-754 internals or Chapter 5 conversion tables were introduced.
+- Problem 3 distinguishes const object / C17 integer constant expression / `#define` / enum constant without expanding into later preprocessing or enum teaching.
+- Problem 6 uses the approved Chapter 4 project measurements as model evidence and labels them as implementation results, not universal C guarantees.
+- Problem 9 signed overflow example was **NOT executed**; it is explained as undefined behavior. The unsigned case is reasoned to produce 0 by defined unsigned arithmetic.
+- Problem 10 original uninitialized-read example was **NOT executed**; the corrected fragment initializes `processed` to 0 and has expected output 5.
+- Chapter 5 not started. No architecture documents changed.
+
+### New complete solution programs and GCC verification
+
+Only two new complete programs were added to the solution manuscript:
+
+1. Problem 8: `problem8_limits.c`
+2. Problem 14: `problem14_storage_record.c`
+
+Actual GCC verification environment: Linux x86_64, **GCC 14.2.0 (Debian 14.2.0-19)**.
+
+Commands actually run:
+
+```text
+gcc -std=c17 -Wall -Wextra problem8_limits.c -o problem8_limits
+gcc -std=c17 -Wall -Wextra problem14_storage_record.c -o problem14_storage_record
+```
+
+| Program | Build | Warnings | Errors | Runtime exit |
+|---|---|---:|---:|---:|
+| Problem 8 | PASS | 0 | 0 | 0 |
+| Problem 14 | PASS | 0 | 0 | 0 |
+
+Problem 8 actual GCC stdout:
+
+```text
+INT_MIN: -2147483648
+INT_MAX: 2147483647
+LONG_MIN: -9223372036854775808
+LONG_MAX: 9223372036854775807
+UINT_MAX: 4294967295
+```
+
+Problem 14 actual GCC stdout:
+
+```text
+Samples: 24
+Zone: M
+Total mass: 1.5000 kg
+Total mass size: 8 bytes
+INT_MAX: 2147483647
+```
+
+Source SHA-256:
+- Problem 8: `b5d2b71c8d2eb501e4d57ee73ed21883b8d26a3dc88ea0dcd5e5002692376e89`
+- Problem 14: `9fa05c497db68b7907d6b0f4dce217b2e9a8f645fc91c8c9458de1db6574aca0`
+
+### Actual Windows / MSVC verification
+
+- Successful run: https://github.com/cys123431-ship-it/Clanguagebooks/actions/runs/36896118669
+- GitHub-hosted **Microsoft Windows Server 2025**, runner image `windows-2025-vs2026` version `20260925.250.1`.
+- Visual Studio Enterprise 2026, product version **18.10.2**, installation version `18.10.12217.157`.
+- `cl.exe` path: `C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\bin\HostX64\x64\cl.exe`.
+- Compiler banner: **Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36260 for x64**.
+- Exact program bytes were generated from the same source used in the solution; SHA-256 values matched the GCC test sources above.
+
+Commands actually run:
+
+```text
+cl /std:c17 /W4 problem8_limits.c
+cl /std:c17 /W4 problem14_storage_record.c
+```
+
+| Program | Build | Warnings | Errors | Runtime exit |
+|---|---|---:|---:|---:|
+| Problem 8 | PASS | 0 | 0 | 0 |
+| Problem 14 | PASS | 0 | 0 | 0 |
+
+Problem 8 actual MSVC stdout:
+
+```text
+INT_MIN: -2147483648
+INT_MAX: 2147483647
+LONG_MIN: -2147483648
+LONG_MAX: 2147483647
+UINT_MAX: 4294967295
+```
+
+Problem 14 actual MSVC stdout:
+
+```text
+Samples: 24
+Zone: M
+Total mass: 1.5000 kg
+Total mass size: 8 bytes
+INT_MAX: 2147483647
+```
+
+- No `scanf` appears in either complete solution program, so C4996 handling was not required.
+- The first temporary workflow run failed only because its log-capture file path was wrong after the Problem 8 program had already compiled warnings-clean; the corrected temporary verifier then completed successfully and verified both programs. No manuscript/code correction was required.
+- Temporary `.github/workflows/ch4-solutions-msvc-temp.yml` is removed in the final tree. No temporary sources, binaries or scripts remain in the repository.
+- Next exact task: **Manager review of Chapter 4 solution Draft 1**.
