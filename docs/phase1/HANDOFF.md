@@ -1038,3 +1038,19 @@ INT_MAX: 2147483647
 - The first temporary workflow run failed only because its log-capture file path was wrong after the Problem 8 program had already compiled warnings-clean; the corrected temporary verifier then completed successfully and verified both programs. No manuscript/code correction was required.
 - Temporary `.github/workflows/ch4-solutions-msvc-temp.yml` is removed in the final tree. No temporary sources, binaries or scripts remain in the repository.
 - Next exact task: **Manager review of Chapter 4 solution Draft 1**.
+
+## Chapter 4 solution manager final approval
+
+- Date: 2026-10-02
+- Approved solution file: `book/solutions/part2/chapter04-solutions.md`
+- Manager reviewed the complete Draft 1 against the approved Chapter 4 exercise set and scope.
+- Coverage gate passed: exercises 1–14 and every subquestion are answered; Exercise 14 retains `〔심화·도전〕`.
+- Technical review passed: declaration/initialization/assignment trace; identifier rules; `const` vs integer constant expression/`#define`/enum; conceptual storage diagram; `sizeof`/`size_t`/`%zu`; standard guarantees vs measured sizes; correct integer format specifiers; `<limits.h>` limits; signed-overflow UB vs unsigned modulo behavior; safe correction of uninitialized use; introductory signed/unsigned caution; floating storage/calculation/formatting distinction; character/string/escape distinction; integrated Problem 14 program.
+- Safety review passed: Problem 9 signed overflow and Problem 10 uninitialized-read originals were not executed and no fixed output was invented for them.
+- Verification gate passed: new complete solution programs for Problems 8 and 14 were compiled and run on GCC 14.2.0 (`-std=c17 -Wall -Wextra`) and MSVC 19.51.36260 (`/std:c17 /W4`), each with 0 warnings / 0 errors / exit 0; implementation-specific outputs are labeled as measurements rather than universal C guarantees.
+- Approved Chapter 4 manuscript remained unchanged during solution authoring.
+- Reader-facing solution body required no substantive manager rewrite.
+- Result: **APPROVED**. Chapter 4 manuscript + solutions are both complete for the current writing stage.
+- Final-approved chapters: 4.
+- Chapter 5: not started.
+- Next exact task: Chapter 5 manuscript writing (`Chapter 5 — 수식과 연산자`).
